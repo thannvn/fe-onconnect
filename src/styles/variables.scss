@@ -1,0 +1,48 @@
+$max-width-layout: 1920px;
+
+// Color Variables
+$color-black: #000000;
+$color-white: #ffffff;
+$color-background: #ebfbff;
+$color-secondary-background: #f7f7f7;
+$color-text-main: #333333;
+$color-text-secondary: #e3e3e3;
+$color-brand-blue: #4bbfbf;
+$color-brand-light-blue: #7deae7;
+$color-brand-orange: #f28729;
+$color-brand-green: #c6f8d9;
+$color-text-sub-1: rgba(51, 51, 51, 0.8);
+$color-text-sub-2: rgba(51, 51, 51, 0.4);
+$color-border-gray: #dbdbdb;
+$color-modal-shadow: rgba(0, 0, 0, 0.1);
+$color-card-shadow: rgba(51, 51, 51, 0.1);
+$color-carousel-shadow: rgba(0, 0, 0, 0.2);
+$color-background-gray: rgba(245, 245, 245, 0.5);
+$color-success: #5cb85c;
+$color-error: #ff4d4f;
+$color-background-cv: #525659;
+
+// Orther colors are get name from https://www.htmlcsscolor.com/
+$color-old-lace: #fff6e9;
+$color-dodger-blue: #008eea;
+$color-robin-egg-blue: #00c5c2;
+$color-dim-gray: #707070;
+$color-white-smoke: #f5f5f5;
+$color-aero-blue: #c6f8d9;
+$color-dark-orange: #ff7e00;
+$color-persian-green: #01a087;
+
+// margin/padding
+$space-unit: 20px;
+$space-XXS: 0.5 * $space-unit;
+$space-XS: 1 * $space-unit;
+$space-S: 1.5 * $space-unit;
+$space-MS: 2 * $space-unit;
+$space-M: 2.5 * $space-unit;
+$space-ML: 3 * $space-unit;
+$space-L: 3.5 * $space-unit;
+$space-LL: 4 * $space-unit;
+$space-XL: 4.5 * $space-unit;
+$space-XXL: 5 * $space-unit;
+$space-XXXL: 6 * $space-unit;
+$space-XXXXL: 7 * $space-unit;

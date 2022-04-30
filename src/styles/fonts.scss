@@ -1,0 +1,115 @@
+@mixin font_base(
+  $size,
+  $weight: normal,
+  $family: 'Montserrat',
+  $style: normal
+) {
+  font-family: $family;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+.font_body_16r {
+  @include font_base(16px);
+}
+
+.font_body_18r {
+  @include font_base(18px);
+}
+
+.font_body_18sm {
+  @include font_base(18px, 600);
+}
+
+.font_body_19sm {
+  @include font_base(19px, 600);
+}
+
+.font_body_20r {
+  @include font_base(20px);
+}
+
+.font_body_20md {
+  @include font_base(20px, 500);
+}
+
+.font_body_20sm {
+  @include font_base(20px, 600);
+}
+
+.font_body_22r {
+  @include font_base(22px);
+}
+
+.font_body_22sm {
+  @include font_base(22px, 600);
+}
+
+.font_body_22md {
+  @include font-base(22px, 500);
+}
+
+.font_body_22b {
+  @include font-base(22px, bold);
+}
+
+.font_body_24r {
+  @include font-base(24px);
+}
+
+.font_title_30r {
+  @include font_base(30px);
+}
+
+.font_title_30sm {
+  @include font_base(30px, 600);
+}
+
+.font_body_25r {
+  @include font-base(25px);
+}
+
+.font_body_25md {
+  @include font-base(25px, 500);
+}
+
+.font_body_25sm {
+  @include font-base(25px, 600);
+}
+
+.font_body_25b {
+  @include font-base(25px, bold);
+}
+
+.font_title_30md {
+  @include font_base(30px, 500);
+}
+
+.font_title_35r {
+  @include font_base(35px);
+}
+
+.font_title_30b {
+  @include font_base(30px, bold);
+}
+
+.font_title_35md {
+  @include font_base(35px, 500);
+}
+
+.font_title_50md {
+  @include font-base(50px, 500);
+}
+
+.font_logo_36b {
+  @include font-base(36px, bold);
+}
+
+.font_image_60r {
+  @include font-base(65px);
+}
+
+.font_image_65r {
+  @include font-base(65px);
+}
