@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+@import 'styles/mui/common.scss';
+
+.app-bar {
+  height: $space-LL;
+
+  .container {
+    height: $space-LL;
+
+    .toolbar {
+      height: $space-LL;
+
+      .nav-list {
+        display: flex;
+        align-items: center;
+        width: 92%;
+
+        .left-list {
+          .register-test {
+            position: relative;
+
+            .menu-list {
+              display: none;
+              padding: $space-XS;
+              position: absolute;
+              background-color: $color-white;
+              border-radius: 4px;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+          }
+
+          .register-test:hover .menu-list {
+            display: block;
+          }
+        }
+
+        .right-list {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

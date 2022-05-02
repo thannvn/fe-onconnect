@@ -1,0 +1,9 @@
+.nav-element {
+  color: $color-black !important;
+  text-transform: none !important;
+}
+
+.nav-element:hover {
+  color: $color-button !important;
+  background-color: $color-button-nav-hover !important;
+}
