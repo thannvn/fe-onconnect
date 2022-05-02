@@ -18,6 +18,8 @@
     "@types/react-redux": "^7.1.23",
     "clsx": "^1.1.1",
     "i18next": "^21.6.16",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-http-backend": "^1.4.0",
     "prettier": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
