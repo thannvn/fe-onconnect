@@ -17,7 +17,7 @@
         width: 92%;
 
         .left-list {
-          .register-test {
+          .nav-button--menu-list {
             position: relative;
 
             .menu-list {
@@ -30,8 +30,10 @@
             }
           }
 
-          .register-test:hover .menu-list {
-            display: block;
+          .nav-button--menu-list:hover {
+            .menu-list {
+              display: block;
+            }
           }
         }
 

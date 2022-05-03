@@ -12,16 +12,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 import { LANGUAGE } from 'translation/i18n';
 import './nav-bar.style.scss';
 
-const LANGUAGE_OPTION = Object.values(LANGUAGE);
+const LANGUAGE_OPTION: string[] = Object.values(LANGUAGE);
 
 function NavigationBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const { t, i18n } = useTranslation();
   const open = Boolean(anchorEl);
   const [currentLanguage, setCurrentLanguage] = useState<string>(LANGUAGE.en);
+  const navigate = useNavigate();
 
   const handleChangeLanguage = (language: string) => {
     if (language !== currentLanguage) {
@@ -31,14 +33,20 @@ function NavigationBar() {
       setCurrentLanguage(language);
     }
 
-    handleClose();
+    handleCloseMenuLanguage();
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleOpenMenuLanguage = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleCloseMenuLanguage = () => {
     setAnchorEl(null);
+  };
+
+  const handleRedirectPricing = () => {
+    navigate('/pricing');
   };
 
   return (
@@ -55,10 +63,10 @@ function NavigationBar() {
                 {t('nav.about_me')}
               </Button>
 
-              <div className="register-test">
+              <div className="nav-button--menu-list">
                 <Button
                   aria-haspopup="true"
-                  className="nav-button --arrow-icon"
+                  className=""
                   variant="text"
                   size="large"
                   endIcon={<ArrowDropDownIcon />}
@@ -106,6 +114,15 @@ function NavigationBar() {
                 </MenuList>
               </div>
 
+              <Button
+                variant="text"
+                size="large"
+                className="nav-button"
+                onClick={handleRedirectPricing}
+              >
+                {t('nav.service_pricing')}
+              </Button>
+
               <Button variant="text" size="large" className="nav-button">
                 {t('nav.partners')}
               </Button>
@@ -121,8 +138,12 @@ function NavigationBar() {
                 {t('nav.login')}
               </Button>
 
-              <Button variant="contained" className="on-connect-button">
-                {t('nav.try_it_now')}
+              <Button
+                variant="contained"
+                className="on-connect-button --no-transform"
+                onClick={handleRedirectPricing}
+              >
+                {t('nav.free_trial')}
               </Button>
 
               <IconButton
@@ -131,7 +152,7 @@ function NavigationBar() {
                 aria-controls={open ? 'language-menu' : undefined}
                 aria-expanded={open ? 'true' : undefined}
                 className="nav-button"
-                onClick={handleClick}
+                onClick={handleOpenMenuLanguage}
               >
                 <LanguageIcon fontSize="medium" />
               </IconButton>
@@ -140,7 +161,7 @@ function NavigationBar() {
                 id="language-menu"
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
+                onClose={handleCloseMenuLanguage}
                 MenuListProps={{
                   'aria-labelledby': 'language-button',
                 }}

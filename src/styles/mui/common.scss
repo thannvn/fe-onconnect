@@ -3,7 +3,11 @@
   text-transform: none !important;
 }
 
-.nav-element:hover {
+.hover-element {
   color: $color-button !important;
   background-color: $color-button-nav-hover !important;
+}
+
+.nav-element:hover {
+  @extend .hover-element;
 }
