@@ -49,6 +49,7 @@
     "react/prop-types": "off",
     "no-param-reassign": "off",
     "react/button-has-type": "off",
-    "no-promise-executor-return": "off"
+    "no-promise-executor-return": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

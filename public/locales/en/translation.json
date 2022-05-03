@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "why_onconnect": {
+      "header": "Why ONCONNECT",
+      "title1": "Powerful Features",
+      "description1": "Explore our customer engagement",
+      "title2": "Our Technology",
+      "description2": "Carrier-grade performance and reliability",
+      "title3": "Our Innovations",
+      "description3": "Sercured. Intelligent. Unified"
+    },
+    "about_me": "About me",
+    "partners": "Partners",
+    "register_service": "Register service",
+    "login": "Login",
+    "try_it_now": "Try it now"
+  },
+  "languages": {
+    "en": "English",
+    "vi": "Vietnamese"
+  }
+}

@@ -4,6 +4,7 @@
 
 /**
 * Add more spacing if you need 
+* If spacing not available in variables.scss, let use system properties of MUI component
 */
 $_spacings: (
   XXS: $space-XXS,
@@ -21,19 +22,19 @@ $_spacings: (
 );
 
 @each $_spacing_key, $_spacing in $_spacings {
-  .margin_top_#{$_spacing_key} {
+  .mt--#{$_spacing_key} {
     margin-top: $_spacing !important;
   }
 
-  .margin_right_#{$_spacing_key} {
+  .mr--#{$_spacing_key} {
     margin-right: $_spacing !important;
   }
 
-  .margin_bottom_#{$_spacing_key} {
+  .mb--#{$_spacing_key} {
     margin-bottom: $_spacing !important;
   }
 
-  .margin_left_#{$_spacing_key} {
+  .ml--#{$_spacing_key} {
     margin-left: $_spacing !important;
   }
 }
