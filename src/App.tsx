@@ -11,6 +11,9 @@ export const customTheme = createTheme({
 });
 
 const Home = React.lazy(() => import('app/modules/home/routing'));
+const Pricing = React.lazy(
+  () => import('app/modules/pricing/pages/pricing-page.component')
+);
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
 
         <Routes>
           <Route path="/*" element={<Home />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
       </Suspense>
     </ThemeProvider>
