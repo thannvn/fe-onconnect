@@ -1,0 +1,46 @@
+@import './common.scss';
+
+.nav-button {
+  @extend .nav-element;
+  @extend .font--14b;
+}
+
+.nav-button--menu-list {
+  button {
+    @extend .nav-button;
+
+    .css-z4rqyd-MuiButton-endIcon {
+      margin-left: 4px;
+      transform-style: preserve-3d;
+      transition: 0.2s;
+    }
+
+    .css-z4rqyd-MuiButton-endIcon > *:nth-of-type(1) {
+      font-size: $space-S;
+    }
+  }
+}
+
+.nav-button--menu-list:hover {
+  button {
+    @extend .hover-element;
+  }
+
+  .css-z4rqyd-MuiButton-endIcon {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(-180deg) skew(0deg, 0deg);
+  }
+}
+
+.on-connect-button {
+  @extend .font--15b;
+  background-color: $color-button;
+
+  &.--no-transform {
+    text-transform: none !important;
+  }
+}
+
+.on-connect-button:hover {
+  background-color: $color-button-hover;
+}

@@ -1,0 +1,32 @@
+@import './common.scss';
+
+.nav-menu-item {
+  @extend .nav-element;
+
+  display: flex;
+  align-items: flex-start !important;
+  padding-top: $space-XXS !important;
+  border-radius: 5px !important;
+  width: 360px !important;
+  min-height: $space-XXL !important;
+
+  .content {
+    margin-left: $space-XS;
+    max-width: 300px !important;
+
+    .title {
+      @extend .font--16b;
+    }
+
+    .description {
+      @extend .font--14;
+      color: $color-text-sub-1;
+      white-space: normal;
+    }
+  }
+}
+
+.menu-item {
+  @extend .nav-element;
+  @extend .font--14;
+}
