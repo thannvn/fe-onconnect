@@ -1,0 +1,13 @@
+.nav-element {
+  color: $color-black !important;
+  text-transform: none !important;
+}
+
+.hover-element {
+  color: $color-button !important;
+  background-color: $color-button-nav-hover !important;
+}
+
+.nav-element:hover {
+  @extend .hover-element;
+}
