@@ -27,8 +27,8 @@ function NavigationBar() {
 
   const handleChangeLanguage = (language: string) => {
     if (language !== currentLanguage) {
-      i18n.changeLanguage(language, () => {
-        console.log('Cannot change language');
+      i18n.changeLanguage(language, (err) => {
+        if (err) console.log('Cannot change language');
       });
       setCurrentLanguage(language);
     }

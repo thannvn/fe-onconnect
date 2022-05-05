@@ -2,7 +2,7 @@
 
 .nav-button {
   @extend .nav-element;
-  @extend .font--14b;
+  @extend .font--14sb;
 }
 
 .nav-button--menu-list {
@@ -33,8 +33,8 @@
 }
 
 .on-connect-button {
-  @extend .font--15b;
-  background-color: $color-button;
+  @extend .font--15sb;
+  background-color: $color-button !important;
 
   &.--no-transform {
     text-transform: none !important;
@@ -42,5 +42,5 @@
 }
 
 .on-connect-button:hover {
-  background-color: $color-button-hover;
+  background-color: $color-button-hover !important;
 }

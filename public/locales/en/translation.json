@@ -19,5 +19,9 @@
   "languages": {
     "en": "English",
     "vi": "Vietnamese"
+  },
+  "pricing_page": {
+    "title": "Pricing Page",
+    "header": "Designed for Businesses of All Sizes and Sectors"
   }
 }

@@ -1,3 +1,22 @@
-.container {
-  max-width: 1920px;
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.main-layout {
+  .title {
+    margin: 0 auto;
+    max-width: 42rem;
+
+    h1 {
+      text-align: center;
+      @extend .font--42eb;
+    }
+  }
+
+  .pricing-board {
+    .pricing-switching {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 }

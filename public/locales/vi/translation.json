@@ -19,5 +19,9 @@
   "languages": {
     "en": "Tiếng Anh",
     "vi": "Tiếng Việt"
+  },
+  "pricing_page": {
+    "title": "Bảng Giá Dịch Vụ",
+    "header": "Designed for Businesses of All Sizes and Sectors"
   }
 }
