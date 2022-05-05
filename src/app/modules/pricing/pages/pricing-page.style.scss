@@ -8,15 +8,18 @@
 
     h1 {
       text-align: center;
-      @extend .font--42eb;
+      @extend .font--48eb;
     }
   }
 
   .pricing-board {
     .pricing-switching {
       display: flex;
-      justify-content: center;
-      text-align: center;
+      align-items: center;
     }
+  }
+
+  .pricing-card-list {
+    padding: 0px $space-XXXL 0px $space-XXXL;
   }
 }
