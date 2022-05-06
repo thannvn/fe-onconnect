@@ -1,3 +1,51 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
 .pricing-card {
-  padding: 1.5rem;
+  border-radius: 16px;
+
+  .header {
+    padding: 1.5rem;
+    height: 4rem;
+    background-color: $color-brand-light-blue;
+    border: 1px solid #d5ecf3;
+    border-radius: 16px 16px 0px 0px;
+    color: $color-brand-blue-dark;
+
+    &.--popular {
+      background-color: $color-brand-yellow-light;
+      border: 1px solid #f3e9c6;
+    }
+
+    .title {
+      width: 100%;
+      margin-bottom: 0.25rem;
+
+      h5 {
+        max-width: 65%;
+        font-weight: 700;
+      }
+
+      .card-type {
+        @extend .font--16md;
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        margin-left: auto;
+        background-color: $color-brand-orange;
+      }
+    }
+  }
+
+  .action-area {
+    padding: 1.875rem 2rem;
+
+    h4 {
+      @extend .font--32b;
+    }
+
+    span {
+      @extend .font--16;
+      color: $color-text-sub-1;
+    }
+  }
 }
