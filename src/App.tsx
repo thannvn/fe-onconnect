@@ -15,6 +15,9 @@ export const customTheme = createTheme({
 
 const Home = React.lazy(() => import('app/modules/home/routing'));
 const Pricing = React.lazy(() => import('app/modules/pricing/routing'));
+const RegisterFree = React.lazy(
+  () => import('app/modules/register-free/routing')
+);
 
 function App() {
   useState(() => {
@@ -29,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/register-free" element={<RegisterFree />} />
         </Routes>
 
         <Footer />
