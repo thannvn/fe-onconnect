@@ -1,0 +1,73 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.compare-feature {
+  .part-heading {
+    @extend .font--24b;
+    text-transform: uppercase;
+  }
+
+  .channel-title {
+    @extend .font--16sb;
+    text-transform: uppercase;
+    color: $color-text-sub-2;
+  }
+
+  .feature-compare-description {
+    border: 1px solid $color-border-light-gray;
+
+    .css-yw020d-MuiAccordionSummary-expandIconWrapper {
+      color: $color-black;
+    }
+
+    .feature-compare-content {
+      border-top: 1px solid $color-border-light-gray;
+
+      .feature-description {
+        height: 3.75rem;
+        border-bottom: 1px solid $color-border-light-gray;
+
+        .feature-name {
+          padding: 0 1.25rem 0 2.25rem;
+          display: flex;
+          align-items: center;
+
+          .helper {
+            margin-left: auto;
+            color: $color-text-sub-2;
+
+            &:hover {
+              cursor: pointer;
+              color: $color-sub-black;
+            }
+          }
+
+          .extra {
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            margin-left: auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: $color-button;
+            background-color: $color-brand-light-blue;
+          }
+        }
+
+        &.--light-background {
+          background-color: $color-background-light-gray;
+        }
+
+        div:not(:first-child) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-left: 1px solid $color-border-light-gray;
+        }
+      }
+    }
+  }
+
+  .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+    margin: 0px;
+  }
+}

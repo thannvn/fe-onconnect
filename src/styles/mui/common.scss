@@ -5,9 +5,16 @@
 
 .hover-element {
   color: $color-button !important;
-  background-color: $color-button-nav-hover !important;
+  background-color: $color-brand-light-blue !important;
 }
 
 .nav-element:hover {
   @extend .hover-element;
+}
+
+//Custom width layout
+.css-19r6kue-MuiContainer-root {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    max-width: $max-width-container !important;
+  }
 }

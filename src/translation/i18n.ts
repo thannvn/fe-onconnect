@@ -23,8 +23,7 @@ i18n
   // init i18next
   .init({
     fallbackLng: LANGUAGE.en,
-    debug: true,
-
+    debug: false,
     interpolation: {
       escapeValue: false,
     },

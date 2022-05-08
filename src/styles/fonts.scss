@@ -4,18 +4,60 @@
   font-size: $size !important;
 }
 
+/*
+*Suffixes font-weight*
+- l: light = 300
+- md: medium = 500
+- sb: semi bold = 600
+- b: bold = 700
+- eb: extra bold = 800
+- h: heavy = 900
+ */
+
 .font--14 {
-  @include font_base(14px);
+  @include font_base(0.875rem);
 }
 
-.font--14b {
-  @include font_base(14px, 600);
+.font--14sb {
+  @include font_base(0.875rem, 600);
 }
 
-.font--15b {
-  @include font_base(15px, 600);
+.font--15sb {
+  @include font_base(0.9375rem, 600);
+}
+
+.font--15md {
+  @include font_base(0.9375rem, 500);
+}
+
+.font--16 {
+  @include font_base(1rem);
+}
+
+.font--16sb {
+  @include font_base(1rem, 600);
 }
 
 .font--16b {
-  @include font_base(16px, 700);
+  @include font_base(1rem, 700);
+}
+
+.font--16md {
+  @include font_base(1rem, 500);
+}
+
+.font--24b {
+  @include font_base(1.5rem, 700);
+}
+
+.font--48eb {
+  @include font_base(3rem, 800);
+}
+
+.font--22b {
+  @include font_base(1.375rem, 700);
+}
+
+.font--32b {
+  @include font_base(2rem, 700);
 }

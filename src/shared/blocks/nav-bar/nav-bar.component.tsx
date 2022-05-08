@@ -1,5 +1,4 @@
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import { DeveloperBoard, ExpandMore } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import LoginIcon from '@mui/icons-material/Login';
 import StarIcon from '@mui/icons-material/Star';
@@ -14,6 +13,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { LANGUAGE } from 'translation/i18n';
+
 import './nav-bar.style.scss';
 
 const LANGUAGE_OPTION: string[] = Object.values(LANGUAGE);
@@ -27,8 +27,8 @@ function NavigationBar() {
 
   const handleChangeLanguage = (language: string) => {
     if (language !== currentLanguage) {
-      i18n.changeLanguage(language, () => {
-        console.log('Cannot change language');
+      i18n.changeLanguage(language, (err) => {
+        if (err) console.log('Cannot change language');
       });
       setCurrentLanguage(language);
     }
@@ -50,7 +50,12 @@ function NavigationBar() {
   };
 
   return (
-    <AppBar position="static" color="transparent" className="app-bar">
+    <AppBar
+      position="fixed"
+      color="transparent"
+      className="app-bar"
+      id="app-bar"
+    >
       <Container maxWidth="xl" className="container">
         <Toolbar disableGutters className="toolbar">
           <Typography variant="h5" noWrap component="div" className="mr--MS">
@@ -69,7 +74,7 @@ function NavigationBar() {
                   className=""
                   variant="text"
                   size="large"
-                  endIcon={<ArrowDropDownIcon />}
+                  endIcon={<ExpandMore />}
                 >
                   {t('nav.why_onconnect.header')}
                 </Button>
@@ -88,7 +93,7 @@ function NavigationBar() {
                     </div>
                   </MenuItem>
                   <MenuItem className="nav-menu-item">
-                    <DeveloperBoardIcon />
+                    <DeveloperBoard />
 
                     <div className="content">
                       <Typography variant="h6" className="title">

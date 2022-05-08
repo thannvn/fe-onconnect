@@ -1,0 +1,79 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+@import '../../shared/styles/card-name.style.scss';
+
+.pricing-card {
+  border-radius: 16px;
+
+  .header {
+    @extend .card-name;
+    padding: 1.5rem;
+    height: 4rem;
+    border-radius: 16px 16px 0px 0px;
+
+    .title {
+      width: 100%;
+      margin-bottom: 0.25rem;
+
+      h5 {
+        max-width: 65%;
+        font-weight: 700;
+      }
+
+      .card-type {
+        @extend .font--16md;
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        margin-left: auto;
+        background-color: $color-brand-orange;
+      }
+    }
+  }
+
+  .action-area {
+    padding: 1.875rem 2rem;
+    height: 14.25rem;
+    border-bottom: 1px solid $color-border-light-gray;
+
+    h4 {
+      @extend .font--32b;
+    }
+
+    .per-month {
+      @extend .font--16;
+      color: $color-text-sub-1;
+    }
+
+    .on-connect-button {
+      width: 100%;
+    }
+  }
+
+  .card-content {
+    padding: 2.25rem;
+
+    .options {
+      .title {
+        @extend .font--16;
+        color: $color-sub-black;
+      }
+
+      .channels {
+        margin-top: 3px;
+        margin-left: $space-MS;
+
+        &.--long-channels {
+          @media only screen and (max-width: 1250px) {
+            margin-left: $space-S;
+            transform: scale(0.9);
+          }
+
+          @media only screen and (max-width: 1060px) {
+            margin-left: 18px;
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+  }
+}

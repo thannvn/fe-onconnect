@@ -9,15 +9,63 @@
       "title3": "Our Innovations",
       "description3": "Sercured. Intelligent. Unified"
     },
+    "capabilities": {
+      "header": "Capabilities",
+      "title1": "Connect",
+      "title2": "Orchestrate",
+      "title3": "Evaluate"
+    },
+    "solutions": {
+      "header": "Solutions",
+      "business_needs": "Business needs",
+      "business_needs.title1": "Team Collaboration",
+      "business_needs.title2": "Remote Office & Mobility",
+      "business_needs.title3": "Customer Engagement",
+      "industry": "Industry",
+      "industry.title1": "Finance Services",
+      "industry.title2": "E-commerce",
+      "case_study": "Case study",
+      "case_study.title1": "Customer Wearables",
+      "case_study.title2": "Retail",
+      "case_study.title3": "IT Services"
+    },
     "about_me": "Về chúng tôi",
     "partners": "Đối tác",
     "register_service": "Đăng ký dịch vụ",
     "login": "Đăng nhập",
-    "free_trial": "Trải nghiệm MIỄN PHÍ",
+    "free_trial": "Dùng thử MIỄN PHÍ",
     "service_pricing": "Bảng giá dịch vụ"
   },
   "languages": {
     "en": "Tiếng Anh",
     "vi": "Tiếng Việt"
+  },
+  "pricing_page": {
+    "title": "Bảng Giá Dịch Vụ",
+    "header": "Designed for Businesses of All Sizes and Sectors",
+    "compare_features": "Compare Plans and Explore Features",
+    "questions": "Frequently  Asked Questions",
+    "start_free": "Dùng thử MIỄN PHÍ 30 ngày",
+    "plan_include": "Gói Bao Gồm",
+    "connect": "Connect",
+    "channels": "Channel"
+  },
+  "footer": {
+    "resources": {
+      "header": "Resources",
+      "title1": "Documentation",
+      "title2": "News & Events",
+      "title3": "Video Centre",
+      "title4": "FAQ",
+      "title5": "Blog"
+    },
+    "company": {
+      "header": "Company",
+      "title1": "About Us",
+      "title2": "Partners",
+      "title3": "Careers",
+      "title4": "Contact Us"
+    },
+    "get_in_touch": "Get in Touch"
   }
 }

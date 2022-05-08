@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.footer {
+  background-color: black;
+  color: $color-white;
+
+  .container {
+    padding: 5rem 8rem;
+
+    .header {
+      @extend .font--22b;
+    }
+
+    .subTitle {
+      text-transform: uppercase;
+      color: $color-text-sub-3;
+    }
+
+    .feature {
+      color: $color-white;
+      @extend .font--16sb;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-button;
+      }
+    }
+  }
+}
