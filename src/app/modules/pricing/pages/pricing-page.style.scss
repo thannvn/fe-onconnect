@@ -1,25 +1,69 @@
 @import 'styles/variables.scss';
 @import 'styles/fonts.scss';
+@import '../shared/styles/card-name.style.scss';
 
 .main-layout {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    margin-top: 13rem;
+  }
+
+  padding: 0px $space-XXXL 0px $space-XXXL;
+
+  @media only screen and (max-width: $min-width-screen-xl) {
+    padding: 0px $space-LL 0px $space-LL;
+  }
+
+  @media only screen and (max-width: 1300px) {
+    padding: 0px $space-ML 0px $space-ML;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    padding: 0px $space-M 0px $space-M;
+  }
+
   .title {
     margin: 0 auto;
-    max-width: 42rem;
+    max-width: 50rem;
 
     h1 {
-      text-align: center;
       @extend .font--48eb;
+      text-align: center;
+    }
+
+    h3 {
+      @extend .font--32b;
+      text-align: center;
     }
   }
 
-  .pricing-board {
+  .pricing-list {
+    width: 100%;
+
     .pricing-switching {
       display: flex;
       align-items: center;
     }
   }
 
-  .pricing-card-list {
-    padding: 0px $space-XXXL 0px $space-XXXL;
+  .compare-features-list {
+    width: 100%;
+
+    .card-name-compare {
+      text-align: center;
+
+      .name {
+        @extend .card-name;
+
+        h6 {
+          padding: 1.5rem 0;
+          @extend .font--16b;
+        }
+      }
+    }
+  }
+
+  .questions {
+    width: 100%;
+    padding: 0 15rem;
   }
 }

@@ -1,0 +1,12 @@
+@import 'styles/variables.scss';
+
+.card-name {
+  background-color: $color-brand-light-blue;
+  color: $color-brand-blue-dark;
+  border: 1px solid $color-brand-light-blue-border;
+
+  &.--popular {
+    background-color: $color-brand-yellow-light;
+    border: 1px solid $color-brand-yellow-light-boder;
+  }
+}

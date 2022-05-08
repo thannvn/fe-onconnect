@@ -1,0 +1,13 @@
+@import 'styles/variables.scss';
+
+.question {
+  box-shadow: none;
+  border-bottom: 1px solid $color-border-light-gray;
+  p {
+    color: $color-body-black;
+  }
+
+  &::before {
+    display: none;
+  }
+}

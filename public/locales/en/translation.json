@@ -9,6 +9,32 @@
       "title3": "Our Innovations",
       "description3": "Sercured. Intelligent. Unified"
     },
+    "capabilities": {
+      "header": "Capabilities",
+      "title1": "Connect",
+      "title2": "Orchestrate",
+      "title3": "Evaluate"
+    },
+    "solutions": {
+      "header": "Solutions",
+      "business_needs": {
+        "header": "Business needs",
+        "title1": "Team Collaboration",
+        "title2": "Remote Office & Mobility",
+        "title3": "Customer Engagement"
+      },
+      "industry": {
+        "header": "Industry",
+        "title1": "Finance Services",
+        "title2": "E-commerce"
+      },
+      "case_study": {
+        "header": "Case study",
+        "title1": "Customer Wearables",
+        "title2": "Retail",
+        "title3": "IT Services"
+      }
+    },
     "about_me": "About me",
     "partners": "Partners",
     "register_service": "Register service",
@@ -22,6 +48,30 @@
   },
   "pricing_page": {
     "title": "Pricing Page",
-    "header": "Designed for Businesses of All Sizes and Sectors"
+    "header": "Designed for Businesses of All Sizes and Sectors",
+    "compare_features": "Compare Plans and Explore Features",
+    "questions": "Frequently Asked Questions",
+    "start_free": "Start a FREE 30-days Trial",
+    "plan_include": "Plan Includes",
+    "connect": "Connect",
+    "channels": "Channel"
+  },
+  "footer": {
+    "resources": {
+      "header": "Resources",
+      "title1": "Documentation",
+      "title2": "News & Events",
+      "title3": "Video Centre",
+      "title4": "FAQ",
+      "title5": "Blog"
+    },
+    "company": {
+      "header": "Company",
+      "title1": "About Us",
+      "title2": "Partners",
+      "title3": "Careers",
+      "title4": "Contact Us"
+    },
+    "get_in_touch": "Get in Touch"
   }
 }
