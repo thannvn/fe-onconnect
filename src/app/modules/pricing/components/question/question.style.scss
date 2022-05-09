@@ -3,6 +3,11 @@
 .question {
   box-shadow: none;
   border-bottom: 1px solid $color-border-light-gray;
+
+  .css-yw020d-MuiAccordionSummary-expandIconWrapper {
+    color: $color-black;
+  }
+
   p {
     color: $color-body-black;
   }

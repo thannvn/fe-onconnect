@@ -21,7 +21,9 @@ function Question({ question, answer }: QuestionProps) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography className="font--15md">{question}</Typography>
+        <Typography variant="h6" className="font--15md">
+          {question}
+        </Typography>
       </AccordionSummary>
 
       <AccordionDetails>
