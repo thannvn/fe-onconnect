@@ -67,5 +67,8 @@
       "title4": "Contact Us"
     },
     "get_in_touch": "Get in Touch"
+  },
+  "register_free": {
+    "title": "Đăng ký miễn phí"
   }
 }

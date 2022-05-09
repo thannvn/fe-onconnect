@@ -8,6 +8,11 @@ export default function RegisterFreeRoute() {
     const appBar = document.getElementById('app-bar');
     if (footer) footer.style.display = 'none';
     if (appBar) appBar.style.display = 'none';
+
+    return () => {
+      if (footer) footer.style.display = 'flex';
+      if (appBar) appBar.style.display = 'block';
+    };
   }, []);
 
   return (

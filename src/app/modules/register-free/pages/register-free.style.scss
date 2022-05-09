@@ -1,3 +1,37 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
 .register-free {
   padding: 1.5rem 12rem;
+  text-align: center;
+
+  .register-bar {
+    p {
+      color: $color-body-black;
+    }
+
+    .login {
+      margin-left: auto;
+
+      .navigate {
+        margin-left: 5px;
+        cursor: pointer;
+        color: $color-button;
+      }
+
+      svg {
+        color: $color-button;
+      }
+    }
+  }
+
+  .card {
+    .card-email {
+      background-color: $color-white;
+      padding: 3rem;
+      margin: 0 auto;
+      max-width: 20rem;
+      box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
+    }
+  }
 }
