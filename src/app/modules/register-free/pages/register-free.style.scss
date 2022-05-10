@@ -1,13 +1,20 @@
 @import 'styles/variables.scss';
 @import 'styles/fonts.scss';
+@import 'styles/mui/button.scss';
 
 .register-free {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    max-width: $max-width-layout !important;
+  }
+
+  background-color: $color-background-gray;
+  height: 100vh;
   padding: 1.5rem 12rem;
   text-align: center;
 
   .register-bar {
     p {
-      color: $color-body-black;
+      color: $color-sub-black;
     }
 
     .login {
@@ -27,11 +34,32 @@
 
   .card {
     .card-email {
+      border-radius: 0.5rem;
       background-color: $color-white;
       padding: 3rem;
       margin: 0 auto;
-      max-width: 20rem;
+      max-width: 29rem;
       box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
+
+      .hint-text {
+        color: $color-sub-black;
+      }
+
+      .email-form {
+        text-align: initial;
+        padding-left: 1rem;
+
+        .onc-text-field {
+          width: 100%;
+        }
+
+        .continue-button {
+          margin-top: $space-MS;
+          height: 3rem;
+          @extend .onc-button;
+          width: 100%;
+        }
+      }
     }
   }
 }

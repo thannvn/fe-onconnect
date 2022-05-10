@@ -75,6 +75,8 @@
     "get_in_touch": "Get in Touch"
   },
   "register_free": {
-    "title": "Sign up Free"
+    "title": "Sign up Free",
+    "email": "Email",
+    "create_account": "Create Account"
   }
 }

@@ -32,7 +32,7 @@
   }
 }
 
-.on-connect-button {
+.onc-button {
   @extend .font--15sb;
   background-color: $color-button !important;
 
@@ -41,6 +41,6 @@
   }
 }
 
-.on-connect-button:hover {
+.onc-button:hover {
   background-color: $color-button-hover !important;
 }

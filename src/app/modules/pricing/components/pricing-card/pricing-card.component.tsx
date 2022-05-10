@@ -59,7 +59,7 @@ function PricingCard({ info, isMonthly }: PricingCardProps) {
 
         <Button
           variant="contained"
-          className="on-connect-button --no-transform"
+          className="onc-button --no-transform"
           onClick={handleStartFree}
         >
           {t('pricing_page.start_free')}

@@ -149,7 +149,7 @@ function NavigationBar() {
 
               <Button
                 variant="contained"
-                className="on-connect-button --no-transform"
+                className="onc-button --no-transform"
                 onClick={handleRegisterFree}
               >
                 {t('nav.free_trial')}

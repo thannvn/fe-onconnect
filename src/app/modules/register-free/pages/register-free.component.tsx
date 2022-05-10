@@ -1,14 +1,23 @@
-import { Container, Link, Paper, Stack, Typography } from '@mui/material';
-import React from 'react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {
+  Button,
+  Container,
+  Paper,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import './register-free.style.scss';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router';
+import StepperRegister from '../components/stepper-register/stepper-register.component';
+import './register-free.style.scss';
 
 function RegisterFree() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
     <Container maxWidth="xl" className="register-free">
@@ -38,9 +47,28 @@ function RegisterFree() {
         </Stack>
       </Stack>
 
-      <div className="card mt--XXXXL">
+      <StepperRegister activeStep={activeStep} />
+
+      <div className="card mt--M">
         <Paper className="card-email">
-          <Typography variant="h5">Please enter your email</Typography>
+          <Typography className="font--28b">Please enter your email</Typography>
+          <Typography className="hint-text mt--XXS">
+            We suggest that you use your work email address.
+          </Typography>
+
+          <form className="email-form">
+            <Typography className="mt--S mb--XXS">Work email</Typography>
+
+            <TextField
+              type="email"
+              className="onc-text-field"
+              placeholder="name@work-email.com"
+            />
+
+            <Button className="continue-button" variant="contained">
+              Continue
+            </Button>
+          </form>
         </Paper>
       </div>
     </Container>
