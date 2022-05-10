@@ -46,7 +46,7 @@ function Pricing() {
   return (
     <Container maxWidth="xl" className="mt--XXXXL mb--XXXL">
       <Helmet>
-        <title>{t('pricing_page.title')}</title>
+        <title>{t('pricing_page.page_title')}</title>
       </Helmet>
 
       <Grid container className="main-layout">

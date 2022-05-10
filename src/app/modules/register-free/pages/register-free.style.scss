@@ -32,24 +32,28 @@
     }
   }
 
+  .custom-card {
+    border-radius: 0.5rem;
+    background-color: $color-white;
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 29rem;
+    box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
+  }
+
   .card {
-    .card-email {
-      border-radius: 0.5rem;
-      background-color: $color-white;
-      padding: 3rem;
-      margin: 0 auto;
-      max-width: 29rem;
-      box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
+    .paper {
+      @extend .custom-card;
 
       .hint-text {
         color: $color-sub-black;
       }
 
-      .email-form {
+      .form-paper {
         text-align: initial;
-        padding-left: 1rem;
+        width: 100%;
 
-        .onc-text-field {
+        .text-field-width-100 {
           width: 100%;
         }
 
@@ -60,6 +64,16 @@
           width: 100%;
         }
       }
+    }
+  }
+
+  .register-footer {
+    margin-top: $space-XL;
+    @extend .font--14;
+    color: $color-sub-black;
+
+    a {
+      color: $color-sub-black;
     }
   }
 }

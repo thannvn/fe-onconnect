@@ -1,4 +1,8 @@
 {
+  "common": {
+    "sign_in": "Sign in",
+    "continue": "Continue"
+  },
   "nav": {
     "why_onconnect": {
       "header": "Tại sao là ONCONNECT",
@@ -69,6 +73,17 @@
     "get_in_touch": "Get in Touch"
   },
   "register_free": {
-    "title": "Đăng ký miễn phí"
+    "page_title": "Đăng ký miễn phí",
+    "already_account": "Already have an account?",
+    "email": "Email",
+    "create_account": "Create Account",
+    "enter_email": "Please enter you email",
+    "hint-text": "We suggest that you use your work email address.",
+    "work_email": "Work email",
+    "email_error": "Please provide a valid email.",
+    "name": "Your name",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "phone_number": "Work phone number"
   }
 }

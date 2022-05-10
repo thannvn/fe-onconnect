@@ -2,27 +2,62 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {
   Button,
   Container,
+  Grid,
+  InputLabel,
+  Link,
+  MenuItem,
   Paper,
+  Select,
   Stack,
   TextField,
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import StepperRegister from '../components/stepper-register/stepper-register.component';
 import './register-free.style.scss';
 
+const schema = yup
+  .object()
+  .shape({
+    email: yup
+      .string()
+      .required('Please enter email.')
+      .email('Please enter a valid email.'),
+  })
+  .required();
+
 function RegisterFree() {
+  const {
+    control,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    defaultValues: {
+      email: '',
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+    },
+    resolver: yupResolver(schema),
+  });
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState<number>(0);
 
+  const onSubmit = () => {
+    setActiveStep(1);
+  };
+
   return (
     <Container maxWidth="xl" className="register-free">
       <Helmet>
-        <title>{t('register_free.title')}</title>
+        <title>{t('register_free.page_title')}</title>
       </Helmet>
 
       <Stack
@@ -39,9 +74,9 @@ function RegisterFree() {
           className="login"
           spacing={0}
         >
-          <Typography>Already have an account?</Typography>
+          <Typography>{t('register_free.already_account')}</Typography>
           <Typography onClick={() => navigate('/login')} className="navigate">
-            Sign in
+            {t('common.sign_in')}
           </Typography>
           <ArrowForwardIcon fontSize="small" />
         </Stack>
@@ -50,27 +85,170 @@ function RegisterFree() {
       <StepperRegister activeStep={activeStep} />
 
       <div className="card mt--M">
-        <Paper className="card-email">
-          <Typography className="font--28b">Please enter your email</Typography>
-          <Typography className="hint-text mt--XXS">
-            We suggest that you use your work email address.
-          </Typography>
+        {activeStep ? (
+          <Paper className="paper">
+            <Typography className="font--28b">
+              {t('register_free.enter_email')}
+            </Typography>
+            <Typography className="hint-text mt--XXS">
+              {t('register_free.hint_text')}
+            </Typography>
 
-          <form className="email-form">
-            <Typography className="mt--S mb--XXS">Work email</Typography>
+            <form className="form-paper" onSubmit={handleSubmit(onSubmit)}>
+              <Typography className="mt--S mb--XXS">
+                {t('register_free.work_email')}
+              </Typography>
 
-            <TextField
-              type="email"
-              className="onc-text-field"
-              placeholder="name@work-email.com"
-            />
+              <Controller
+                name="email"
+                control={control}
+                render={({ field, fieldState }) => (
+                  <TextField
+                    {...field}
+                    id="email"
+                    className="onc-text-field text-field-width-100"
+                    placeholder="name@work-email.com"
+                    error={!!fieldState.error}
+                    helperText={
+                      fieldState.error ? fieldState.error.message : ''
+                    }
+                  />
+                )}
+              />
 
-            <Button className="continue-button" variant="contained">
-              Continue
-            </Button>
-          </form>
-        </Paper>
+              <Button
+                className="continue-button"
+                variant="contained"
+                type="submit"
+              >
+                {t('common.continue')}
+              </Button>
+            </form>
+          </Paper>
+        ) : (
+          <Paper className="paper">
+            <Typography className="font--28b">
+              {t('register_free.create_account')}
+            </Typography>
+
+            <Grid>
+              <form className="form-paper">
+                <Grid item xs={12}>
+                  <Typography className="mt--S mb--XXS">
+                    {t('register_free.name')}
+                  </Typography>
+                </Grid>
+
+                <Grid container spacing={1}>
+                  <Grid item xs={6}>
+                    <Controller
+                      name="firstName"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <TextField
+                          {...field}
+                          id="firstName"
+                          className="onc-text-field"
+                          placeholder={t('register_free.first_name')}
+                          error={!!fieldState.error}
+                          helperText={
+                            fieldState.error ? fieldState.error.message : ''
+                          }
+                        />
+                      )}
+                    />
+                  </Grid>
+
+                  <Grid item xs={6}>
+                    <Controller
+                      name="lastName"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <TextField
+                          {...field}
+                          id="lastName"
+                          className="onc-text-field"
+                          placeholder={t('register_free.last_name')}
+                          error={!!fieldState.error}
+                          helperText={
+                            fieldState.error ? fieldState.error.message : ''
+                          }
+                        />
+                      )}
+                    />
+                  </Grid>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Typography className="mt--S mb--XXS">
+                    {t('register_free.phone_number')}
+                  </Typography>
+                </Grid>
+
+                <Grid container spacing={0}>
+                  <Grid item xs={2}>
+                    <Controller
+                      name="firstName"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <Select
+                          {...field}
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={10}
+                        >
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      )}
+                    />
+                  </Grid>
+
+                  <Grid item xs={10}>
+                    <Controller
+                      name="phoneNumber"
+                      control={control}
+                      render={({ field, fieldState }) => (
+                        <TextField
+                          {...field}
+                          id="phoneNumber"
+                          className="onc-text-field text-field-width-100"
+                          placeholder={t('register_free.last_name')}
+                          error={!!fieldState.error}
+                          helperText={
+                            fieldState.error ? fieldState.error.message : ''
+                          }
+                        />
+                      )}
+                    />
+                  </Grid>
+                </Grid>
+              </form>
+            </Grid>
+          </Paper>
+        )}
       </div>
+
+      <Stack
+        direction="row"
+        spacing={0.5}
+        alignItems="center"
+        justifyContent="center"
+        className="register-footer"
+      >
+        <Link href="/" underline="hover">
+          Terms and Conditions
+        </Link>
+        <span>|</span>
+        <Link href="/" underline="hover">
+          Privacy Policy
+        </Link>
+        <span>|</span>
+        <Typography className="font--14">
+          ©2021 CINNOX All rights reserved.
+        </Typography>
+      </Stack>
     </Container>
   );
 }

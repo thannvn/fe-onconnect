@@ -1,4 +1,8 @@
 {
+  "common": {
+    "sign_in": "Sign in",
+    "continue": "Continue"
+  },
   "nav": {
     "why_onconnect": {
       "header": "Why ONCONNECT",
@@ -47,7 +51,7 @@
     "vi": "Vietnamese"
   },
   "pricing_page": {
-    "title": "Pricing Page",
+    "page_title": "Pricing Page",
     "header": "Designed for Businesses of All Sizes and Sectors",
     "compare_features": "Compare Plans and Explore Features",
     "questions": "Frequently Asked Questions",
@@ -75,8 +79,17 @@
     "get_in_touch": "Get in Touch"
   },
   "register_free": {
-    "title": "Sign up Free",
+    "page_title": "Sign Up Free",
+    "already_account": "Already have an account?",
     "email": "Email",
-    "create_account": "Create Account"
+    "create_account": "Create Account",
+    "enter_email": "Please enter you email",
+    "hint_text": "We suggest that you use your work email address.",
+    "work_email": "Work email",
+    "email_error": "Please provide a valid email.",
+    "name": "Your name",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "phone_number": "Work phone number"
   }
 }
