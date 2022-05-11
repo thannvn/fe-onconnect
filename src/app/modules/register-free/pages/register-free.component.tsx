@@ -3,9 +3,9 @@ import {
   Button,
   Container,
   Grid,
-  InputLabel,
   Link,
   MenuItem,
+  MenuProps,
   Paper,
   Select,
   Stack,
@@ -21,6 +21,26 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import StepperRegister from '../components/stepper-register/stepper-register.component';
 import './register-free.style.scss';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+
+const CustomMenuProps: Partial<MenuProps> = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+  anchorOrigin: {
+    vertical: 'bottom',
+    horizontal: 'left',
+  },
+  transformOrigin: {
+    vertical: 'top',
+    horizontal: 'left',
+  },
+};
 
 const schema = yup
   .object()
@@ -193,13 +213,40 @@ function RegisterFree() {
                       render={({ field, fieldState }) => (
                         <Select
                           {...field}
+                          className="onc-select"
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           value={10}
+                          MenuProps={CustomMenuProps}
                         >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
+                          <MenuItem value={10} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={20} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={30} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={30} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={30} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={30} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
+                          <MenuItem value={30} className="phone-menu-item">
+                            <Typography>+84</Typography>
+                            <Typography>Vietnam</Typography>
+                          </MenuItem>
                         </Select>
                       )}
                     />
