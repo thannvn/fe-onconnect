@@ -8,7 +8,7 @@
   }
 
   background-color: $color-background-gray;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1.5rem 12rem;
   text-align: center;
 
@@ -53,19 +53,21 @@
         text-align: initial;
         width: 100%;
 
-        .text-field-width-100 {
+        .width-100 {
           width: 100%;
         }
 
-        .continue-button {
+        .custom-button {
           margin-top: $space-MS;
           height: 3rem;
           @extend .onc-button;
           width: 100%;
         }
 
-        .phone-menu-item {
-          width: 100%;
+        .remark {
+          margin-top: $space-XS;
+          color: $color-sub-black;
+          @extend .font--14;
         }
       }
     }

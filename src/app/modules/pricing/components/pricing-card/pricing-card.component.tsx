@@ -10,7 +10,7 @@ import {
   CARD_CHANNELS,
   POPULAR_TYPE,
   PricingCardInfo,
-} from '../../shared/pricing-card.type';
+} from '../../shared/const/pricing-card.type';
 import './pricing-card.style.scss';
 
 interface PricingCardProps {
