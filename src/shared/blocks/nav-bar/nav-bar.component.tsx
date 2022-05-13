@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import { DeveloperBoard, ExpandMore } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import LoginIcon from '@mui/icons-material/Login';
@@ -58,9 +59,11 @@ function NavigationBar() {
     >
       <Container maxWidth="xl" className="container">
         <Toolbar disableGutters className="toolbar">
-          <Typography variant="h5" noWrap component="div" className="mr--MS">
-            LOGO
-          </Typography>
+          <img
+            className="logo"
+            src={require('app/assets/images/logo4.png')}
+            alt=""
+          />
 
           <div className="nav-list">
             <Stack direction="row" spacing={2} className="left-list">
