@@ -12,6 +12,11 @@
     .toolbar {
       height: $space-LL;
 
+      .logo {
+        width: 144px;
+        height: 50px;
+      }
+
       .nav-list {
         display: flex;
         align-items: center;
