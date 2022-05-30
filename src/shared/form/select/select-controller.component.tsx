@@ -1,10 +1,5 @@
-import {
-  FormHelperText,
-  MenuItem,
-  MenuProps,
-  Select,
-  SelectProps,
-} from '@mui/material';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { FormHelperText, MenuItem, Select, SelectProps } from '@mui/material';
 import React from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { DEFAULT_MENU } from 'shared/const/menu-props.const';
@@ -15,29 +10,25 @@ export interface SelectItem {
 }
 
 interface SelectControllerProps extends SelectProps {
-  controllerName: string;
+  name: string;
   control: Control<any>;
   options: SelectItem[];
 }
 
 function SelectController(props: SelectControllerProps) {
-  const { control, controllerName, options } = props;
+  const { control, name, options } = props;
 
   return (
     <Controller
-      name={controllerName}
+      name={name}
       control={control}
       render={({ field, fieldState }) => (
         <>
-          <Select
-            {...field}
-            {...props}
-            id="phoneCode"
-            className="onc-select width-100"
-            labelId="select-phone"
-          >
+          <Select MenuProps={DEFAULT_MENU} {...field} {...props} id={name}>
             {options.map((item) => (
-              <MenuItem value={item.value}>{item.label}</MenuItem>
+              <MenuItem value={item.value} key={item.value}>
+                {item.label}
+              </MenuItem>
             ))}
           </Select>
           {fieldState.error && (

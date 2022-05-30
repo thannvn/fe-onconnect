@@ -4,70 +4,47 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {
   Button,
   Container,
-  Grid,
   Link,
-  MenuItem,
-  MenuProps,
   Paper,
-  Select,
   Stack,
   Typography,
 } from '@mui/material';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
-import { DEFAULT_MENU, PHONE_CODE_MENU } from 'shared/const/menu-props.const';
-import SelectController from 'shared/form/select/select-controller.component';
 import TextFieldController from 'shared/form/text-field/text-field-controller.component';
 import * as yup from 'yup';
+import CreateAccountForm from '../components/create-account-form/create-account-form.component';
 import StepperRegister from '../components/stepper-register/stepper-register.component';
-import {
-  COMPANY_COUNTRY,
-  PACKAGE,
-  PHONE_CODE,
-} from '../shared/const/options.const';
 import './register-free.style.scss';
 
-const schema = yup
-  .object()
-  .shape({
-    email: yup
-      .string()
-      .required('Please enter email.')
-      .email('Please enter a valid email.'),
-  })
-  .required();
+interface EmailForm {
+  email: string;
+}
 
 function RegisterFree() {
-  const { control, handleSubmit } = useForm({
-    defaultValues: {
-      email: '',
-      firstName: '',
-      lastName: '',
-      phoneCode: 1,
-      phoneNumber: '',
-      companyName: '',
-      companyCountry: 1,
-      package: '',
-    },
-    resolver: yupResolver(schema),
-  });
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState<number>(0);
+  const schema = useRef(
+    yup.object().shape({
+      email: yup
+        .string()
+        .required(t('register_free.email.email_require'))
+        .email(t('register_free.email.email_invalid')),
+    })
+  ).current;
+  const { control, handleSubmit, watch } = useForm<EmailForm>({
+    defaultValues: {
+      email: '',
+    },
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = () => {
     setActiveStep(1);
-  };
-
-  const handleCutLabel = (value: number) => {
-    const splitLabel = PHONE_CODE.find((item) => item.value === value)
-      ?.label.split('(')
-      .pop();
-
-    return splitLabel?.substring(0, splitLabel.length - 1);
   };
 
   return (
@@ -104,19 +81,19 @@ function RegisterFree() {
         {!activeStep ? (
           <Paper className="paper">
             <Typography className="font--28b">
-              {t('register_free.enter_email')}
+              {t('register_free.email.enter_email')}
             </Typography>
             <Typography className="hint-text mt--XXS">
-              {t('register_free.hint_text')}
+              {t('register_free.email.hint_text')}
             </Typography>
 
             <form className="form-paper" onSubmit={handleSubmit(onSubmit)}>
-              <Typography className="mt--S mb--XXS">
-                {t('register_free.work_email')}
+              <Typography className="mt--S mb--XXS require-field">
+                {t('register_free.email.work_email')}
               </Typography>
 
               <TextFieldController
-                controllerName="email"
+                name="email"
                 control={control}
                 className="onc-text-field width-100"
                 placeholder="name@work-email.com"
@@ -132,143 +109,7 @@ function RegisterFree() {
             </form>
           </Paper>
         ) : (
-          <Paper className="paper">
-            <Typography className="font--28b">
-              {t('register_free.create_account')}
-            </Typography>
-
-            <Grid>
-              <form className="form-paper">
-                <div id="name">
-                  <Grid item xs={12}>
-                    <Typography className="mt--S mb--XXS">
-                      {t('register_free.name.your_name')}
-                    </Typography>
-                  </Grid>
-
-                  <Grid container spacing={1}>
-                    <Grid item xs={6}>
-                      <TextFieldController
-                        controllerName="firstName"
-                        control={control}
-                        className="onc-text-field"
-                        placeholder={t('register_free.name.first_name')}
-                      />
-                    </Grid>
-
-                    <Grid item xs={6}>
-                      <TextFieldController
-                        controllerName="lastName"
-                        control={control}
-                        className="onc-text-field"
-                        placeholder={t('register_free.name.last_name')}
-                      />
-                    </Grid>
-                  </Grid>
-                </div>
-
-                <div id="phone-number">
-                  <Grid item xs={12}>
-                    <Typography className="mt--S mb--XXS">
-                      {t('register_free.phone_number')}
-                    </Typography>
-                  </Grid>
-
-                  <Grid container spacing={0}>
-                    <Grid item xs={2.4}>
-                      <SelectController
-                        controllerName="phoneCode"
-                        control={control}
-                        className="onc-select width-100"
-                        options={PHONE_CODE}
-                        renderValue={(value) => handleCutLabel(value as number)}
-                        MenuProps={PHONE_CODE_MENU}
-                      />
-                    </Grid>
-
-                    <Grid item xs={9.6}>
-                      <TextFieldController
-                        controllerName="phoneNumber"
-                        control={control}
-                        className="onc-text-field width-100"
-                        placeholder={t('register_free.phone_number')}
-                      />
-                    </Grid>
-                  </Grid>
-                </div>
-
-                <div id="company">
-                  <Grid item xs={12}>
-                    <Typography className="mt--S mb--XXS">
-                      {t('register_free.company.your_company')}
-                    </Typography>
-                  </Grid>
-
-                  <Grid container spacing={1}>
-                    <Grid item xs={6}>
-                      <TextFieldController
-                        controllerName="companyName"
-                        control={control}
-                        className="onc-text-field"
-                        placeholder={t('register_free.company.company_name')}
-                      />
-                    </Grid>
-
-                    <Grid item xs={6}>
-                      <SelectController
-                        controllerName="companyCountry"
-                        control={control}
-                        className="onc-select width-100"
-                        options={COMPANY_COUNTRY}
-                        MenuProps={DEFAULT_MENU}
-                      />
-                    </Grid>
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <Typography className="hint-text" sx={{ marginTop: '3px' }}>
-                      {t('register_free.company.hint-text')}
-                    </Typography>
-                  </Grid>
-                </div>
-
-                <div id="select-package">
-                  <Grid item xs={12}>
-                    <Typography className="mt--S mb--XXS">
-                      {t('register_free.select_package')}
-                    </Typography>
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <SelectController
-                      controllerName="package"
-                      control={control}
-                      className="onc-select width-100"
-                      options={PACKAGE}
-                      MenuProps={DEFAULT_MENU}
-                    />
-                  </Grid>
-                </div>
-
-                <Button
-                  className="custom-button --no-transform"
-                  variant="contained"
-                  type="submit"
-                >
-                  {t('register_free.create_account_free')}
-                </Button>
-
-                <div
-                  className="remark"
-                  dangerouslySetInnerHTML={{
-                    __html: t('register_free.remark', {
-                      interpolation: { escapeValue: false },
-                    }),
-                  }}
-                />
-              </form>
-            </Grid>
-          </Paper>
+          <CreateAccountForm email={watch('email')} />
         )}
       </div>
 

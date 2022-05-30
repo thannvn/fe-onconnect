@@ -65,3 +65,11 @@ export const PHONE_CODE: SelectItem[] = [
   { label: 'Haiti (+509)', value: 6 },
   { label: 'Holy See (+379)', value: 6 },
 ];
+
+export const LANGUAGE_USE: SelectItem[] = [
+  { label: 'Vietnam', value: 'vi' },
+  { label: 'English', value: 'en' },
+  { label: 'German', value: 'de' },
+  { label: 'French', value: 'fr' },
+  { label: 'Italian', value: 'it' },
+];

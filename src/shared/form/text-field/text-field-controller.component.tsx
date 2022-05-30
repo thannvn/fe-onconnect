@@ -1,24 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 import { BaseTextFieldProps, InputAdornment, TextField } from '@mui/material';
 import React from 'react';
 import { Control, Controller } from 'react-hook-form';
 
 interface TextFieldController extends BaseTextFieldProps {
-  controllerName: string;
+  name: string;
   control: Control<any>;
 }
 
 function TextFieldController(props: TextFieldController) {
-  const { control, controllerName } = props;
+  const { control, name } = props;
   return (
     <Controller
-      name={controllerName}
+      name={name}
       control={control}
       render={({ field, fieldState }) => (
         <TextField
           {...field}
           {...props}
-          id={controllerName}
+          id={name}
           error={!!fieldState.error}
           InputProps={{
             endAdornment: !!fieldState.error && (

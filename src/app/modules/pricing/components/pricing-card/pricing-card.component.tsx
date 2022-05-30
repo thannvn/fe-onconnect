@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import CheckIcon from '@mui/icons-material/Check';
 import { Button, Card, Stack, Typography } from '@mui/material';
 import clsx from 'clsx';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import AppIcon from 'shared/icons/app-icon.component';
