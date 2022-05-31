@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-danger */
 import { yupResolver } from '@hookform/resolvers/yup';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -9,7 +12,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -47,6 +50,10 @@ function RegisterFree() {
     setActiveStep(1);
   };
 
+  const handleRedirect = (url: string) => {
+    navigate(url);
+  };
+
   return (
     <Container maxWidth="xl" className="register-free">
       <Helmet>
@@ -59,7 +66,12 @@ function RegisterFree() {
         alignItems="center"
         className="register-bar"
       >
-        <Typography variant="h6">LOGO</Typography>
+        <img
+          className="logo"
+          src={require('app/assets/images/logo4.png')}
+          alt="logo"
+          onClick={() => handleRedirect('/')}
+        />
 
         <Stack
           direction="row"

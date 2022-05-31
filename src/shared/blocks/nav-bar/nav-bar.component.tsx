@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable global-require */
 import { DeveloperBoard, ExpandMore } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -14,6 +16,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { LANGUAGE } from 'translation/i18n';
+import addToast from '../toastify/add-toast.component';
 
 import './nav-bar.style.scss';
 
@@ -29,7 +32,8 @@ function NavigationBar() {
   const handleChangeLanguage = (language: string) => {
     if (language !== currentLanguage) {
       i18n.changeLanguage(language, (err) => {
-        if (err) console.log('Cannot change language');
+        if (err)
+          addToast({ message: t('can_not_change_language'), type: 'error' });
       });
       setCurrentLanguage(language);
     }
@@ -46,12 +50,8 @@ function NavigationBar() {
     setAnchorEl(null);
   };
 
-  const handleRedirectPricing = () => {
-    navigate('/pricing');
-  };
-
-  const handleRegisterFree = () => {
-    navigate('/register-free');
+  const handleRedirect = (url: string) => {
+    navigate(url);
   };
 
   return (
@@ -66,7 +66,8 @@ function NavigationBar() {
           <img
             className="logo"
             src={require('app/assets/images/logo4.png')}
-            alt=""
+            alt="logo"
+            onClick={() => handleRedirect('/')}
           />
 
           <div className="nav-list">
@@ -130,7 +131,7 @@ function NavigationBar() {
                 variant="text"
                 size="large"
                 className="nav-button"
-                onClick={handleRedirectPricing}
+                onClick={() => handleRedirect('/pricing')}
               >
                 {t('nav.service_pricing')}
               </Button>
@@ -153,7 +154,7 @@ function NavigationBar() {
               <Button
                 variant="contained"
                 className="onc-button --no-transform"
-                onClick={handleRegisterFree}
+                onClick={() => handleRedirect('/register-free')}
               >
                 {t('nav.free_trial')}
               </Button>

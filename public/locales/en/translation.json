@@ -1,7 +1,8 @@
 {
   "common": {
     "sign_in": "Sign in",
-    "continue": "Continue"
+    "continue": "Continue",
+    "can_not_change_language": "Cannot change language"
   },
   "nav": {
     "why_onconnect": {
