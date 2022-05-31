@@ -5,10 +5,35 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import AppIcon from 'shared/icons/app-icon.component';
+import CheckIcon from '@mui/icons-material/Check';
 import './home-page.style.scss';
+import { GREEN } from 'styles/mui/variables';
+import { ReactComponent as ImageHero } from 'app/assets/svg/image-hero.svg';
 
 function HomePage() {
   const { t } = useTranslation();
+  const FEATTURES_1 = [
+    'See each customer journey in a single view across all channels',
+    'Eliminate the need to ask them for information you already have',
+    'Enable multimedia responses via social, video, and phone channels',
+    'Set up in seconds; cloud-based, no coding or hardware required',
+  ];
+  const FEATURES_2 = [
+    'Incoming phone calls & messages are handled digitally',
+    'Intelligent routing connects customers to the right experts',
+    'Return calls show up as recognised numbers, enhancing resolution times and reducing time spent ‘on-hold’',
+    'Build deeper bonds with consistent one-to-one relationships – customers won’t get passed around',
+    'Easily access reports, insights, and files',
+    'Let distributed teams to work cohesively',
+  ];
+  const FEATURES_3 = [
+    'Incoming phone calls & messages are handled digitally',
+    'Intelligent routing connects customers to the right experts',
+    'Return calls show up as recognised numbers, enhancing resolution times and reducing time spent ‘on-hold’',
+    'Build deeper bonds with consistent one-to-one relationships – customers won’t get passed around',
+    'Easily access reports, insights, and files',
+    'Let distributed teams to work cohesively',
+  ];
   return (
     <>
       <Helmet>
@@ -62,12 +87,170 @@ function HomePage() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} className="introduce-section mt--XXXXL">
+          <Grid item xs={12} className="introduce-section mt--XXXL ">
+            <div className="watch-video mb--XXS">
+              <AppIcon iconName="ic-arrow-right-left" className="mt--XS" />
+              <Typography className="hand-writing ml--XXS">
+                Watch the video
+              </Typography>
+            </div>
+
             <iframe
               title="introduce"
-              className="video"
+              className="video mb--L"
               src="https://www.youtube.com/embed/8vXu5f4wHnQ"
             />
+          </Grid>
+
+          <Grid item xs={12} className="introduce-title-section mt--XXL">
+            <Typography variant="h3" textAlign="center">
+              <span>{t('common.web_name')}</span> delivers seamless customer
+              experience through digital collaboration.
+            </Typography>
+          </Grid>
+
+          <Grid container className="feature-section" spacing={4}>
+            <Grid item xs={6} className="wrap-left">
+              <Typography className="paragraph-number">1</Typography>
+              <Typography className="title">Connect</Typography>
+              <Typography className="subtitle">
+                Be available to customers on their
+                <br />
+                <span>own terms</span>
+              </Typography>
+
+              <div className="content">
+                <Typography>
+                  Discover, acquire, and engage customers through channels they
+                  already use - from first enquiry to post-sales support.
+                </Typography>
+
+                <div className="mt--S">
+                  {FEATTURES_1.map((item) => (
+                    <Stack direction="row" spacing={2} className="mt--XXS">
+                      <CheckIcon sx={{ color: GREEN }} fontSize="large" />
+                      <Typography>{item}</Typography>
+                    </Stack>
+                  ))}
+                </div>
+              </div>
+            </Grid>
+
+            <Grid item xs={6} className="wrap-right">
+              <Stack direction="row" spacing={0}>
+                <Typography className="hand-writing" sx={{ width: '220px' }}>
+                  All channels converge in one dashboard.
+                </Typography>
+                <AppIcon iconName="ic-arrow-left-down" className="mt--XS" />
+              </Stack>
+              <img
+                src={require('app/assets/images/engage-ui.png')}
+                alt="engage"
+                className="image"
+              />
+
+              <Stack
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                className="home-channel"
+              >
+                <AppIcon iconName="ic-qr-code-square" />
+                <AppIcon iconName="ic-whats-app-square" />
+                <AppIcon iconName="ic-messenger-square" />
+                <AppIcon iconName="ic-we-chat-square" />
+              </Stack>
+            </Grid>
+            <Grid />
+          </Grid>
+
+          <Grid container className="feature-section-2" spacing={4}>
+            <Grid item xs={6} className="wrap-right">
+              <Stack direction="row" spacing={0} className="point-text">
+                <AppIcon iconName="ic-arrow-right-left" className="mt--XS" />
+                <Typography className="hand-writing" sx={{ width: '150px' }}>
+                  Built-in routing intelligence
+                </Typography>
+              </Stack>
+
+              <img
+                src={require('app/assets/images/hero-img.png')}
+                alt="hero-img"
+                className="image"
+              />
+            </Grid>
+
+            <Grid item xs={6} className="wrap-left">
+              <Typography className="paragraph-number">2</Typography>
+              <Typography className="title">Orchestrate</Typography>
+              <Typography className="subtitle">
+                Match enquiries to the
+                <br />
+                <span>right expertise</span>
+              </Typography>
+
+              <div className="content">
+                <Typography>
+                  Our intelligent hybrid platform offers unmatched efficiency.
+                </Typography>
+
+                <div className="mt--S">
+                  {FEATURES_2.map((item) => (
+                    <Stack direction="row" spacing={2} className="mt--XXS">
+                      <CheckIcon sx={{ color: GREEN }} fontSize="large" />
+                      <Typography>{item}</Typography>
+                    </Stack>
+                  ))}
+                </div>
+              </div>
+            </Grid>
+            <Grid />
+          </Grid>
+
+          <Grid container className="feature-section-3" spacing={4}>
+            <Grid item xs={6} className="wrap-left">
+              <Typography className="paragraph-number">3</Typography>
+              <Typography className="title">Evaluate</Typography>
+              <Typography className="subtitle">
+                Build long-term loyalty strategy for
+                <br />
+                <span>improved ROI</span>
+              </Typography>
+
+              <div className="content">
+                <Typography>
+                  Understanding your customers means understanding your
+                  business. CINNOX turns unstructured data into clearly
+                  formulated growth strategies.
+                </Typography>
+
+                <div className="mt--S">
+                  {FEATURES_3.map((item) => (
+                    <Stack direction="row" spacing={2} className="mt--XXS">
+                      <CheckIcon sx={{ color: GREEN }} fontSize="large" />
+                      <Typography>{item}</Typography>
+                    </Stack>
+                  ))}
+                </div>
+              </div>
+            </Grid>
+
+            <Grid item xs={6} className="wrap-right">
+              <Stack direction="row" spacing={2} className="point-text">
+                <Typography className="hand-writing">Unified data</Typography>
+                <AppIcon iconName="ic-arrow-left-right" className="mt--XXS" />
+              </Stack>
+
+              <ImageHero />
+            </Grid>
+            <Grid />
+          </Grid>
+
+          <Grid item xs={12} className="introduce-title-section mt--XXL">
+            <Typography variant="h3" textAlign="center">
+              Trusted by <span>1000+</span> multinational corporations across
+              the globe
+            </Typography>
           </Grid>
         </Grid>
       </Container>

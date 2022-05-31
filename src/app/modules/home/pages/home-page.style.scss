@@ -5,6 +5,14 @@
 .home-page {
   @extend .onc-page;
   margin-top: 80px;
+  margin-bottom: 200px;
+
+  .hand-writing {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: 'Gochi Hand', cursive;
+    color: $color-blue-light;
+  }
 
   .hero-section {
     height: 100vh;
@@ -59,9 +67,137 @@
   .introduce-section {
     text-align: center;
 
+    .watch-video {
+      display: flex;
+      justify-content: flex-end;
+      width: 78%;
+    }
+
     .video {
       width: 56%;
       height: 400px;
+    }
+  }
+
+  .introduce-title-section {
+    width: 90%;
+    margin: 0 auto;
+
+    h3 {
+      @extend .font--48b;
+      line-height: 3.5rem;
+
+      span {
+        text-transform: uppercase;
+        color: $color-button;
+      }
+    }
+  }
+
+  .feature-section {
+    margin-top: $space-XXXL;
+
+    .wrap-left {
+      .paragraph-number {
+        @extend .font--48b;
+        background-image: url('../../../assets/svg/icon-bg-yellow.svg');
+        background-position: 50% 50%;
+        display: flex;
+        width: 4.5rem;
+        height: 4.5rem;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .title {
+        @extend .font--48eb;
+        margin-top: $space-XXS;
+      }
+
+      .subtitle {
+        @extend .font--32b;
+
+        span {
+          background-image: url('../../../assets/svg/icon-bg-yellow-text.svg');
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          padding-top: 0.3rem;
+          padding-bottom: 0.3rem;
+          background-size: auto 80%;
+        }
+      }
+
+      .content {
+        margin-top: $space-XS;
+
+        p {
+          @extend .font--21;
+          color: $color-body-black;
+        }
+      }
+    }
+
+    .wrap-right {
+      position: relative;
+
+      .image {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .home-channel {
+        position: absolute;
+        padding: 1rem;
+        left: 0;
+        right: 0;
+        border-radius: 16px;
+        background-color: $color-white;
+        box-shadow: 0 4px 24px 0 rgb(0 0 0 / 8%);
+        width: fit-content;
+        margin: -3.5rem auto 0 auto;
+
+        svg {
+          border-radius: 16px;
+          box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%);
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  .feature-section-2 {
+    @extend .feature-section;
+    position: relative;
+
+    .point-text {
+      position: absolute;
+      right: 30px;
+      top: 30%;
+
+      @media screen and (max-width: 1400px) {
+        right: 0;
+        top: 25%;
+      }
+
+      @media screen and (max-width: 1200px) {
+        svg {
+          width: 55px;
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  .feature-section-3 {
+    @extend .feature-section;
+
+    .point-text {
+      position: absolute;
+      left: 0px;
+      top: 0%;
     }
   }
 }
