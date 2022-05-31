@@ -1,4 +1,8 @@
 {
+  "common": {
+    "sign_in": "Sign in",
+    "continue": "Continue"
+  },
   "nav": {
     "why_onconnect": {
       "header": "Tại sao là ONCONNECT",
@@ -67,5 +71,40 @@
       "title4": "Contact Us"
     },
     "get_in_touch": "Get in Touch"
+  },
+  "register_free": {
+    "page_title": "Đăng ký miễn phí",
+    "already_account": "Already have an account?",
+    "email": "Email",
+    "create_account": "Create Account",
+    "enter_email": "Please enter you email",
+    "hint-text": "We suggest that you use your work email address.",
+    "work_email": "Work email",
+    "email_error": "Please provide a valid email.",
+    "name": {
+      "your_name": "Your name",
+      "first_name": "First name",
+      "first_name_require": "First name is required",
+      "last_name": "Last name",
+      "last_name_require": "Last name is required"
+    },
+    "phone_number": {
+      "label": "Work phone number",
+      "phone_number_require": "Phone number is required"
+    },
+    "company": {
+      "your_company": "Your company",
+      "company_name": "Company name",
+      "company_name_require": "Company name is required",
+      "hint-text": "We need this information to select the right server for your account."
+    },
+    "switchboard_name": {
+      "label": "Switchboard name",
+      "switchboard_name_require": "Switchboard name is required"
+    },
+    "language": "Use language",
+    "select_package": "Select Package",
+    "create_account_free": "Create account for FREE",
+    "remark": "By clicking 'Create account for FREE', I agree to the <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Terms and Conditions</a> and <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Privacy Policy</a>. I also agree to OnConnect use of my personal data that I provided herein to conduct direct marketing in relation to CINNOX and its products, services and events in accordance with the Privacy Policy."
   }
 }

@@ -1,4 +1,8 @@
 {
+  "common": {
+    "sign_in": "Sign in",
+    "continue": "Continue"
+  },
   "nav": {
     "why_onconnect": {
       "header": "Why ONCONNECT",
@@ -47,7 +51,7 @@
     "vi": "Vietnamese"
   },
   "pricing_page": {
-    "title": "Pricing Page",
+    "page_title": "Pricing Page",
     "header": "Designed for Businesses of All Sizes and Sectors",
     "compare_features": "Compare Plans and Explore Features",
     "questions": "Frequently Asked Questions",
@@ -73,5 +77,44 @@
       "title4": "Contact Us"
     },
     "get_in_touch": "Get in Touch"
+  },
+  "register_free": {
+    "page_title": "Sign Up Free",
+    "already_account": "Already have an account?",
+    "create_account": "Create Account",
+    "email": {
+      "label": "Email",
+      "enter_email": "Please enter you email",
+      "hint_text": "We suggest that you use your work email address.",
+      "work_email": "Work email",
+      "email_require": "Please enter a email.",
+      "email_invalid": "Email is invalid."
+    },
+    "name": {
+      "your_name": "Your name",
+      "first_name": "First name",
+      "first_name_require": "First name is required",
+      "last_name": "Last name",
+      "last_name_require": "Last name is required"
+    },
+    "phone_number": {
+      "label": "Work phone number",
+      "phone_number_require": "Phone number is required"
+    },
+    "company": {
+      "your_company": "Your company",
+      "company_name": "Company name",
+      "company_name_require": "Company name is required",
+      "hint-text": "We need this information to select the right server for your account."
+    },
+    "select_package": "Select package",
+    "switchboard_name": {
+      "label": "Switchboard name",
+      "placeholder": "Switchboard name you want to set",
+      "switchboard_name_require": "Switchboard name is required"
+    },
+    "language": "Use language",
+    "create_account_free": "Create account for FREE",
+    "remark": "By clicking 'Create account for FREE', I agree to the <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Terms and Conditions</a> and <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Privacy Policy</a>. I also agree to OnConnect use of my personal data that I provided herein to conduct direct marketing in relation to CINNOX and its products, services and events in accordance with the Privacy Policy."
   }
 }

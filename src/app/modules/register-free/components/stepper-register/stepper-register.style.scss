@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.stepper-register {
+  margin-top: $space-L;
+  width: 100%;
+
+  .css-m5vj9m-MuiStepper-root {
+    width: 20rem;
+    margin: 0 auto;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}

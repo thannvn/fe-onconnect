@@ -50,6 +50,10 @@ function NavigationBar() {
     navigate('/pricing');
   };
 
+  const handleRegisterFree = () => {
+    navigate('/register-free');
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -148,8 +152,8 @@ function NavigationBar() {
 
               <Button
                 variant="contained"
-                className="on-connect-button --no-transform"
-                onClick={handleRedirectPricing}
+                className="onc-button --no-transform"
+                onClick={handleRegisterFree}
               >
                 {t('nav.free_trial')}
               </Button>

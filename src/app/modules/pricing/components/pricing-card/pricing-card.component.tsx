@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import CheckIcon from '@mui/icons-material/Check';
 import { Button, Card, Stack, Typography } from '@mui/material';
 import clsx from 'clsx';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import AppIcon from 'shared/icons/app-icon.component';
@@ -10,7 +12,7 @@ import {
   CARD_CHANNELS,
   POPULAR_TYPE,
   PricingCardInfo,
-} from '../../shared/pricing-card.type';
+} from '../../shared/const/pricing-card.type';
 import './pricing-card.style.scss';
 
 interface PricingCardProps {
@@ -59,7 +61,7 @@ function PricingCard({ info, isMonthly }: PricingCardProps) {
 
         <Button
           variant="contained"
-          className="on-connect-button --no-transform"
+          className="onc-button --no-transform"
           onClick={handleStartFree}
         >
           {t('pricing_page.start_free')}
