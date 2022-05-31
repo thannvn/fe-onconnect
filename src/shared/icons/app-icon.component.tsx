@@ -30,9 +30,7 @@ function AppIcon({ className, iconName, onClick }: IconProps) {
 
 AppIcon.defaultProps = {
   className: '',
-  onClick: () => {
-    // Do nothing
-  },
+  onClick: () => {},
 };
 
 export default AppIcon;

@@ -1,0 +1,67 @@
+@import 'styles/fonts.scss';
+@import 'styles/variables.scss';
+@import 'styles/pages.scss';
+
+.home-page {
+  @extend .onc-page;
+  margin-top: 80px;
+
+  .hero-section {
+    height: 100vh;
+
+    .hero-item {
+      display: flex;
+      align-items: center;
+
+      .text-home {
+        h3 {
+          @extend .font--48eb;
+          line-height: 3.5rem;
+          width: 90%;
+
+          span {
+            color: $color-button;
+          }
+        }
+
+        p {
+          @extend .font--21;
+          width: 95%;
+          line-height: 2rem;
+          margin-top: $space-XS;
+          color: $color-sub-black1;
+        }
+      }
+    }
+  }
+
+  .quote-section {
+    padding: 0px $space-L 0px $space-L;
+
+    .text-quote {
+      svg {
+        opacity: 0.3;
+      }
+
+      h6 {
+        @extend .font--32sb;
+        text-align: center;
+        font-style: italic !important;
+        line-height: 1.2;
+      }
+    }
+
+    .forester {
+      text-align: center;
+    }
+  }
+
+  .introduce-section {
+    text-align: center;
+
+    .video {
+      width: 56%;
+      height: 400px;
+    }
+  }
+}

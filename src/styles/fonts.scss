@@ -54,6 +54,10 @@
   @include font_base(1.5rem, 700);
 }
 
+.font--21 {
+  @include font_base(1.325rem);
+}
+
 .font--48eb {
   @include font_base(3rem, 800);
 }
@@ -64,6 +68,10 @@
 
 .font--28b {
   @include font_base(1.75rem, 700);
+}
+
+.font--32sb {
+  @include font_base(2rem, 600);
 }
 
 .font--32b {

@@ -1,24 +1,12 @@
 @import 'styles/variables.scss';
 @import 'styles/fonts.scss';
 @import '../shared/styles/card-name.style.scss';
+@import 'styles/pages.scss';
 
 .main-layout {
+  @extend .onc-page;
   @media only screen and (min-width: $min-width-screen-xl) {
     margin-top: 13rem;
-  }
-
-  padding: 0px $space-XXXL 0px $space-XXXL;
-
-  @media only screen and (max-width: $min-width-screen-xl) {
-    padding: 0px $space-LL 0px $space-LL;
-  }
-
-  @media only screen and (max-width: 1300px) {
-    padding: 0px $space-ML 0px $space-ML;
-  }
-
-  @media only screen and (max-width: 1150px) {
-    padding: 0px $space-M 0px $space-M;
   }
 
   .title {
