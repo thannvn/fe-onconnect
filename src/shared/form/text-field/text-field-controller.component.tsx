@@ -10,7 +10,7 @@ interface TextFieldController extends BaseTextFieldProps {
 }
 
 function TextFieldController(props: TextFieldController) {
-  const { control, name } = props;
+  const { control, name, ...rest } = props;
   return (
     <Controller
       name={name}
@@ -18,7 +18,7 @@ function TextFieldController(props: TextFieldController) {
       render={({ field, fieldState }) => (
         <TextField
           {...field}
-          {...props}
+          {...rest}
           id={name}
           error={!!fieldState.error}
           InputProps={{

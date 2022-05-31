@@ -51,6 +51,7 @@
     "react/button-has-type": "off",
     "no-promise-executor-return": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/no-empty-function": "off"
   }
 }
