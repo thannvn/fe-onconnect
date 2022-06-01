@@ -1,5 +1,11 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import {
+  ArrowDropDown,
+  Check,
+  HighlightOff,
+  InfoOutlined,
+} from '@mui/icons-material';
+import {
   Accordion,
   AccordionSummary,
   Grid,
@@ -7,15 +13,8 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { GREEN } from 'styles/mui/variables';
 import './compare-feature.style.scss';
-import {
-  HighlightOff,
-  ArrowDropDown,
-  Check,
-  InfoOutlined,
-} from '@mui/icons-material';
 
 interface CompareFeatureProps {
   partHeading: string;
@@ -78,7 +77,6 @@ function FeatureDescription({
 }
 
 function CompareFeature({ featureTitle, partHeading }: CompareFeatureProps) {
-  const { t } = useTranslation();
   const fakeData = [
     {
       featureContent: 'Digital Channels',

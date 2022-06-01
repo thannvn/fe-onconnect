@@ -1,0 +1,91 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+@import 'styles/mui/button.scss';
+
+.register-free {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    max-width: $max-width-layout !important;
+  }
+
+  background-color: $color-background-gray;
+  min-height: 100vh;
+  padding: 1.5rem 12rem;
+  text-align: center;
+
+  .register-bar {
+    p {
+      color: $color-sub-black;
+    }
+
+    .logo {
+      width: 144px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .login {
+      margin-left: auto;
+
+      .navigate {
+        margin-left: 5px;
+        cursor: pointer;
+        color: $color-button;
+      }
+
+      svg {
+        color: $color-button;
+      }
+    }
+  }
+
+  .custom-card {
+    border-radius: 0.5rem;
+    background-color: $color-white;
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 29rem;
+    box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
+  }
+
+  .card {
+    .paper {
+      @extend .custom-card;
+
+      .hint-text {
+        color: $color-sub-black;
+      }
+
+      .form-paper {
+        text-align: initial;
+        width: 100%;
+
+        .width-100 {
+          width: 100%;
+        }
+
+        .custom-button {
+          margin-top: $space-MS;
+          height: 3rem;
+          @extend .onc-button;
+          width: 100%;
+        }
+
+        .remark {
+          margin-top: $space-XS;
+          color: $color-sub-black;
+          @extend .font--14;
+        }
+      }
+    }
+  }
+
+  .register-footer {
+    margin-top: $space-XL;
+    @extend .font--14;
+    color: $color-sub-black;
+
+    a {
+      color: $color-sub-black;
+    }
+  }
+}

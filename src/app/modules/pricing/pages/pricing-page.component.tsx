@@ -6,7 +6,7 @@ import CompareFeature from '../components/compare-feature/compare-feature.compon
 import PricingCard from '../components/pricing-card/pricing-card.component';
 import Question from '../components/question/question.component';
 import PricingSwitching from '../components/switch-button/switch-button.component';
-import { fakeData } from '../shared/pricing-card.type';
+import { fakeData } from '../shared/const/pricing-card.type';
 import './pricing-page.style.scss';
 
 function Pricing() {
@@ -46,7 +46,7 @@ function Pricing() {
   return (
     <Container maxWidth="xl" className="mt--XXXXL mb--XXXL">
       <Helmet>
-        <title>{t('pricing_page.title')}</title>
+        <title>{t('pricing_page.page_title')}</title>
       </Helmet>
 
       <Grid container className="main-layout">

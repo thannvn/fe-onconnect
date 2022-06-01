@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import { Container, Grid, Link, Stack, Typography } from '@mui/material';
+import { Container, Grid, Stack, Typography } from '@mui/material';
 import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './footer.style.scss';
 import { YouTube, Twitter, LinkedIn, Facebook } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 interface FooterSectionProps {
   header: string;
@@ -25,7 +26,7 @@ interface Feature {
 
 function Feature({ href, label }: Feature) {
   return (
-    <Link href={href} className="feature" underline="none">
+    <Link to={href} className="feature">
       {label}
     </Link>
   );
@@ -61,12 +62,7 @@ function FooterSection({
             >
               <Typography className="subTitle">{subTitle}</Typography>
               {subSection?.features?.[index].map((feature) => (
-                <Link
-                  href={feature.href}
-                  key={feature.label}
-                  className="feature"
-                  underline="none"
-                >
+                <Link to={feature.href} key={feature.label} className="feature">
                   {feature.label}
                 </Link>
               ))}

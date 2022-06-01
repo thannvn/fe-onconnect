@@ -18,9 +18,10 @@
     }
 
     .feature {
-      color: $color-white;
       @extend .font--16sb;
+      color: $color-white;
       cursor: pointer;
+      text-decoration: none;
 
       &:hover {
         color: $color-button;
