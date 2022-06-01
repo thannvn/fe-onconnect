@@ -14,6 +14,7 @@ import { ReactComponent as RocheLogo } from 'app/assets/svg/logo-roche.svg';
 import graphicsImage from 'app/assets/images/graphics.webp';
 import engageUI from 'app/assets/images/engage-ui.png';
 import heroImage from 'app/assets/images/hero-img.png';
+import PartnerSlider from '../components/partner-slider/partner-slider.component';
 
 function HomePage() {
   const { t } = useTranslation();
@@ -251,8 +252,8 @@ function HomePage() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} className="partners mt--M">
-            <Stack direction="row" alignItems="center" />
+          <Grid item xs={12} className="partners ">
+            <PartnerSlider />
           </Grid>
 
           <Grid container spacing={0} className="case-study-card">

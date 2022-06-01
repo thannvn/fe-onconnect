@@ -26,6 +26,7 @@ import vnptLogo from 'app/assets/images/partners-logo/vnpt.png';
 import vnttLogo from 'app/assets/images/partners-logo/vntt.png';
 import vosLogo from 'app/assets/images/partners-logo/vos.png';
 import vpBankLogo from 'app/assets/images/partners-logo/vp-bank.png';
+import './partner-slider.style.scss';
 
 const LOGO = [
   viettelLogo,
