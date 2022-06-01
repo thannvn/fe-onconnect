@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/media-has-caption */
-import { Container, Grid, Stack, Typography } from '@mui/material';
+import { Button, Container, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -8,10 +8,16 @@ import AppIcon from 'shared/icons/app-icon.component';
 import CheckIcon from '@mui/icons-material/Check';
 import './home-page.style.scss';
 import { GREEN } from 'styles/mui/variables';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as ImageHero } from 'app/assets/svg/image-hero.svg';
+import { ReactComponent as RocheLogo } from 'app/assets/svg/logo-roche.svg';
+import graphicsImage from 'app/assets/images/graphics.webp';
+import engageUI from 'app/assets/images/engage-ui.png';
+import heroImage from 'app/assets/images/hero-img.png';
 
 function HomePage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const FEATTURES_1 = [
     'See each customer journey in a single view across all channels',
     'Eliminate the need to ask them for information you already have',
@@ -75,7 +81,7 @@ function HomePage() {
               <Typography variant="h6">
                 {t('home_page.quote.content')}
               </Typography>
-              <AppIcon iconName="ic-quote-close" />
+              <AppIcon iconName="ic-quote-close" className="quote-close" />
             </Stack>
 
             <div className="forester mt--MS">
@@ -143,11 +149,7 @@ function HomePage() {
                 </Typography>
                 <AppIcon iconName="ic-arrow-left-down" className="mt--XS" />
               </Stack>
-              <img
-                src={require('app/assets/images/engage-ui.png')}
-                alt="engage"
-                className="image"
-              />
+              <img src={engageUI} alt="engage" className="image" />
 
               <Stack
                 direction="row"
@@ -173,11 +175,7 @@ function HomePage() {
                 </Typography>
               </Stack>
 
-              <img
-                src={require('app/assets/images/hero-img.png')}
-                alt="hero-img"
-                className="image"
-              />
+              <img src={heroImage} alt="hero-img" className="image" />
             </Grid>
 
             <Grid item xs={6} className="wrap-left">
@@ -252,6 +250,81 @@ function HomePage() {
               the globe
             </Typography>
           </Grid>
+
+          <Grid item xs={12} className="partners mt--M">
+            <Stack direction="row" alignItems="center" />
+          </Grid>
+
+          <Grid container spacing={0} className="case-study-card">
+            <Grid item xs={8} className="wrap-left">
+              <Stack
+                direction="row"
+                spacing={4}
+                alignItems="center"
+                className="title"
+              >
+                <RocheLogo />
+                <Typography className="big-plus">+</Typography>
+                <Typography className="on-connect">ONCONNECT</Typography>
+              </Stack>
+
+              <Typography className="font--32b mt--S">
+                From Our Customer
+              </Typography>
+
+              <div className="content">
+                <Typography>
+                  Roche is using CINNOX as part of a digitalisation pilot
+                  program for customer enquiry handling and team collaboration -
+                  as part of their wider push towards customer service
+                  automation.
+                </Typography>
+              </div>
+
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                className="text-quote mt--L"
+                spacing={8}
+              >
+                <AppIcon iconName="ic-quote-open" />
+                <Typography variant="h6">
+                  CINNOX is unique in that its intuitive design drastically
+                  reduces the flow and process in multiple adoptions for
+                  business units – which is usually the hardest part of
+                  introducing any change within a large organisation like ours.
+                </Typography>
+                <AppIcon iconName="ic-quote-close" className="quote-close" />
+              </Stack>
+
+              <div className="signature">
+                <Typography>Hans Lim</Typography>
+                <Typography>
+                  Global Idea Accelerator, Innovation Theme, APAC Automation
+                  Squad Lead, Roche Hong Kong Limited
+                </Typography>
+              </div>
+            </Grid>
+
+            <Grid item xs={4} className="wrap-right">
+              <img src={graphicsImage} alt="graphics" className="graphics" />
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item xs={12} className="trial-section">
+          <Typography>Reimagine your business</Typography>
+          <Typography>Get started with a 14-day free trial.</Typography>
+          <Button
+            variant="contained"
+            className="trial-button --no-transform"
+            onClick={() => navigate('/register-free')}
+          >
+            {t('nav.free_trial')}
+          </Button>
+          <Typography>
+            No credit card required | 1 minute installation
+          </Typography>
         </Grid>
       </Container>
     </>

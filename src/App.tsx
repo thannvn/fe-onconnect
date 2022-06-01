@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import { setIconSet } from 'shared/icons/app-icon.component';
 import icons from 'shared/icons/icon-list';
 import Footer from 'shared/blocks/footer/footer.component';
+import LoadingComponent from 'shared/blocks/loading/loading.component';
 
 export const customTheme = createTheme({
   typography: {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <ThemeProvider theme={customTheme}>
-      <Suspense fallback={<div>...Loading</div>}>
+      <Suspense fallback={<LoadingComponent open />}>
         <NavBar />
 
         <Routes>
