@@ -64,7 +64,7 @@ function NavigationBar() {
         <Toolbar disableGutters className="toolbar">
           <img
             className="logo"
-            src={require('app/assets/images/logo4.png')}
+            src={require('app/assets/images/logo.png')}
             alt="logo"
             onClick={() => handleRedirect('/')}
           />
@@ -146,6 +146,7 @@ function NavigationBar() {
                 size="large"
                 className="nav-button"
                 startIcon={<LoginIcon />}
+                onClick={() => handleRedirect('/login')}
               >
                 {t('nav.login')}
               </Button>

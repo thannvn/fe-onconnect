@@ -68,7 +68,7 @@ function RegisterFree() {
       >
         <img
           className="logo"
-          src={require('app/assets/images/logo4.png')}
+          src={require('app/assets/images/logo.png')}
           alt="logo"
           onClick={() => handleRedirect('/')}
         />
@@ -89,7 +89,7 @@ function RegisterFree() {
 
       <StepperRegister activeStep={activeStep} />
 
-      <div className="card mt--M">
+      <div className="card-email mt--M">
         {!activeStep ? (
           <Paper className="paper">
             <Typography className="font--28b">

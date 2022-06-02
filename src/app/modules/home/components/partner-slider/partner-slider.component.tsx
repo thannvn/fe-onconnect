@@ -64,8 +64,8 @@ function PartnerSlider() {
       <div id="infinite" className="highway-slider">
         <div className="container highway-barrier">
           <ul className="highway-lane">
-            {LOGO.map((item) => (
-              <li className="highway-car">
+            {LOGO.map((item, index) => (
+              <li key={index} className="highway-car">
                 <img alt={item} src={item} />
               </li>
             ))}
