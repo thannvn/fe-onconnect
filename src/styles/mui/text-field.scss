@@ -3,12 +3,12 @@
     height: 0.94rem;
   }
 
-  .css-16s9uyk-MuiFormHelperText-root {
+  .MuiFormHelperText-root {
     @extend .font--12-8;
     margin-left: 0px;
   }
 }
 
 .labelAsterisk {
-  color: $color-error;
+  color: $color-error !important;
 }

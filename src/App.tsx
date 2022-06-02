@@ -1,12 +1,13 @@
-import React, { Suspense, useState } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material';
+import StorageService from 'app/services/storage';
+import React, { Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import NavBar from 'shared/blocks/nav-bar/nav-bar.component';
-import './translation/i18n';
-import { ThemeProvider, createTheme } from '@mui/material';
-import { setIconSet } from 'shared/icons/app-icon.component';
-import icons from 'shared/icons/icon-list';
 import Footer from 'shared/blocks/footer/footer.component';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
+import NavBar from 'shared/blocks/nav-bar/nav-bar.component';
+import { setIconSet } from 'shared/icons/app-icon.component';
+import icons from 'shared/icons/icon-list';
+import './translation/i18n';
 
 export const customTheme = createTheme({
   typography: {
@@ -21,9 +22,10 @@ const RegisterFree = React.lazy(
 );
 
 function App() {
-  useState(() => {
+  useEffect(() => {
+    StorageService.init();
     setIconSet(icons);
-  });
+  }, []);
 
   return (
     <ThemeProvider theme={customTheme}>
