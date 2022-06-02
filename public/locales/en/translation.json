@@ -2,7 +2,8 @@
   "common": {
     "sign_in": "Sign in",
     "continue": "Continue",
-    "can_not_change_language": "Cannot change language"
+    "can_not_change_language": "Cannot change language",
+    "web_name": "onconnect"
   },
   "nav": {
     "why_onconnect": {
@@ -50,6 +51,18 @@
   "languages": {
     "en": "English",
     "vi": "Vietnamese"
+  },
+  "home_page": {
+    "page_title": "Home Page",
+    "hero": {
+      "connect": "Boost Your Business",
+      "with_onconnect": " with ONCONNECT",
+      "description": "Our platform elevates customer and team experiences. Drive digital transformation with precise, personalised marketing and customer support."
+    },
+    "quote": {
+      "content": "Only 16% of consumers surveyed experienced interactions that exceeded their expectations.",
+      "sub_content": "Based on a survey commissioned by CINNOX to explore customer behaviours post-pandemic, with 1,200 respondents in Australia, Hong Kong, Indonesia, Malaysia, Philippines, and Singapore."
+    }
   },
   "pricing_page": {
     "page_title": "Pricing Page",
