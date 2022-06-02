@@ -7,6 +7,16 @@ import { ReactComponent as LiveChatIcon } from 'app/assets/svg/icon-live-chat.sv
 import { ReactComponent as PhoneIcon } from 'app/assets/svg/icon-phone.svg';
 import { ReactComponent as WeChatIcon } from 'app/assets/svg/icon-we-chat.svg';
 import { ReactComponent as WhatsAppIcon } from 'app/assets/svg/icon-whats-app.svg';
+import { ReactComponent as ForesterIcon } from 'app/assets/svg/icon-forester.svg';
+import { ReactComponent as QuoteOpenIcon } from 'app/assets/svg/icon-quote-open.svg';
+import { ReactComponent as QuoteCloseIcon } from 'app/assets/svg/icon-quote-close.svg';
+import { ReactComponent as ArrowRightToLeftIcon } from 'app/assets/svg/icon-arrow-right-left.svg';
+import { ReactComponent as QrCodeSquareIcon } from 'app/assets/svg/icon-qr-code-square.svg';
+import { ReactComponent as MessengerSquareIcon } from 'app/assets/svg/icon-messenger-square.svg';
+import { ReactComponent as WhatsAppsSquareIcon } from 'app/assets/svg/icon-whats-app-square.svg';
+import { ReactComponent as WeChatSquareIcon } from 'app/assets/svg/icon-we-chat-square.svg';
+import { ReactComponent as ArrowLeftToDownIcon } from 'app/assets/svg/icon-arrow-left-down.svg';
+import { ReactComponent as ArrowLeftToRightIcon } from 'app/assets/svg/icon-arrow-left-right.svg';
 import { IconSetType } from './app-icon.component';
 
 /*
@@ -37,6 +47,16 @@ const icons: IconSetType = {
   'ic-phone': <PhoneIcon />,
   'ic-we-chat': <WeChatIcon />,
   'ic-whats-app': <WhatsAppIcon />,
+  'ic-forester': <ForesterIcon />,
+  'ic-quote-open': <QuoteOpenIcon />,
+  'ic-quote-close': <QuoteCloseIcon />,
+  'ic-arrow-right-left': <ArrowRightToLeftIcon />,
+  'ic-qr-code-square': <QrCodeSquareIcon />,
+  'ic-messenger-square': <MessengerSquareIcon />,
+  'ic-we-chat-square': <WeChatSquareIcon />,
+  'ic-whats-app-square': <WhatsAppsSquareIcon />,
+  'ic-arrow-left-down': <ArrowLeftToDownIcon />,
+  'ic-arrow-left-right': <ArrowLeftToRightIcon />,
 };
 
 export default icons;
