@@ -17,7 +17,6 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { LANGUAGE } from 'translation/i18n';
 import addToast from '../toastify/add-toast.component';
-
 import './nav-bar.style.scss';
 
 const LANGUAGE_OPTION: string[] = Object.values(LANGUAGE);
