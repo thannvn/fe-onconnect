@@ -22,7 +22,7 @@ i18n
   .use(initReactI18next)
   // init i18next
   .init({
-    fallbackLng: LANGUAGE.en,
+    lng: LANGUAGE.en,
     debug: false,
     interpolation: {
       escapeValue: false,
