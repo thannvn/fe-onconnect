@@ -6,7 +6,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import LoginIcon from '@mui/icons-material/Login';
 import StarIcon from '@mui/icons-material/Star';
 import WidgetsIcon from '@mui/icons-material/Widgets';
-import { Button, IconButton, Menu, MenuList, Stack } from '@mui/material';
+import { Button, Grid, IconButton, Menu, MenuList, Stack } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
@@ -70,7 +70,7 @@ function NavigationBar() {
           />
 
           <div className="nav-list">
-            <Stack direction="row" spacing={2} className="left-list">
+            <Stack direction="row" spacing={1.5} className="left-list">
               <Button variant="text" size="large" className="nav-button">
                 {t('nav.about_me')}
               </Button>
@@ -99,6 +99,7 @@ function NavigationBar() {
                       </Typography>
                     </div>
                   </MenuItem>
+
                   <MenuItem className="nav-menu-item">
                     <DeveloperBoard />
 
@@ -111,6 +112,7 @@ function NavigationBar() {
                       </Typography>
                     </div>
                   </MenuItem>
+
                   <MenuItem className="nav-menu-item">
                     <StarIcon />
 
@@ -124,6 +126,149 @@ function NavigationBar() {
                     </div>
                   </MenuItem>
                 </MenuList>
+              </div>
+
+              <div className="nav-button--menu-list">
+                <Button
+                  aria-haspopup="true"
+                  className=""
+                  variant="text"
+                  size="large"
+                  endIcon={<ExpandMore />}
+                >
+                  {t('nav.solutions.header')}
+                </Button>
+
+                <Grid container className="flex-menu-list">
+                  <Grid item xs={4}>
+                    <MenuList>
+                      <MenuItem className="nav-menu-item">
+                        <WidgetsIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title1')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description1')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <DeveloperBoard />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title2')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description2')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <StarIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title3')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description3')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+                    </MenuList>
+                  </Grid>
+
+                  <Grid item xs={4}>
+                    <MenuList>
+                      <MenuItem className="nav-menu-item">
+                        <WidgetsIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title1')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description1')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <DeveloperBoard />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title2')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description2')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <StarIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title3')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description3')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+                    </MenuList>
+                  </Grid>
+
+                  <Grid item xs={4}>
+                    <MenuList>
+                      <MenuItem className="nav-menu-item">
+                        <WidgetsIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title1')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description1')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <DeveloperBoard />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title2')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description2')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+
+                      <MenuItem className="nav-menu-item">
+                        <StarIcon />
+
+                        <div className="content">
+                          <Typography variant="h6" className="title">
+                            {t('nav.why_onconnect.title3')}
+                          </Typography>
+                          <Typography variant="body1" className="description">
+                            {t('nav.why_onconnect.description3')}
+                          </Typography>
+                        </div>
+                      </MenuItem>
+                    </MenuList>
+                  </Grid>
+                </Grid>
               </div>
 
               <Button
@@ -140,7 +285,7 @@ function NavigationBar() {
               </Button>
             </Stack>
 
-            <Stack className="right-list" direction="row" spacing={2}>
+            <Stack className="right-list" direction="row" spacing={1.5}>
               <Button
                 variant="text"
                 size="large"
@@ -160,6 +305,9 @@ function NavigationBar() {
 
               <IconButton
                 id="language-button"
+                disableRipple
+                disableTouchRipple
+                disableFocusRipple
                 aria-haspopup="true"
                 aria-controls={open ? 'language-menu' : undefined}
                 aria-expanded={open ? 'true' : undefined}
