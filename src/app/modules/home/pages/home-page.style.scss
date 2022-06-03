@@ -205,6 +205,12 @@
       left: 0px;
       top: 0%;
     }
+
+    .image-hero {
+      @media screen and (max-width: $max-screen-lg) {
+        width: 460px;
+      }
+    }
   }
 
   .case-study-card {
