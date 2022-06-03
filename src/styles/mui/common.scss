@@ -12,13 +12,6 @@
   @extend .hover-element;
 }
 
-//Custom width layout
-.MuiContainer-root {
-  @media only screen and (min-width: $min-width-screen-xl) {
-    max-width: $max-width-container !important;
-  }
-}
-
 .hint-text {
   @extend .font--12-8;
   font-size: 0.8rem;

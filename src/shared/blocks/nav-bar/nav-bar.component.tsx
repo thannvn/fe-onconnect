@@ -60,7 +60,7 @@ function NavigationBar() {
       className="app-bar"
       id="app-bar"
     >
-      <Container maxWidth="xl" className="container">
+      <Container maxWidth="xl" className="nav-container">
         <Toolbar disableGutters className="toolbar">
           <img
             className="logo"

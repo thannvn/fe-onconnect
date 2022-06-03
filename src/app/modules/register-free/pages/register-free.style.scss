@@ -43,17 +43,19 @@
     background-color: $color-white;
     padding: 3rem;
     margin: 0 auto;
-    max-width: 29rem;
+    width: 29rem;
     box-shadow: 0 0.125rem 1.5rem 0 rgb(0 0 0 / 12%);
   }
 
-  .card-email {
+  .card-form {
     .paper {
       @extend .custom-card;
 
       .hint-text {
         color: $color-sub-black;
       }
+
+      box-sizing: content-box !important;
 
       .form-paper {
         text-align: initial;

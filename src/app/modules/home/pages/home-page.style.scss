@@ -4,6 +4,10 @@
 @import 'styles/mui/button.scss';
 
 .home-page {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    max-width: $max-width-container !important;
+  }
+
   @extend .onc-page;
   margin-top: 80px;
   margin-bottom: 120px;

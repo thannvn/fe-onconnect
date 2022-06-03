@@ -3,10 +3,14 @@
 @import 'styles/mui/common.scss';
 
 .app-bar {
+  @media only screen and (min-width: $min-width-screen-xl) {
+    max-width: $max-width-layout !important;
+  }
+
   height: $space-LL;
   background-color: $color-white !important;
 
-  .container {
+  .nav-container {
     height: $space-LL;
 
     .toolbar {

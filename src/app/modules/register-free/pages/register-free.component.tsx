@@ -89,7 +89,7 @@ function RegisterFree() {
 
       <StepperRegister activeStep={activeStep} />
 
-      <div className="card-email mt--M">
+      <div className="card-form mt--M">
         {!activeStep ? (
           <Paper className="paper">
             <Typography className="font--28b">

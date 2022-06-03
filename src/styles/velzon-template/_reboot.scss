@@ -32,23 +32,3 @@ strong {
   border-right: 4px solid $gray-300;
   text-align: right;
 }
-
-// container
-
-.container,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-  }
-}
-
-// row
-.row > * {
-  position: relative;
-}
-
-// mixing
