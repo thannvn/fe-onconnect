@@ -255,7 +255,7 @@ function HomePage() {
                 <AppIcon iconName="ic-arrow-left-right" className="mt--XXS" />
               </Stack>
 
-              <ImageHero />
+              <ImageHero className="image-hero" />
             </Grid>
             <Grid />
           </Grid>
