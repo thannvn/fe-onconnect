@@ -129,12 +129,17 @@ function HomePage() {
               <div className="content">
                 <Typography>
                   Discover, acquire, and engage customers through channels they
-                  already use - from first enquiry to post-sales support.
+                  already use - from first enquiry to post-sales support.right
                 </Typography>
 
                 <div className="mt--S">
                   {FEATTURES_1.map((item) => (
-                    <Stack direction="row" spacing={2} className="mt--XXS">
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      className="mt--XXS"
+                      key={item}
+                    >
                       <CheckIcon sx={{ color: GREEN }} fontSize="large" />
                       <Typography>{item}</Typography>
                     </Stack>
@@ -195,7 +200,12 @@ function HomePage() {
 
                 <div className="mt--S">
                   {FEATURES_2.map((item) => (
-                    <Stack direction="row" spacing={2} className="mt--XXS">
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      className="mt--XXS"
+                      key={item}
+                    >
                       <CheckIcon sx={{ color: GREEN }} fontSize="large" />
                       <Typography>{item}</Typography>
                     </Stack>
@@ -225,7 +235,12 @@ function HomePage() {
 
                 <div className="mt--S">
                   {FEATURES_3.map((item) => (
-                    <Stack direction="row" spacing={2} className="mt--XXS">
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      className="mt--XXS"
+                      key={item}
+                    >
                       <CheckIcon sx={{ color: GREEN }} fontSize="large" />
                       <Typography>{item}</Typography>
                     </Stack>

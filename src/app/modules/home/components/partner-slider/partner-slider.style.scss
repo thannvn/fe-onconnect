@@ -2,7 +2,8 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  div.container {
+
+  .slider-container {
     transition: all 0.3s ease;
   }
   @media (max-width: 992px) {

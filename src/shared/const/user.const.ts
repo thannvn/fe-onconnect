@@ -14,6 +14,7 @@ export interface UserForm {
 export interface UserInfo extends UserForm {
   id: number;
   role: string;
+  createdDate: string;
 }
 
 export const ACCESS_TOKEN = 'access_token';

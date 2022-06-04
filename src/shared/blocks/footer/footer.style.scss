@@ -1,15 +1,15 @@
 @import 'styles/variables.scss';
 @import 'styles/fonts.scss';
 
-.footer {
+.onc-footer {
   background-color: black;
   color: $color-white;
 
-  .container {
+  .footer-container {
     padding: 5rem 8rem;
 
     .header {
-      @extend .font--22b;
+      @extend .font--20b;
     }
 
     .subTitle {

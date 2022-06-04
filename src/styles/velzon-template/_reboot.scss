@@ -1,0 +1,34 @@
+//
+// reboot.scss
+//
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+label {
+  font-weight: $font-weight-medium;
+  margin-bottom: $form-label-margin-bottom;
+}
+b,
+strong {
+  font-weight: $font-weight-semibold;
+}
+
+// blockquote
+
+.blockquote {
+  padding: 10px 20px;
+  border-left: 4px solid $gray-300;
+}
+
+.blockquote-reverse {
+  border-left: 0;
+  border-right: 4px solid $gray-300;
+  text-align: right;
+}

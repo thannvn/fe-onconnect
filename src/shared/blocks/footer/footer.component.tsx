@@ -136,8 +136,8 @@ function Footer() {
   };
 
   return (
-    <div className="footer" id="footer">
-      <Container maxWidth="xl" className="container">
+    <div className="onc-footer" id="footer">
+      <Container maxWidth="xl" className="footer-container">
         <Grid container spacing={4}>
           {FOOTER.headers.map((header, index) => (
             <Grid item xs={2} key={header}>

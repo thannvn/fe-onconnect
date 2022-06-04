@@ -12,13 +12,6 @@
   @extend .hover-element;
 }
 
-//Custom width layout
-.css-19r6kue-MuiContainer-root {
-  @media only screen and (min-width: $min-width-screen-xl) {
-    max-width: $max-width-container !important;
-  }
-}
-
 .hint-text {
   @extend .font--12-8;
   font-size: 0.8rem;
@@ -30,5 +23,19 @@
     content: '*';
     margin-left: 1px;
     color: $color-error;
+  }
+}
+
+.custom-link {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: $color-button;
+
+  &.--underline:hover {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $color-button;
   }
 }
