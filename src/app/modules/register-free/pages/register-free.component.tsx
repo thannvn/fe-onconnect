@@ -4,19 +4,13 @@
 /* eslint-disable react/no-danger */
 import { yupResolver } from '@hookform/resolvers/yup';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import {
-  Button,
-  Container,
-  Link,
-  Paper,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Button, Container, Paper, Stack, Typography } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import TextFieldController from 'shared/form/text-field/text-field-controller.component';
 import * as yup from 'yup';
 import CreateAccountForm from '../components/create-account-form/create-account-form.component';
@@ -80,9 +74,9 @@ function RegisterFree() {
           spacing={0}
         >
           <Typography>{t('register_free.already_account')}</Typography>
-          <Typography onClick={() => navigate('/login')} className="navigate">
+          <Link to="/login" className="custom-link font--16">
             {t('common.sign_in')}
-          </Typography>
+          </Link>
           <ArrowForwardIcon fontSize="small" />
         </Stack>
       </Stack>
@@ -132,11 +126,11 @@ function RegisterFree() {
         justifyContent="center"
         className="register-footer"
       >
-        <Link href="/" underline="hover">
+        <Link to="/" className="custom-link --underline">
           Terms and Conditions
         </Link>
         <span>|</span>
-        <Link href="/" underline="hover">
+        <Link to="/" className="custom-link --underline">
           Privacy Policy
         </Link>
         <span>|</span>

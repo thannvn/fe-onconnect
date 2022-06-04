@@ -45,9 +45,9 @@ function App() {
 
         <Routes>
           <Route path="/*" element={<Home />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/register-free" element={<RegisterFree />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/pricing/*" element={<Pricing />} />
+          <Route path="/register-free/*" element={<RegisterFree />} />
+          <Route path="/login/*" element={<Login />} />
         </Routes>
 
         {displayNavFooter && <Footer />}

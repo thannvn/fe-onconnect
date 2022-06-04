@@ -1,6 +1,7 @@
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import LoginAPI from 'app/api/login.api';
+import { Stack, Typography } from '@mui/material';
+import AuthenticationAPI from 'app/api/authentication.api';
 import logo from 'app/assets/images/logo.png';
 import { useAppDispatch } from 'app/services/redux/hooks';
 import { login } from 'app/services/redux/slices/user-slice';
@@ -36,32 +37,30 @@ function Login() {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      username: '',
+      email: '',
       password: '',
     },
     validationSchema: Yup.object({
-      username: Yup.string().required('Vui lòng nhập Tên tài khoản'),
+      email: Yup.string().required('Vui lòng nhập Email'),
       password: Yup.string().required('Vui lòng nhập Mật khẩu'),
     }),
     onSubmit: async (values) => {
       try {
         setLoading(true);
-        const result = await LoginAPI.login({
-          userName: values.username,
-          password: values.password,
-        });
-        StorageService.set(ACCESS_TOKEN, result?.accessToken);
-        dispatch(
-          login({
-            info: {
-              id: '1',
-              role: 'admin',
-              username: values.username,
-            },
-          })
+        const result = await AuthenticationAPI.login(
+          values.email,
+          values.password
         );
+        if (result.data) {
+          StorageService.set(ACCESS_TOKEN, result.data.accessToken);
+          dispatch(
+            login({
+              info: { ...result.data.user },
+            })
+          );
+          navigate('/');
+        }
         setLoading(false);
-        navigate('/admin/home');
       } catch (error) {
         setLoading(false);
       }
@@ -77,7 +76,7 @@ function Login() {
       <LoadingComponent open={loading} />
 
       <Helmet>
-        <title>Login</title>
+        <title>Login Page</title>
       </Helmet>
 
       <ParticlesAuth>
@@ -115,27 +114,24 @@ function Login() {
                         action="#"
                       >
                         <div className="mb-3">
-                          <Label htmlFor="username" className="form-label">
-                            Tên tài khoản
+                          <Label htmlFor="email" className="form-label">
+                            Email
                           </Label>
                           <Input
-                            name="username"
+                            name="email"
                             className="form-control"
-                            placeholder="Enter username"
+                            placeholder="Enter email"
                             type="text"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.username || ''}
+                            value={formik.values.email || ''}
                             invalid={
-                              !!(
-                                formik.touched.username &&
-                                formik.errors.username
-                              )
+                              !!(formik.touched.email && formik.errors.email)
                             }
                           />
-                          {formik.touched.username && formik.errors.username ? (
+                          {formik.touched.email && formik.errors.email ? (
                             <FormFeedback type="invalid">
-                              {formik.errors.username}
+                              {formik.errors.email}
                             </FormFeedback>
                           ) : null}
                         </div>
@@ -195,6 +191,22 @@ function Login() {
                             Đăng nhập
                           </Button>
                         </div>
+
+                        <Stack
+                          direction="row"
+                          className="mt--S"
+                          justifyContent="center"
+                          alignItems="center"
+                          spacing={0.5}
+                        >
+                          <Typography>Don&apos;t have account?</Typography>
+                          <Link
+                            to="/register-free"
+                            className="custom-link font--16"
+                          >
+                            Sign Up
+                          </Link>
+                        </Stack>
                       </Form>
                     </div>
                   </CardBody>

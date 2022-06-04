@@ -3,6 +3,12 @@
 //
 
 .auth-page-wrapper {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   .auth-page-content {
     padding-bottom: $footer-height;
     position: relative;
@@ -111,5 +117,11 @@
 
   .footer {
     color: rgba($white, 0.5);
+  }
+}
+
+.sign-up {
+  a {
+    font-size: 1rem;
   }
 }

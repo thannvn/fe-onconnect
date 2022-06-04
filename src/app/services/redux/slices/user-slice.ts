@@ -20,6 +20,7 @@ const initialState: User = {
     language: '',
     companyName: '',
     companyRegion: '',
+    createdDate: '',
   },
 };
 

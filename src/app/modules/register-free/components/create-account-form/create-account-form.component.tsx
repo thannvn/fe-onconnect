@@ -10,11 +10,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { UserForm } from 'shared/const/user.const';
-import RegisterFreeAPI from 'app/api/register-free.api';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
 import addToast from 'shared/blocks/toastify/add-toast.component';
 import { Message } from 'shared/const/message.const';
 import { useNavigate } from 'react-router-dom';
+import AuthenticationAPI from 'app/api/authentication.api';
 import {
   COMPANY_COUNTRY,
   LANGUAGE_USE,
@@ -82,7 +82,7 @@ function CreateAccountForm({ email }: CreateAccountFormProps) {
       const phoneCodeLabel = data.phoneCode
         ? handleCutLabel(Number(data.phoneCode))
         : '';
-      await RegisterFreeAPI.registerFree({
+      await AuthenticationAPI.registerFree({
         ...data,
         phoneNumber: phoneCodeLabel + data.phoneNumber,
       });
