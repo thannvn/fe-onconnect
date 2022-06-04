@@ -39,6 +39,10 @@
   &.--no-transform {
     text-transform: none !important;
   }
+
+  &.--width-100 {
+    width: 100%;
+  }
 }
 
 .onc-button:hover {

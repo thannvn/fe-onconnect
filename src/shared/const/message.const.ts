@@ -4,4 +4,5 @@ export enum Message {
   UPDATE_SUCCESS = 'Cập nhật thành công',
   LOGIN_AGAIN = 'Để tiếp tục, vui lòng đăng nhập lại',
   COMMON_ERROR = 'Có lỗi trong quá trình xử lý',
+  CHANGE_PASSWORD_SUCCESS = 'Đổi mật khẩu thành công',
 }

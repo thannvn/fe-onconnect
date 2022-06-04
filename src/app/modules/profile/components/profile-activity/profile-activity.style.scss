@@ -1,0 +1,25 @@
+@import 'styles/fonts.scss';
+@import 'styles/variables.scss';
+
+.profile-activity {
+  button {
+    @extend .font--16sb;
+    text-transform: none;
+  }
+
+  .upgrade-package {
+    @extend .font--14;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 1rem;
+    padding: 2px 5px;
+    border: 1px solid $color-border-light-gray;
+
+    &:hover {
+      background-color: $color-background-gray;
+    }
+  }
+}

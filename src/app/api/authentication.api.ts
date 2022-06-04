@@ -25,4 +25,13 @@ export default class AuthenticationAPI {
       },
     });
   };
+
+  static changePassword = (currentPassword: string, newPassword: string) => {
+    return httpService.post('/auth/change-password', {
+      body: {
+        currentPassword,
+        newPassword,
+      },
+    });
+  };
 }

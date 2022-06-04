@@ -170,7 +170,10 @@ function CompareFeature({ featureTitle, partHeading }: CompareFeatureProps) {
       </Grid>
 
       {fakeData.map((feature) => (
-        <Accordion className="feature-compare-description">
+        <Accordion
+          className="feature-compare-description"
+          key={feature.featureContent}
+        >
           <AccordionSummary
             expandIcon={<ArrowDropDown />}
             aria-controls="feature-content"
