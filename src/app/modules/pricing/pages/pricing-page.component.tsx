@@ -44,81 +44,85 @@ function Pricing() {
   ];
 
   return (
-    <Container maxWidth="xl" className="mt--XXXXL mb--XXXL">
+    <>
       <Helmet>
         <title>{t('pricing_page.page_title')}</title>
       </Helmet>
 
-      <Grid container className="main-layout">
-        <div className="pricing-list">
-          <Grid item xs={12} className="title">
-            <Typography variant="h1">{t('pricing_page.header')}</Typography>
-          </Grid>
+      <Container maxWidth="xl" className="pricing-page">
+        <Grid container>
+          <div className="pricing-list">
+            <Grid item xs={12} className="title">
+              <Typography variant="h1">{t('pricing_page.header')}</Typography>
+            </Grid>
 
-          <Grid item xs={12} className="mt--LL">
-            <Stack direction="row" spacing={2} justifyContent="center">
-              <div className="pricing-switching">
-                <Typography className="font--16b">Yearly</Typography>
-                <PricingSwitching
-                  defaultChecked
-                  inputProps={{ 'aria-label': 'pricing-time' }}
-                  sx={{ margin: '0px 5px 0px 5px' }}
-                />
-                <Typography className="font--16b">Monthly</Typography>
-              </div>
-            </Stack>
-          </Grid>
+            <Grid item xs={12} className="mt--LL">
+              <Stack direction="row" spacing={2} justifyContent="center">
+                <div className="pricing-switching">
+                  <Typography className="font--16b">Yearly</Typography>
+                  <PricingSwitching
+                    defaultChecked
+                    inputProps={{ 'aria-label': 'pricing-time' }}
+                    sx={{ margin: '0px 5px 0px 5px' }}
+                  />
+                  <Typography className="font--16b">Monthly</Typography>
+                </div>
+              </Stack>
+            </Grid>
 
-          <Grid container spacing={3} className="mt--XS">
-            {fakeData.map((item) => (
-              <Grid item xs={4} key={item.id}>
-                <PricingCard info={item} isMonthly={isMonthly} />
+            <Grid container spacing={3} className="mt--XS">
+              {fakeData.map((item) => (
+                <Grid item xs={4} key={item.id}>
+                  <PricingCard info={item} isMonthly={isMonthly} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+
+          <div className="compare-features-list">
+            <Grid item xs={12} className="title mt--XXXXL">
+              <Typography variant="h3">
+                {t('pricing_page.compare_features')}
+              </Typography>
+            </Grid>
+
+            <Grid container spacing={0} className="card-name-compare mt--M">
+              <Grid item xs={4.8} />
+              <Grid item xs={2.4} className="name">
+                <Typography variant="h6">Essentials</Typography>
               </Grid>
-            ))}
-          </Grid>
-        </div>
-
-        <div className="compare-features-list">
-          <Grid item xs={12} className="title mt--XXXXL">
-            <Typography variant="h3">
-              {t('pricing_page.compare_features')}
-            </Typography>
-          </Grid>
-
-          <Grid container spacing={0} className="card-name-compare mt--M">
-            <Grid item xs={4.8} />
-            <Grid item xs={2.4} className="name">
-              <Typography variant="h6">Essentials</Typography>
+              <Grid item xs={2.4} className="name --popular">
+                <Typography variant="h6">Business</Typography>
+              </Grid>
+              <Grid item xs={2.4} className="name">
+                <Typography variant="h6">Enterprise</Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={2.4} className="name --popular">
-              <Typography variant="h6">Business</Typography>
-            </Grid>
-            <Grid item xs={2.4} className="name">
-              <Typography variant="h6">Enterprise</Typography>
-            </Grid>
-          </Grid>
 
-          <CompareFeature
-            partHeading={t('pricing_page.connect')}
-            featureTitle={t('pricing_page.channels')}
-          />
-        </div>
-
-        <div className="questions mt--XXXXL">
-          <Grid item xs={12} className="title mb--L">
-            <Typography variant="h1">{t('pricing_page.questions')}</Typography>
-          </Grid>
-
-          {questions.map((item, index) => (
-            <Question
-              question={item.question}
-              answer={item.answer}
-              key={index}
+            <CompareFeature
+              partHeading={t('pricing_page.connect')}
+              featureTitle={t('pricing_page.channels')}
             />
-          ))}
-        </div>
-      </Grid>
-    </Container>
+          </div>
+
+          <div className="questions mt--XXXXL">
+            <Grid item xs={12} className="title mb--L">
+              <Typography variant="h1">
+                {t('pricing_page.questions')}
+              </Typography>
+            </Grid>
+
+            {questions.map((item, index) => (
+              <Question
+                question={item.question}
+                answer={item.answer}
+                key={index}
+              />
+            ))}
+          </div>
+        </Grid>
+      </Container>
+    </>
   );
 }
 

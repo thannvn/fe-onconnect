@@ -58,7 +58,7 @@ function Login() {
               info: { ...result.data.user },
             })
           );
-          navigate('/');
+          navigate('/profile');
         }
         setLoading(false);
       } catch (error) {

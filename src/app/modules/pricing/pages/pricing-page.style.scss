@@ -3,11 +3,14 @@
 @import '../shared/styles/card-name.style.scss';
 @import 'styles/pages.scss';
 
-.main-layout {
-  @extend .onc-page;
+.pricing-page {
   @media only screen and (min-width: $min-width-screen-xl) {
-    margin-top: 13rem;
+    max-width: $max-width-container !important;
   }
+
+  @extend .onc-page;
+  margin-top: 13rem;
+  margin-bottom: 5rem;
 
   .title {
     margin: 0 auto;
