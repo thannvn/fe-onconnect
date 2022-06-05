@@ -119,6 +119,7 @@
       "your_company": "Your company",
       "company_name": "Company name",
       "company_name_require": "Company name is required",
+      "company_region_require": "Company region is required",
       "hint-text": "We need this information to select the right server for your account."
     },
     "select_package": "Select package",

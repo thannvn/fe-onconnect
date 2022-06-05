@@ -1,12 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable global-require */
-import {
-  DeveloperBoard,
-  ExpandMore,
-  Logout,
-  LockReset,
-} from '@mui/icons-material';
+import { DeveloperBoard, ExpandMore, Logout } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import LoginIcon from '@mui/icons-material/Login';
 import StarIcon from '@mui/icons-material/Star';
@@ -25,21 +20,18 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import avatar from 'app/assets/images/avatar-demo.png';
 import { useAppDispatch, useAppSelector } from 'app/services/redux/hooks';
 import { logout, selectUser } from 'app/services/redux/slices/user-slice';
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { LANGUAGE } from 'translation/i18n';
-import avatar from 'app/assets/images/avatar-demo.png';
 import addToast from '../toastify/add-toast.component';
 import './nav-bar.style.scss';
 
 const LANGUAGE_OPTION: string[] = Object.values(LANGUAGE);
-const SETTING_ICON = [
-  <LockReset fontSize="small" color="action" />,
-  <Logout fontSize="small" color="action" />,
-];
+const SETTING_ICON = [<Logout fontSize="small" color="action" />];
 
 function NavigationBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -48,7 +40,7 @@ function NavigationBar() {
   const [currentLanguage, setCurrentLanguage] = useState<string>(LANGUAGE.en);
   const navigate = useNavigate();
   const user = useAppSelector(selectUser);
-  const SETTING_MENU = useRef<string[]>(['Đổi mật khẩu', 'Đăng xuất']).current;
+  const SETTING_MENU = useRef<string[]>(['Đăng xuất']).current;
   const dispatch = useAppDispatch();
   const [settingAnchorEl, setSettingAnchorEl] =
     React.useState<null | HTMLElement>(null);
