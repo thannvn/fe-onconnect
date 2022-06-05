@@ -50,6 +50,12 @@ function CreateAccountForm({ email }: CreateAccountFormProps) {
       language: yup
         .string()
         .required(t('register_free.language.language_require')),
+      companyName: yup
+        .string()
+        .required(t('register_free.company.company_name_require')),
+      companyRegion: yup
+        .string()
+        .required(t('register_free.company.company_region_require')),
     })
   ).current;
   const { control, handleSubmit } = useForm<UserForm>({
@@ -165,7 +171,7 @@ function CreateAccountForm({ email }: CreateAccountFormProps) {
 
             <div id="company">
               <Grid item xs={12}>
-                <Typography className="mt--S mb--XXS">
+                <Typography className="mt--S mb--XXS require-field">
                   {t('register_free.company.your_company')}
                 </Typography>
               </Grid>
