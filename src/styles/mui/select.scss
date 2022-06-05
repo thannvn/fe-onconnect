@@ -4,4 +4,8 @@
   @media only screen and (max-width: $max-screen-lg) {
     height: 3.3rem;
   }
+
+  &.--width-100 {
+    width: 100%;
+  }
 }
