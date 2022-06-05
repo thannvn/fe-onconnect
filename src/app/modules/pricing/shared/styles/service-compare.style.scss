@@ -1,0 +1,35 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.service-compare {
+  .service-name {
+    @extend .font--24b;
+    text-transform: uppercase;
+  }
+
+  .plan-name {
+    @extend .font--16sb;
+    text-transform: uppercase;
+    color: $color-text-sub-2;
+  }
+
+  .feature-compare {
+    border: 1px solid $color-border-light-gray;
+
+    .MuiAccordionSummary-root {
+      min-height: 3.5rem;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper {
+      color: $color-black;
+    }
+
+    .feature-compare-content {
+      border-top: 1px solid $color-border-light-gray;
+    }
+  }
+
+  .Mui-expanded {
+    margin: 0px;
+  }
+}
