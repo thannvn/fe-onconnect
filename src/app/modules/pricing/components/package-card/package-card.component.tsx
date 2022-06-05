@@ -11,19 +11,19 @@ import { GREEN } from 'styles/mui/variables';
 import {
   CARD_CHANNELS,
   POPULAR_TYPE,
-  PricingCardInfo,
+  PackageInfo,
 } from '../../shared/const/pricing-card.type';
-import './pricing-card.style.scss';
+import './package-card.style.scss';
 
 interface PricingCardProps {
-  info: PricingCardInfo;
+  info: PackageInfo;
   isMonthly: boolean;
 }
 
 function PricingCard({ info, isMonthly }: PricingCardProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const popularType = info.cardType === POPULAR_TYPE;
+  const popularType = info.type === POPULAR_TYPE;
   const channels = info.channels.split(',');
 
   const handleStartFree = () => {
@@ -50,9 +50,9 @@ function PricingCard({ info, isMonthly }: PricingCardProps) {
       <div className="action-area">
         <Stack direction="row" alignItems="baseline" spacing={0.5}>
           <Typography variant="h4">
-            US${isMonthly ? info.monthlyPrice : info.yearlyPrice}
+            US${isMonthly ? info.monthlyPricing : info.yearlyPricing}
           </Typography>
-          <Typography className="per-month">/staff/month</Typography>
+          <Typography className="per-month">/staff</Typography>
         </Stack>
 
         <Typography sx={{ height: '6.5rem' }} className="mt--XS">

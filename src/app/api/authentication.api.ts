@@ -2,12 +2,9 @@ import httpService from 'app/services/http/http.service';
 import { UserForm, UserInfo } from 'shared/const/user.const';
 
 interface LoginResponse {
-  data: {
-    accessToken: string;
-    user: UserInfo;
-  };
+  accessToken: string;
+  user: UserInfo;
   message: string;
-  status: number;
 }
 
 export default class AuthenticationAPI {

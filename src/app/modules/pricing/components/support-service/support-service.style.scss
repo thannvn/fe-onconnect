@@ -1,0 +1,13 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.support-service {
+  .service-name {
+    @extend .font--24b;
+    text-transform: uppercase;
+  }
+
+  .support-table {
+    border: 1px solid $color-border-light-gray;
+  }
+}

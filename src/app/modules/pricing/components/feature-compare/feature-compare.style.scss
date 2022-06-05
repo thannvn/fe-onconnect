@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.feature-compare-description {
+  height: 3.75rem;
+  border-bottom: 1px solid $color-border-light-gray;
+
+  .feature-name {
+    padding: 0 1.25rem 0 2.25rem;
+    display: flex;
+    align-items: center;
+
+    .helper {
+      margin-left: auto;
+      color: $color-text-sub-2;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-sub-black;
+      }
+    }
+
+    .extra {
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      margin-left: auto;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: $color-button;
+      background-color: $color-brand-light-blue;
+    }
+  }
+
+  &.--light-background {
+    background-color: $color-background-light-gray;
+  }
+
+  div:not(:first-child) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $color-border-light-gray;
+  }
+}

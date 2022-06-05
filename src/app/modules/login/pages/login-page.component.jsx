@@ -51,11 +51,11 @@ function Login() {
           values.email,
           values.password
         );
-        if (result.data) {
-          StorageService.set(ACCESS_TOKEN, result.data.accessToken);
+        if (result) {
+          StorageService.set(ACCESS_TOKEN, result.accessToken);
           dispatch(
             login({
-              info: { ...result.data.user },
+              info: { ...result.user },
             })
           );
           navigate('/profile');
