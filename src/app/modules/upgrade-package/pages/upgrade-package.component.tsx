@@ -66,6 +66,10 @@ function UpgradePackage() {
         ...data,
         packageName:
           PACKAGE.find((item) => item.value === data.packageName)?.label || '',
+        companyRegion:
+          COMPANY_COUNTRY.find(
+            (item) => String(item.value) === data.companyRegion
+          )?.label || '',
       });
       addToast({ message: Message.CONTACT_SALES, type: 'success' });
       navigate('/profile');
@@ -179,6 +183,12 @@ function UpgradePackage() {
                 </Grid>
               </Grid>
 
+              <Grid item xs={12}>
+                <Typography className="hint-text" sx={{ marginTop: '3px' }}>
+                  {t('register_free.company.hint-text')}
+                </Typography>
+              </Grid>
+
               <div id="select-package">
                 <Grid item xs={12}>
                   <Typography className="mt--S mb--XXS require-field">
@@ -196,19 +206,23 @@ function UpgradePackage() {
                 </Grid>
               </div>
 
-              <Grid item xs={12}>
-                <Typography className="hint-text" sx={{ marginTop: '3px' }}>
-                  {t('register_free.company.hint-text')}
-                </Typography>
-              </Grid>
+              <Grid container spacing={2}>
+                <Grid item xs={9}>
+                  <Button
+                    className="custom-button --no-transform"
+                    variant="contained"
+                    type="submit"
+                  >
+                    Contact Sales
+                  </Button>
+                </Grid>
 
-              <Button
-                className="custom-button --no-transform"
-                variant="contained"
-                type="submit"
-              >
-                Contact Sales
-              </Button>
+                <Grid item xs={3}>
+                  <Button className="pay-now" variant="outlined" type="button">
+                    Pay Now
+                  </Button>
+                </Grid>
+              </Grid>
             </form>
           </Paper>
         </Grid>

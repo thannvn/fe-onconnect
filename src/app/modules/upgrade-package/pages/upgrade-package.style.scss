@@ -11,10 +11,19 @@
     width: 29rem;
 
     .custom-button {
+      @extend .onc-button;
+
       margin-top: $space-MS;
       height: 3rem;
-      @extend .onc-button;
       width: 100%;
+    }
+
+    .pay-now {
+      @extend .font--15sb;
+      margin-top: $space-MS;
+      height: 3rem;
+      width: 100%;
+      text-transform: none;
     }
 
     .MuiInputBase-root {
