@@ -14,7 +14,7 @@ import storage from 'redux-persist/lib/storage';
 // Config Redux-Persist
 const persistConfig = {
   storage,
-  key: 'user',
+  key: `${process.env.REACT_APP_BASE_NAME}_user`,
   whiteList: ['user'],
 };
 
