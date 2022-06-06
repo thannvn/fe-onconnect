@@ -20,26 +20,28 @@ function HomePage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const FEATTURES_1 = [
-    'See each customer journey in a single view across all channels',
-    'Eliminate the need to ask them for information you already have',
-    'Enable multimedia responses via social, video, and phone channels',
+    'Messaging, Chat (P2P & Group Chat)',
+    'Voice and video call (high-class PBX)',
+    'File sharing (multimedia)',
+    'Meetings & Video confrence',
     'Set up in seconds; cloud-based, no coding or hardware required',
   ];
   const FEATURES_2 = [
     'Incoming phone calls & messages are handled digitally',
     'Intelligent routing connects customers to the right experts',
-    'Return calls show up as recognised numbers, enhancing resolution times and reducing time spent ‘on-hold’',
-    'Build deeper bonds with consistent one-to-one relationships – customers won’t get passed around',
     'Easily access reports, insights, and files',
-    'Let distributed teams to work cohesively',
+    `ensures that remote workers can connect with in-office employees through video conferences, and everyone
+     can stay in touch in real-time through instant messaging`,
+    `Let distributed teams to work cohesively, Where communication is about sharing knowledge, 
+     collaboration is about actively working together to achieve mutual goals`,
   ];
   const FEATURES_3 = [
-    'Incoming phone calls & messages are handled digitally',
-    'Intelligent routing connects customers to the right experts',
-    'Return calls show up as recognised numbers, enhancing resolution times and reducing time spent ‘on-hold’',
-    'Build deeper bonds with consistent one-to-one relationships – customers won’t get passed around',
-    'Easily access reports, insights, and files',
-    'Let distributed teams to work cohesively',
+    `Cost savings, every company needs to keep costs low and ROI high if it wants success, 
+     OnConnect provides with access to robust communication tools, without the initial capital expenditure, 
+     or on-going maintenance of an on-premise service`,
+    'Enrich customer experiences with unified data, leveraging APIs',
+    `Encourages innovation, companies want to make sure that they’re on the cutting-edge of technology. 
+     With OnConnect, they can change and adapt the services they access according to their developing needs`,
   ];
   return (
     <>
@@ -121,7 +123,7 @@ function HomePage() {
               <Typography className="paragraph-number">1</Typography>
               <Typography className="title">Connect</Typography>
               <Typography className="subtitle">
-                Be available to customers on their
+                Be available to your on their
                 <br />
                 <span>own terms</span>
               </Typography>
@@ -129,7 +131,7 @@ function HomePage() {
               <div className="content">
                 <Typography>
                   Discover, acquire, and engage customers through channels they
-                  already use - from first enquiry to post-sales support.right
+                  already use - for comunication and collaboration.
                 </Typography>
 
                 <div className="mt--S">
@@ -188,9 +190,9 @@ function HomePage() {
               <Typography className="paragraph-number">2</Typography>
               <Typography className="title">Orchestrate</Typography>
               <Typography className="subtitle">
-                Match enquiries to the
+                Curate staff journeys and
                 <br />
-                <span>right expertise</span>
+                <span>optimise workflows</span>
               </Typography>
 
               <div className="content">
@@ -219,7 +221,7 @@ function HomePage() {
           <Grid container className="feature-section-3" spacing={4}>
             <Grid item xs={6} className="wrap-left">
               <Typography className="paragraph-number">3</Typography>
-              <Typography className="title">Evaluate</Typography>
+              <Typography className="title">Benefit</Typography>
               <Typography className="subtitle">
                 Build long-term loyalty strategy for
                 <br />
@@ -262,8 +264,7 @@ function HomePage() {
 
           <Grid item xs={12} className="introduce-title-section mt--XXL">
             <Typography variant="h3" textAlign="center">
-              Trusted by <span>1000+</span> multinational corporations across
-              the globe
+              Trusted by <span>1000+</span> corporations across the globe
             </Typography>
           </Grid>
 
@@ -290,10 +291,9 @@ function HomePage() {
 
               <div className="content">
                 <Typography>
-                  Roche is using CINNOX as part of a digitalisation pilot
-                  program for customer enquiry handling and team collaboration -
-                  as part of their wider push towards customer service
-                  automation.
+                 `From Our Customer VMG is using OnConnect as part of a digitalisation pilot program for 
+                 team communication and team collaboration - as 
+                 part of their wider push towards digital tranform and innovation for communication.`
                 </Typography>
               </div>
 
@@ -305,10 +305,10 @@ function HomePage() {
               >
                 <AppIcon iconName="ic-quote-open" />
                 <Typography variant="h6">
-                  CINNOX is unique in that its intuitive design drastically
-                  reduces the flow and process in multiple adoptions for
-                  business units – which is usually the hardest part of
-                  introducing any change within a large organisation like ours.
+                OnConnect is unique in its powerful intuitive design
+                user-friendly. Help users experience online meetings, video calls 
+                and phone calls with sharp image and sound quality, 
+                making it easier for you to connect at work..
                 </Typography>
                 <AppIcon iconName="ic-quote-close" className="quote-close" />
               </Stack>
@@ -316,8 +316,7 @@ function HomePage() {
               <div className="signature">
                 <Typography>Hans Lim</Typography>
                 <Typography>
-                  Global Idea Accelerator, Innovation Theme, APAC Automation
-                  Squad Lead, Roche Hong Kong Limited
+                Some intellectual property rights - outstanding achievements
                 </Typography>
               </div>
             </Grid>
