@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 class StorageService {
-  private prefix = process.env.NEXT_PUBLIC_APP_NAME || 'app';
+  private prefix = process.env.REACT_APP_BASE_NAME || 'app';
 
   private localStorage: Storage | undefined;
 
