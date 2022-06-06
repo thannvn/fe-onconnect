@@ -1,3 +1,5 @@
+import { PackageInfo } from './pricing.const';
+
 export interface UserForm {
   phoneNumber: string;
   firstName: string;
@@ -9,6 +11,10 @@ export interface UserForm {
   email: string;
   companyRegion: string;
   phoneCode?: number;
+}
+
+export interface Profile extends UserInfo {
+  Package: PackageInfo;
 }
 
 export interface UserInfo extends UserForm {
