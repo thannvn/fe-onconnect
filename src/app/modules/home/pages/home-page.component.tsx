@@ -10,10 +10,11 @@ import './home-page.style.scss';
 import { GREEN } from 'styles/mui/variables';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as ImageHero } from 'app/assets/svg/image-hero.svg';
-import { ReactComponent as RocheLogo } from 'app/assets/svg/logo-roche.svg';
+import vmgLogo from 'app/assets/images/partners-logo/vmg.png';
 import graphicsImage from 'app/assets/images/graphics.webp';
 import engageUI from 'app/assets/images/engage-ui.png';
 import heroImage from 'app/assets/images/hero-img.png';
+import intellectualImage from 'app/assets/images/intellectual.png';
 import PartnerSlider from '../components/partner-slider/partner-slider.component';
 
 function HomePage() {
@@ -231,7 +232,7 @@ function HomePage() {
               <div className="content">
                 <Typography>
                   Understanding your customers means understanding your
-                  business. CINNOX turns unstructured data into clearly
+                  business. ONCONNECT turns unstructured data into clearly
                   formulated growth strategies.
                 </Typography>
 
@@ -276,13 +277,13 @@ function HomePage() {
             <Grid item xs={8} className="wrap-left">
               <Stack
                 direction="row"
-                spacing={4}
+                spacing={2.5}
                 alignItems="center"
                 className="title"
               >
-                <RocheLogo />
+                <img src={vmgLogo} alt="vmg-logo" />
                 <Typography className="big-plus">+</Typography>
-                <Typography className="on-connect">ONCONNECT</Typography>
+                <Typography className="on-connect ml--S">ONCONNECT</Typography>
               </Stack>
 
               <Typography className="font--32b mt--S">
@@ -291,9 +292,10 @@ function HomePage() {
 
               <div className="content">
                 <Typography>
-                 `From Our Customer VMG is using OnConnect as part of a digitalisation pilot program for 
-                 team communication and team collaboration - as 
-                 part of their wider push towards digital tranform and innovation for communication.`
+                  From Our Customer VMG is using OnConnect as part of a
+                  digitalisation pilot program for team communication and team
+                  collaboration - as part of their wider push towards digital
+                  tranform and innovation for communication.
                 </Typography>
               </div>
 
@@ -305,10 +307,10 @@ function HomePage() {
               >
                 <AppIcon iconName="ic-quote-open" />
                 <Typography variant="h6">
-                OnConnect is unique in its powerful intuitive design
-                user-friendly. Help users experience online meetings, video calls 
-                and phone calls with sharp image and sound quality, 
-                making it easier for you to connect at work..
+                  OnConnect is unique in its powerful intuitive design
+                  user-friendly. Help users experience online meetings, video
+                  calls and phone calls with sharp image and sound quality,
+                  making it easier for you to connect at work..
                 </Typography>
                 <AppIcon iconName="ic-quote-close" className="quote-close" />
               </Stack>
@@ -316,7 +318,7 @@ function HomePage() {
               <div className="signature">
                 <Typography>Hans Lim</Typography>
                 <Typography>
-                Some intellectual property rights - outstanding achievements
+                  Some intellectual property rights - outstanding achievements
                 </Typography>
               </div>
             </Grid>
@@ -327,7 +329,17 @@ function HomePage() {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} className="trial-section">
+        <Grid item xs={12} className="introduce-title-section mt--XXL">
+          <Typography variant="h3" textAlign="center">
+            Some intellectual property rights
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12} className="mt--S">
+          <img alt="intellectual" src={intellectualImage} />
+        </Grid>
+
+        <Grid item xs={12} className="trial-section mb--XXXL">
           <Typography>Reimagine your business</Typography>
           <Typography>Get started with a 14-day free trial.</Typography>
           <Button
