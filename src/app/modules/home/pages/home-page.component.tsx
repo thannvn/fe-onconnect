@@ -335,8 +335,12 @@ function HomePage() {
           </Typography>
         </Grid>
 
-        <Grid item xs={12} className="mt--S">
-          <img alt="intellectual" src={intellectualImage} />
+        <Grid item xs={12} className="mt--S" textAlign="center">
+          <img
+            alt="intellectual"
+            src={intellectualImage}
+            style={{ width: '90%' }}
+          />
         </Grid>
 
         <Grid item xs={12} className="trial-section mb--XXXL">
