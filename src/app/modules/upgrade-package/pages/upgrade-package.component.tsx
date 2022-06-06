@@ -12,16 +12,13 @@ import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
-import addToast from 'shared/blocks/toastify/add-toast.component';
-import { Message } from 'shared/const/message.const';
+import useMessageDialog from 'shared/blocks/message-dialog/message-dialog.component';
 import { UpgradePackageForm } from 'shared/const/pricing.const';
 import SelectController from 'shared/form/select/select-controller.component';
 import TextFieldController from 'shared/form/text-field/text-field-controller.component';
-import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
-import './upgrade-package.style.scss';
-import useMessageDialog from 'shared/blocks/message-dialog/message-dialog.component';
 import usePaymentDialog from '../components/payment-dialog/payment-dialog.component';
+import './upgrade-package.style.scss';
 
 function UpgradePackage() {
   const { t } = useTranslation();
@@ -65,16 +62,16 @@ function UpgradePackage() {
 
   const onSubmit = async (data: UpgradePackageForm) => {
     try {
-      // setLoading(true);
-      // await PackageAPI.upgradePackage({
-      //   ...data,
-      //   packageName:
-      //     PACKAGE.find((item) => item.value === data.packageName)?.label || '',
-      //   companyRegion:
-      //     COMPANY_COUNTRY.find(
-      //       (item) => String(item.value) === data.companyRegion
-      //     )?.label || '',
-      // });
+      setLoading(true);
+      await PackageAPI.upgradePackage({
+        ...data,
+        packageName:
+          PACKAGE.find((item) => item.value === data.packageName)?.label || '',
+        companyRegion:
+          COMPANY_COUNTRY.find(
+            (item) => String(item.value) === data.companyRegion
+          )?.label || '',
+      });
       open({
         message: `Please pay attention to your phone, our consultant will contact you soon to confirm. 
           Then, you can click PAY NOW to payment.`,
