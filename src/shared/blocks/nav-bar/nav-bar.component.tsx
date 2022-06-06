@@ -40,7 +40,7 @@ function NavigationBar() {
   const [currentLanguage, setCurrentLanguage] = useState<string>(LANGUAGE.en);
   const navigate = useNavigate();
   const user = useAppSelector(selectUser);
-  const SETTING_MENU = useRef<string[]>(['Đăng xuất']).current;
+  const SETTING_MENU = useRef<string[]>(['Logout']).current;
   const dispatch = useAppDispatch();
   const [settingAnchorEl, setSettingAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -406,6 +406,7 @@ function NavigationBar() {
                     key={item}
                     selected={item === currentLanguage}
                     className="menu-item"
+                    sx={{ paddingLeft: '40px', paddingRight: '40px' }}
                     onClick={() => handleChangeLanguage(item)}
                   >
                     {t(`languages.${item}`)}

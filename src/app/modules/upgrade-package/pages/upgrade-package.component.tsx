@@ -20,12 +20,16 @@ import TextFieldController from 'shared/form/text-field/text-field-controller.co
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import './upgrade-package.style.scss';
+import useMessageDialog from 'shared/blocks/message-dialog/message-dialog.component';
+import usePaymentDialog from '../components/payment-dialog/payment-dialog.component';
 
 function UpgradePackage() {
   const { t } = useTranslation();
   const user = useAppSelector(selectUser);
   const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
+  const { MessageDialog, open } = useMessageDialog();
+  const { PaymentDialog, open: openPayment } = usePaymentDialog();
+
   const schema = useRef(
     yup.object().shape({
       firstName: yup
@@ -61,18 +65,20 @@ function UpgradePackage() {
 
   const onSubmit = async (data: UpgradePackageForm) => {
     try {
-      setLoading(true);
-      await PackageAPI.upgradePackage({
-        ...data,
-        packageName:
-          PACKAGE.find((item) => item.value === data.packageName)?.label || '',
-        companyRegion:
-          COMPANY_COUNTRY.find(
-            (item) => String(item.value) === data.companyRegion
-          )?.label || '',
+      // setLoading(true);
+      // await PackageAPI.upgradePackage({
+      //   ...data,
+      //   packageName:
+      //     PACKAGE.find((item) => item.value === data.packageName)?.label || '',
+      //   companyRegion:
+      //     COMPANY_COUNTRY.find(
+      //       (item) => String(item.value) === data.companyRegion
+      //     )?.label || '',
+      // });
+      open({
+        message: `Please pay attention to your phone, our consultant will contact you soon to confirm. 
+          Then, you can click PAY NOW to payment.`,
       });
-      addToast({ message: Message.CONTACT_SALES, type: 'success' });
-      navigate('/profile');
     } catch (error) {
       setLoading(false);
     }
@@ -218,7 +224,12 @@ function UpgradePackage() {
                 </Grid>
 
                 <Grid item xs={3}>
-                  <Button className="pay-now" variant="outlined" type="button">
+                  <Button
+                    className="pay-now"
+                    variant="outlined"
+                    type="button"
+                    onClick={openPayment}
+                  >
                     Pay Now
                   </Button>
                 </Grid>
@@ -227,6 +238,9 @@ function UpgradePackage() {
           </Paper>
         </Grid>
       </Container>
+
+      <MessageDialog />
+      <PaymentDialog />
     </>
   );
 }

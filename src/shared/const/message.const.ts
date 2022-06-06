@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
 export enum Message {
-  REGISTER_SUCCESS = 'Đăng ký thành công. Vui lòng kiểm tra email',
-  CREATE_SUCCESS = 'Tạo mới thành công',
-  UPDATE_SUCCESS = 'Cập nhật thành công',
-  LOGIN_AGAIN = 'Để tiếp tục, vui lòng đăng nhập lại',
-  COMMON_ERROR = 'Có lỗi trong quá trình xử lý',
-  CHANGE_PASSWORD_SUCCESS = 'Đổi mật khẩu thành công',
-  CONTACT_SALES = `Đăng ký thành công. Vui lòng chú ý điện thoại, nhân viên tư vấn của chúng tôi sẽ sớm liên hệ với bạn.`,
+  REGISTER_SUCCESS = 'Register successful, please check email to continue',
+  CREATE_SUCCESS = 'Create successful',
+  UPDATE_SUCCESS = 'update successful',
+  LOGIN_AGAIN = 'To continue, please login again',
+  COMMON_ERROR = 'There was an error in processing',
+  CHANGE_PASSWORD_SUCCESS = 'Change password successful',
 }
