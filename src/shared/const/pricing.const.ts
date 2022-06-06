@@ -31,6 +31,12 @@ export interface PackageInfo {
   channels: string;
 }
 
+export interface PackageOption {
+  id: number;
+  title: string;
+  value: string;
+}
+
 export interface UpgradePackageForm {
   phoneNumber: string;
   firstName: string;

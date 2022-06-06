@@ -35,7 +35,7 @@ function Pricing() {
     try {
       setLoading(true);
       const result = await Promise.all([
-        PackageAPI.getListPackage(),
+        PackageAPI.getPackageList(),
         PackageAPI.getCompareList(),
       ]);
       listData.current.packageList = result[0]?.packageList || [];

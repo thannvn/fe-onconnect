@@ -3,40 +3,40 @@ import { SelectItem } from 'shared/form/select/select-controller.component';
 export const COMPANY_COUNTRY: SelectItem[] = [
   {
     label: 'VietNam',
-    value: 1,
+    value: 'vi',
   },
   {
     label: 'China',
-    value: 2,
+    value: 'cn',
   },
   {
-    label: 'America',
-    value: 3,
+    label: 'United States',
+    value: 'us',
   },
   {
     label: 'Hong Kong',
-    value: 4,
+    value: 'hk',
   },
   {
     label: 'Russia',
-    value: 5,
+    value: 'ru',
   },
 
   {
     label: 'Canada',
-    value: 6,
+    value: 'ca',
   },
   {
     label: 'Japan',
-    value: 7,
+    value: 'jp',
   },
   {
     label: 'Haiti',
-    value: 8,
+    value: 'ht',
   },
   {
     label: 'Germany',
-    value: 9,
+    value: 'de',
   },
 ];
 
