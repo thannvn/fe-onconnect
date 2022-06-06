@@ -1,0 +1,6 @@
+export enum DATE_TIME_FORMAT {
+  SLASH_DATE = 'YYYY/MM/DD',
+  CROSS_DATE = 'YYYY-MM-DD',
+  DATE_TIME = 'YYYY-MM-DD HH:mm:ss',
+  DATE_TIME_SLASH = 'YYYY/MM/DD HH:mm:ss',
+}

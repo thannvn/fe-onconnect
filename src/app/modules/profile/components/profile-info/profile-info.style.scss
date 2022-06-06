@@ -1,0 +1,11 @@
+@import 'styles/fonts.scss';
+@import 'styles/variables.scss';
+
+.profile-info {
+  padding: $space-S;
+  border-right: 1px solid $color-border-light-gray;
+
+  .item-info {
+    margin-top: 5px;
+  }
+}

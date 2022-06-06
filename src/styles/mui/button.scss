@@ -9,13 +9,13 @@
   button {
     @extend .nav-button;
 
-    .css-z4rqyd-MuiButton-endIcon {
+    .MuiButton-endIcon {
       margin-left: 4px;
       transform-style: preserve-3d;
       transition: 0.2s;
     }
 
-    .css-z4rqyd-MuiButton-endIcon > *:nth-of-type(1) {
+    .MuiButton-endIcon > *:nth-of-type(1) {
       font-size: $space-S;
     }
   }
@@ -26,7 +26,7 @@
     @extend .hover-element;
   }
 
-  .css-z4rqyd-MuiButton-endIcon {
+  .MuiButton-endIcon {
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(-180deg) skew(0deg, 0deg);
   }
@@ -38,6 +38,10 @@
 
   &.--no-transform {
     text-transform: none !important;
+  }
+
+  &.--width-100 {
+    width: 100%;
   }
 }
 

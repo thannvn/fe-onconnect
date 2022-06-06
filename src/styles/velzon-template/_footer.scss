@@ -1,0 +1,17 @@
+//
+// _footer.scss
+//
+
+.footer {
+  bottom: 0;
+  padding: 20px calc(#{$grid-gutter-width} / 2);
+  position: absolute;
+  right: 0;
+  color: $footer-color;
+  left: $vertical-menu-width;
+  background-color: $footer-bg;
+
+  @media (max-width: 991.98px) {
+    left: 0;
+  }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import {
   Accordion,
   AccordionDetails,
@@ -25,7 +26,10 @@ function Question({ question, answer }: QuestionProps) {
       </AccordionSummary>
 
       <AccordionDetails>
-        <Typography className="font--14">{answer}</Typography>
+        <div
+          className="font--14"
+          dangerouslySetInnerHTML={{ __html: answer }}
+        />
       </AccordionDetails>
     </Accordion>
   );
