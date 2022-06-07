@@ -13,7 +13,7 @@
 
     height: $space-LL;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1150px) {
       padding: 0px !important;
     }
 
@@ -24,6 +24,11 @@
         width: 144px;
         height: 50px;
         cursor: pointer;
+
+        @media screen and (max-width: 1050px) {
+          width: 120px;
+          height: 41px;
+        }
       }
 
       .nav-list {
@@ -37,6 +42,11 @@
 
             .menu-list,
             .flex-menu-list {
+              .part-heading {
+                @extend .font--16md;
+                color: $color-body-black;
+              }
+
               display: none;
               padding: $space-XS;
               position: absolute;
@@ -57,12 +67,8 @@
 
             .flex-menu-list {
               display: flex;
-              width: 80.5rem;
-              left: -20rem;
-
-              @media screen and (max-width: $min-width-screen-xl) {
-                width: 61.25rem;
-              }
+              width: 52rem;
+              left: -15rem;
             }
           }
         }
