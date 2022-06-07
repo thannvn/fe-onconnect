@@ -2,7 +2,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Stack, Typography } from '@mui/material';
 import AuthenticationAPI from 'app/api/authentication.api';
-import logo from 'app/assets/images/logo.png';
+import logo from 'app/assets/images/logo-white.png';
 import { useAppDispatch } from 'app/services/redux/hooks';
 import { login } from 'app/services/redux/slices/user-slice';
 import StorageService from 'app/services/storage/index';
