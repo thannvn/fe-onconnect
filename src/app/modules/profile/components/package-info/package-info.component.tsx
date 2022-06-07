@@ -27,15 +27,12 @@ function PackageInfoTab({ packageInfo }: PackageInfoProps) {
         </Link>
       </Stack>
       <Typography className="mt--XS">
+        Max extension: {packageInfo?.value}
+      </Typography>
+      <Typography className="mt--XS">
         Start date:{' '}
         {convertDateByFormat(user.createdDate, DATE_TIME_FORMAT.CROSS_DATE)}
       </Typography>
-      {/* <Typography>
-        Expired date:{' '}
-        {dayjs(user.createdDate)
-          .add(7, 'day')
-          .format(DATE_TIME_FORMAT.CROSS_DATE)}
-      </Typography> */}
     </div>
   );
 }
