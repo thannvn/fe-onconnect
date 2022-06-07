@@ -9,6 +9,7 @@ import LoggedGuard from 'routes/logged-guard';
 import Footer from 'shared/blocks/footer/footer.component';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
 import NavBar from 'shared/blocks/nav-bar/nav-bar.component';
+import { Role } from 'shared/const/user.const';
 import { setIconSet } from 'shared/icons/app-icon.component';
 import icons from 'shared/icons/icon-list';
 import './translation/i18n';
@@ -29,6 +30,7 @@ const Profile = React.lazy(() => import('app/modules/profile/routing'));
 const UpgradePackage = React.lazy(
   () => import('app/modules/upgrade-package/routing')
 );
+const Admin = React.lazy(() => import('app/modules/admin/routing'));
 
 function App() {
   const [displayNavFooter, setDisplayNavFooter] = useState<boolean>(true);
@@ -44,12 +46,12 @@ function App() {
   useEffect(() => {
     if (['/login', '/register-free'].includes(location.pathname) || user.id) {
       setDisplayFooter(false);
-      setDisplayNavFooter(!!user.id);
+      setDisplayNavFooter(!!user.id && user.role === Role.USER);
       return;
     }
     setDisplayFooter(true);
     setDisplayNavFooter(true);
-  }, [location.pathname, user.id]);
+  }, [location.pathname, user.id, user.role]);
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -103,6 +105,15 @@ function App() {
             element={
               <AuthGuard>
                 <UpgradePackage />
+              </AuthGuard>
+            }
+          />
+
+          <Route
+            path="/admin/*"
+            element={
+              <AuthGuard>
+                <Admin />
               </AuthGuard>
             }
           />

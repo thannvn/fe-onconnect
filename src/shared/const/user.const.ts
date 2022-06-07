@@ -1,5 +1,10 @@
 import { PackageInfo } from './pricing.const';
 
+export enum Role {
+  USER = 'user',
+  ADMIN = 'admin',
+}
+
 export interface UserForm {
   phoneNumber: string;
   firstName: string;

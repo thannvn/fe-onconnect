@@ -23,7 +23,7 @@ import {
   Row,
 } from 'reactstrap';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
-import { ACCESS_TOKEN } from 'shared/const/user.const';
+import { ACCESS_TOKEN, Role } from 'shared/const/user.const';
 import 'styles/velzon-template/app.scss';
 import * as Yup from 'yup';
 import ParticlesAuth from '../components/particles-auth.component.jsx';
@@ -58,7 +58,7 @@ function Login() {
               info: { ...result.user },
             })
           );
-          navigate('/profile');
+          navigate(result.user.role === Role.ADMIN ? '/admin' : '/profile');
         }
         setLoading(false);
       } catch (error) {
