@@ -1,20 +1,23 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Container, Grid, Paper, Typography } from '@mui/material';
 import PackageAPI from 'app/api/package.api';
+import { convertArrayToSelectItem } from 'app/helpers/array.helper';
 import {
   COMPANY_COUNTRY,
   PACKAGE,
 } from 'app/modules/register-free/shared/const/options.const';
 import { useAppSelector } from 'app/services/redux/hooks';
 import { selectUser } from 'app/services/redux/slices/user-slice';
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
 import useMessageDialog from 'shared/blocks/message-dialog/message-dialog.component';
-import { UpgradePackageForm } from 'shared/const/pricing.const';
-import SelectController from 'shared/form/select/select-controller.component';
+import { PackageOption, UpgradePackageForm } from 'shared/const/pricing.const';
+import SelectController, {
+  SelectItem,
+} from 'shared/form/select/select-controller.component';
 import TextFieldController from 'shared/form/text-field/text-field-controller.component';
 import * as yup from 'yup';
 import usePaymentDialog from '../components/payment-dialog/payment-dialog.component';
@@ -24,6 +27,7 @@ function UpgradePackage() {
   const { t } = useTranslation();
   const user = useAppSelector(selectUser);
   const [loading, setLoading] = useState<boolean>(false);
+  const packageOptionList = useRef<SelectItem[]>([]);
   const { MessageDialog, open } = useMessageDialog();
   const { PaymentDialog, open: openPayment } = usePaymentDialog();
 
@@ -72,6 +76,7 @@ function UpgradePackage() {
             (item) => String(item.value) === data.companyRegion
           )?.label || '',
       });
+      setLoading(false);
       open({
         message: `Please pay attention to your phone, our consultant will contact you soon to confirm. 
           Then, you can click PAY NOW to payment.`,
@@ -80,6 +85,27 @@ function UpgradePackage() {
       setLoading(false);
     }
   };
+
+  const getPackageList = useCallback(async () => {
+    try {
+      setLoading(true);
+      const option = await PackageAPI.getOptionList();
+      if (option) {
+        packageOptionList.current = convertArrayToSelectItem<PackageOption>(
+          option.optionList,
+          'title',
+          'id'
+        );
+      }
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    getPackageList();
+  }, [getPackageList]);
 
   return (
     <>

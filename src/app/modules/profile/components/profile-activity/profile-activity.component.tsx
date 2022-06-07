@@ -3,14 +3,19 @@ import { Divider } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import * as React from 'react';
+import { PackageInfo } from 'shared/const/pricing.const';
 import ChangePassword from '../change-password/change-password.component';
-import PackageInfo from '../package-info/package-info.component';
+import PackageInfoTab from '../package-info/package-info.component';
 import './profile-activity.style.scss';
 
 interface TabPanelProps {
   children: React.ReactNode;
   index: number;
   value: number;
+}
+
+interface ProfileActivityProps {
+  packageInfo?: PackageInfo;
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -36,7 +41,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function ProfileActivity() {
+function ProfileActivity({ packageInfo }: ProfileActivityProps) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -62,7 +67,7 @@ export default function ProfileActivity() {
       <Divider />
 
       <TabPanel value={value} index={0}>
-        <PackageInfo />
+        <PackageInfoTab packageInfo={packageInfo} />
       </TabPanel>
 
       <TabPanel value={value} index={1}>
@@ -71,3 +76,9 @@ export default function ProfileActivity() {
     </div>
   );
 }
+
+ProfileActivity.defaultProps = {
+  packageInfo: undefined,
+};
+
+export default React.memo(ProfileActivity);

@@ -1,24 +1,28 @@
 /* eslint-disable react/no-danger */
-import { Button, Grid, Paper, Typography } from '@mui/material';
-import React, { useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { PHONE_CODE_MENU } from 'shared/const/menu-props.const';
-import SelectController from 'shared/form/select/select-controller.component';
-import TextFieldController from 'shared/form/text-field/text-field-controller.component';
-import '../../pages/register-free.style.scss';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { UserForm } from 'shared/const/user.const';
+import { Button, Grid, Paper, Typography } from '@mui/material';
+import AuthenticationAPI from 'app/api/authentication.api';
+import PackageAPI from 'app/api/package.api';
+import { convertArrayToSelectItem } from 'app/helpers/array.helper';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
 import addToast from 'shared/blocks/toastify/add-toast.component';
+import { PHONE_CODE_MENU } from 'shared/const/menu-props.const';
 import { Message } from 'shared/const/message.const';
-import { useNavigate } from 'react-router-dom';
-import AuthenticationAPI from 'app/api/authentication.api';
+import { PackageOption } from 'shared/const/pricing.const';
+import { UserForm } from 'shared/const/user.const';
+import SelectController, {
+  SelectItem,
+} from 'shared/form/select/select-controller.component';
+import TextFieldController from 'shared/form/text-field/text-field-controller.component';
+import * as yup from 'yup';
+import '../../pages/register-free.style.scss';
 import {
   COMPANY_COUNTRY,
   LANGUAGE_USE,
-  PACKAGE,
   PHONE_CODE,
 } from '../../shared/const/options.const';
 
@@ -29,6 +33,7 @@ interface CreateAccountFormProps {
 function CreateAccountForm({ email }: CreateAccountFormProps) {
   const { t } = useTranslation();
   const [loading, setLoading] = useState<boolean>(false);
+  const packageOptionList = useRef<SelectItem[]>([]);
   const navigate = useNavigate();
   const schema = useRef(
     yup.object().shape({
@@ -101,9 +106,31 @@ function CreateAccountForm({ email }: CreateAccountFormProps) {
     }
   };
 
+  const getPackageList = useCallback(async () => {
+    try {
+      setLoading(true);
+      const option = await PackageAPI.getOptionList();
+      if (option) {
+        packageOptionList.current = convertArrayToSelectItem<PackageOption>(
+          option.optionList,
+          'title',
+          'id'
+        );
+      }
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    getPackageList();
+  }, [getPackageList]);
+
   return (
     <>
       {loading && <LoadingComponent open={loading} />}
+
       <Paper className="paper">
         <Typography className="font--28b">
           {t('register_free.create_account')}
@@ -232,7 +259,7 @@ function CreateAccountForm({ email }: CreateAccountFormProps) {
                   name="packageId"
                   control={control}
                   className="onc-select width-100"
-                  options={PACKAGE}
+                  options={packageOptionList.current}
                 />
               </Grid>
             </div>

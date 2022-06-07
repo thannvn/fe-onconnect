@@ -1,10 +1,14 @@
 import httpService from 'app/services/http/http.service';
-import { UserForm, UserInfo } from 'shared/const/user.const';
+import { Profile, UserForm, UserInfo } from 'shared/const/user.const';
 
 interface LoginResponse {
   accessToken: string;
   user: UserInfo;
   message: string;
+}
+
+interface ProfileResponse {
+  profile: Profile;
 }
 
 export default class AuthenticationAPI {
@@ -30,5 +34,9 @@ export default class AuthenticationAPI {
         newPassword,
       },
     });
+  };
+
+  static getProfile = () => {
+    return httpService.get<ProfileResponse>('/auth/profile');
   };
 }

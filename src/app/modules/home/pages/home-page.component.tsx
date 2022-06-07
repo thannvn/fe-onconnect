@@ -1,21 +1,21 @@
 /* eslint-disable global-require */
 /* eslint-disable jsx-a11y/media-has-caption */
+import CheckIcon from '@mui/icons-material/Check';
 import { Button, Container, Grid, Stack, Typography } from '@mui/material';
+import engageUI from 'app/assets/images/engage-ui.png';
+import graphicsImage from 'app/assets/images/graphics.webp';
+import heroImage from 'app/assets/images/hero-img.png';
+import intellectualImage from 'app/assets/images/intellectual.png';
+import vmgLogo from 'app/assets/images/partners-logo/vmg.png';
+import { ReactComponent as ImageHero } from 'app/assets/svg/image-hero.svg';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import AppIcon from 'shared/icons/app-icon.component';
-import CheckIcon from '@mui/icons-material/Check';
-import './home-page.style.scss';
-import { GREEN } from 'styles/mui/variables';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as ImageHero } from 'app/assets/svg/image-hero.svg';
-import vmgLogo from 'app/assets/images/partners-logo/vmg.png';
-import graphicsImage from 'app/assets/images/graphics.webp';
-import engageUI from 'app/assets/images/engage-ui.png';
-import heroImage from 'app/assets/images/hero-img.png';
-import intellectualImage from 'app/assets/images/intellectual.png';
+import AppIcon from 'shared/icons/app-icon.component';
+import { GREEN } from 'styles/mui/variables';
 import PartnerSlider from '../components/partner-slider/partner-slider.component';
+import './home-page.style.scss';
 
 function HomePage() {
   const { t } = useTranslation();
@@ -44,6 +44,7 @@ function HomePage() {
     `Encourages innovation, companies want to make sure that they’re on the cutting-edge of technology. 
      With OnConnect, they can change and adapt the services they access according to their developing needs`,
   ];
+
   return (
     <>
       <Helmet>
@@ -329,14 +330,24 @@ function HomePage() {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} className="introduce-title-section mt--XXL">
+        <Grid item xs={12} className="introduce-title-section mt--XXXL">
           <Typography variant="h3" textAlign="center">
             Some intellectual property rights
           </Typography>
         </Grid>
 
-        <Grid item xs={12} className="mt--S">
-          <img alt="intellectual" src={intellectualImage} />
+        <Grid
+          item
+          xs={12}
+          className="mt--S"
+          justifyContent="center"
+          display="flex"
+        >
+          <img
+            alt="intellectual"
+            src={intellectualImage}
+            style={{ width: '60%' }}
+          />
         </Grid>
 
         <Grid item xs={12} className="trial-section mb--XXXL">
