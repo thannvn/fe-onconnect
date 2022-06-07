@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+@import 'styles/mui/button.scss';
+
+.upgrade-package {
+  margin-top: 12rem;
+
+  .upgrade-form {
+    margin: $space-M auto;
+    padding: $space-S;
+    width: 29rem;
+
+    .custom-button {
+      @extend .onc-button;
+
+      margin-top: $space-MS;
+      height: 3rem;
+      width: 100%;
+    }
+
+    .pay-now {
+      @extend .font--15sb;
+      margin-top: $space-MS;
+      height: 3rem;
+      width: 100%;
+    }
+
+    .MuiInputBase-root {
+      background-color: $color-background-light-gray;
+    }
+  }
+}

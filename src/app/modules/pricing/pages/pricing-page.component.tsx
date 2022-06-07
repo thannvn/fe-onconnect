@@ -1,10 +1,11 @@
 import { Container, Grid, Stack, Typography } from '@mui/material';
-import PricingAPI from 'app/api/pricing.api';
+import PackageAPI from 'app/api/package.api';
 import clsx from 'clsx';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import Loading from 'shared/blocks/loading/loading.component';
+import { CompareInfo, PackageInfo } from 'shared/const/pricing.const';
 import ConnectCompare from '../components/connect-compare/connect-compare.component';
 import EvaluateCompare from '../components/evaluate-compare/evaluate-compare.component';
 import OrchestrateCompare from '../components/orchestrate-compare/orchestrate-compare.component';
@@ -12,11 +13,7 @@ import PricingCard from '../components/package-card/package-card.component';
 import Question from '../components/question/question.component';
 import SupportService from '../components/support-service/support-service.component';
 import PricingSwitching from '../components/switch-button/switch-button.component';
-import {
-  CompareInfo,
-  PackageInfo,
-  POPULAR_TYPE,
-} from '../shared/const/pricing-card.type';
+import { POPULAR_TYPE } from '../shared/const/pricing-card.type';
 import { QUESTIONS } from '../shared/const/pricing-page.type';
 import './pricing-page.style.scss';
 
@@ -38,8 +35,8 @@ function Pricing() {
     try {
       setLoading(true);
       const result = await Promise.all([
-        PricingAPI.getListPackage(),
-        PricingAPI.getCompareList(),
+        PackageAPI.getPackageList(),
+        PackageAPI.getCompareList(),
       ]);
       listData.current.packageList = result[0]?.packageList || [];
       listData.current.compareList = result[1]?.compareList || [];

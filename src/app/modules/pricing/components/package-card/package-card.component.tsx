@@ -6,12 +6,12 @@ import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
+import { PackageInfo } from 'shared/const/pricing.const';
 import AppIcon from 'shared/icons/app-icon.component';
 import { GREEN } from 'styles/mui/variables';
 import {
   CARD_CHANNELS,
   POPULAR_TYPE,
-  PackageInfo,
 } from '../../shared/const/pricing-card.type';
 import './package-card.style.scss';
 

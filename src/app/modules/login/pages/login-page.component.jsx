@@ -141,7 +141,7 @@ function Login() {
                             className="form-label"
                             htmlFor="password-input"
                           >
-                            Mật khẩu
+                            Password
                           </Label>
                           <div className="position-relative auth-pass-inputgroup mb-3">
                             <Input
@@ -188,7 +188,7 @@ function Login() {
                             className="btn btn-success w-100"
                             type="submit"
                           >
-                            Đăng nhập
+                            Sign In
                           </Button>
                         </div>
 

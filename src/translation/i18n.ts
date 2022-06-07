@@ -5,12 +5,12 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 interface Language {
   en: string;
-  vi: string;
+  // vi: string;
 }
 
 export const LANGUAGE: Language = {
   en: 'en', // English
-  vi: 'vi', // Vietnamese
+  // vi: 'vi', // Vietnamese
 };
 
 i18n

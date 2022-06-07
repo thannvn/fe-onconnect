@@ -2,7 +2,7 @@ import { ArrowDropDown } from '@mui/icons-material';
 import { Accordion, AccordionSummary, Grid, Typography } from '@mui/material';
 import clsx from 'clsx';
 import React from 'react';
-import { CompareInfo } from '../../shared/const/pricing-card.type';
+import { CompareInfo } from 'shared/const/pricing.const';
 import '../../shared/styles/service-compare.style.scss';
 import FeatureCompare from '../feature-compare/feature-compare.component';
 

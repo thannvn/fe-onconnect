@@ -1,6 +1,6 @@
 {
   "common": {
-    "sign_in": "Sign in",
+    "sign_in": "Sign In",
     "continue": "Continue",
     "can_not_change_language": "Cannot change language",
     "web_name": "onconnect"
@@ -9,11 +9,11 @@
     "why_onconnect": {
       "header": "Why ONCONNECT",
       "title1": "Powerful Features",
-      "description1": "Explore our customer engagement",
+      "description1": "Explore our communication and engagement solutions",
       "title2": "Our Technology",
       "description2": "Carrier-grade performance and reliability",
       "title3": "Our Innovations",
-      "description3": "Sercured. Intelligent. Unified"
+      "description3": "Sercure. Intelligent. Unified"
     },
     "capabilities": {
       "header": "Capabilities",
@@ -41,12 +41,11 @@
         "title3": "IT Services"
       }
     },
-    "about_me": "About me",
     "partners": "Partners",
     "register_service": "Register service",
     "login": "Login",
     "free_trial": "Try it for FREE",
-    "service_pricing": "Service pricing"
+    "service_pricing": "Pricing"
   },
   "languages": {
     "en": "English",
@@ -61,7 +60,7 @@
     },
     "quote": {
       "content": "Only 16% of consumers surveyed experienced interactions that exceeded their expectations.",
-      "sub_content": "Based on a survey commissioned by CINNOX to explore customer behaviours post-pandemic, with 1,200 respondents in Australia, Hong Kong, Indonesia, Malaysia, Philippines, and Singapore."
+      "sub_content": "Based on a survey commissioned by ONCONNECT to explore customer behaviours post-pandemic, with 1,200 respondents in Australia, Hong Kong, Indonesia, Malaysia, Philippines, and Singapore."
     }
   },
   "pricing_page": {
@@ -133,6 +132,6 @@
       "language_require": "Language is required"
     },
     "create_account_free": "Create account for FREE",
-    "remark": "By clicking 'Create account for FREE', I agree to the <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Terms and Conditions</a> and <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Privacy Policy</a>. I also agree to OnConnect use of my personal data that I provided herein to conduct direct marketing in relation to CINNOX and its products, services and events in accordance with the Privacy Policy."
+    "remark": "By clicking Create account for FREE, I agree to the <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Terms and Conditions</a> and <a href='/' target='_blank' rel='noreferrer' tabindex='-1'>Privacy Policy</a>. I also agree to OnConnect use of my personal data that I provided herein to conduct direct marketing in relation to ONCONNECT and its products, services and events in accordance with the Privacy Policy."
   }
 }

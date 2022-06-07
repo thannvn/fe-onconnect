@@ -1,7 +1,20 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable global-require */
-import { DeveloperBoard, ExpandMore, Logout } from '@mui/icons-material';
+import {
+  AccountBalance,
+  AccountTree,
+  ConnectWithoutContact,
+  DeveloperBoard,
+  DonutLarge,
+  ExpandMore,
+  Group,
+  Groups,
+  Logout,
+  MiscellaneousServices,
+  SettingsRemote,
+  ShoppingBag,
+} from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import LoginIcon from '@mui/icons-material/Login';
 import StarIcon from '@mui/icons-material/Star';
@@ -40,7 +53,7 @@ function NavigationBar() {
   const [currentLanguage, setCurrentLanguage] = useState<string>(LANGUAGE.en);
   const navigate = useNavigate();
   const user = useAppSelector(selectUser);
-  const SETTING_MENU = useRef<string[]>(['Đăng xuất']).current;
+  const SETTING_MENU = useRef<string[]>(['Logout']).current;
   const dispatch = useAppDispatch();
   const [settingAnchorEl, setSettingAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -101,10 +114,59 @@ function NavigationBar() {
 
           <div className="nav-list">
             {!user.id && (
-              <Stack direction="row" spacing={1.5} className="left-list">
-                <Button variant="text" size="large" className="nav-button">
-                  {t('nav.about_me')}
-                </Button>
+              <Stack direction="row" spacing={0.5} className="left-list">
+                <div className="nav-button--menu-list">
+                  <Button
+                    aria-haspopup="true"
+                    className=""
+                    variant="text"
+                    size="large"
+                    endIcon={<ExpandMore />}
+                  >
+                    Capabilities
+                  </Button>
+
+                  <MenuList className="menu-list">
+                    <MenuItem className="nav-menu-item">
+                      <ConnectWithoutContact />
+
+                      <div className="content">
+                        <Typography variant="h6" className="title">
+                          Connect
+                        </Typography>
+                        <Typography variant="body1" className="description">
+                          Unify telecom and digital touchpoints on one platform
+                        </Typography>
+                      </div>
+                    </MenuItem>
+
+                    <MenuItem className="nav-menu-item">
+                      <AccountTree />
+
+                      <div className="content">
+                        <Typography variant="h6" className="title">
+                          Orchestrate
+                        </Typography>
+                        <Typography variant="body1" className="description">
+                          Curate staff journeys and optimize workflows
+                        </Typography>
+                      </div>
+                    </MenuItem>
+
+                    <MenuItem className="nav-menu-item">
+                      <DonutLarge />
+
+                      <div className="content">
+                        <Typography variant="h6" className="title">
+                          Benefit
+                        </Typography>
+                        <Typography variant="body1" className="description">
+                          Essential business benefits of unified communications
+                        </Typography>
+                      </div>
+                    </MenuItem>
+                  </MenuList>
+                </div>
 
                 <div className="nav-button--menu-list">
                   <Button
@@ -171,129 +233,99 @@ function NavigationBar() {
                   </Button>
 
                   <Grid container className="flex-menu-list">
-                    <Grid item xs={4}>
+                    <Grid item xs={6}>
+                      <Typography className="part-heading">
+                        BUSINESS NEEDS
+                      </Typography>
+
                       <MenuList>
                         <MenuItem className="nav-menu-item">
-                          <WidgetsIcon />
+                          <Groups />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title1')}
+                              Team Collaboration
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description1')}
+                              All the tools to keep staff connected anywhere
                             </Typography>
                           </div>
                         </MenuItem>
 
                         <MenuItem className="nav-menu-item">
-                          <DeveloperBoard />
+                          <SettingsRemote />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title2')}
+                              Remote Office &amp; Mobility
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description2')}
+                              A scalable solution that readily available
+                              worldwide
                             </Typography>
                           </div>
                         </MenuItem>
 
                         <MenuItem className="nav-menu-item">
-                          <StarIcon />
+                          <Group />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title3')}
+                              Staff Engagement
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description3')}
+                              Transforming experience across every journey
+                              touchpoint
                             </Typography>
                           </div>
                         </MenuItem>
                       </MenuList>
                     </Grid>
 
-                    <Grid item xs={4}>
+                    <Grid item xs={6}>
+                      <Typography className="part-heading">
+                        INDUSTRIES
+                      </Typography>
+
                       <MenuList>
                         <MenuItem className="nav-menu-item">
-                          <WidgetsIcon />
+                          <MiscellaneousServices />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title1')}
+                              Telecom Service Providers
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description1')}
+                              A one-stop shop for platform help grow-up revenue
+                              by bundle with telecom services.
                             </Typography>
                           </div>
                         </MenuItem>
 
                         <MenuItem className="nav-menu-item">
-                          <DeveloperBoard />
+                          <AccountBalance />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title2')}
+                              Financial Services
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description2')}
+                              Collaboration, mobility and teamwork with high
+                              security.
                             </Typography>
                           </div>
                         </MenuItem>
 
                         <MenuItem className="nav-menu-item">
-                          <StarIcon />
+                          <ShoppingBag />
 
                           <div className="content">
                             <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title3')}
+                              SME
                             </Typography>
                             <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description3')}
-                            </Typography>
-                          </div>
-                        </MenuItem>
-                      </MenuList>
-                    </Grid>
-
-                    <Grid item xs={4}>
-                      <MenuList>
-                        <MenuItem className="nav-menu-item">
-                          <WidgetsIcon />
-
-                          <div className="content">
-                            <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title1')}
-                            </Typography>
-                            <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description1')}
-                            </Typography>
-                          </div>
-                        </MenuItem>
-
-                        <MenuItem className="nav-menu-item">
-                          <DeveloperBoard />
-
-                          <div className="content">
-                            <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title2')}
-                            </Typography>
-                            <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description2')}
-                            </Typography>
-                          </div>
-                        </MenuItem>
-
-                        <MenuItem className="nav-menu-item">
-                          <StarIcon />
-
-                          <div className="content">
-                            <Typography variant="h6" className="title">
-                              {t('nav.why_onconnect.title3')}
-                            </Typography>
-                            <Typography variant="body1" className="description">
-                              {t('nav.why_onconnect.description3')}
+                              A one-stop shop for communication services. Stay
+                              connected, anytime, anywhere.
                             </Typography>
                           </div>
                         </MenuItem>
@@ -313,6 +345,10 @@ function NavigationBar() {
 
                 <Button variant="text" size="large" className="nav-button">
                   {t('nav.partners')}
+                </Button>
+
+                <Button variant="text" size="large" className="nav-button">
+                  Blog
                 </Button>
               </Stack>
             )}
@@ -406,6 +442,7 @@ function NavigationBar() {
                     key={item}
                     selected={item === currentLanguage}
                     className="menu-item"
+                    sx={{ paddingLeft: '40px', paddingRight: '40px' }}
                     onClick={() => handleChangeLanguage(item)}
                   >
                     {t(`languages.${item}`)}

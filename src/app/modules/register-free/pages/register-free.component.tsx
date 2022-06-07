@@ -135,7 +135,7 @@ function RegisterFree() {
         </Link>
         <span>|</span>
         <Typography className="font--14">
-          ©2021 CINNOX All rights reserved.
+          ©2021 ONCONNECT All rights reserved.
         </Typography>
       </Stack>
     </Container>
