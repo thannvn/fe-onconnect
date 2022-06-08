@@ -2,7 +2,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Stack, Typography } from '@mui/material';
 import AuthenticationAPI from 'app/api/authentication.api';
-import logo from 'app/assets/images/logo.png';
+import logo from 'app/assets/images/logo-white.png';
 import { useAppDispatch } from 'app/services/redux/hooks';
 import { login } from 'app/services/redux/slices/user-slice';
 import StorageService from 'app/services/storage/index';
@@ -23,7 +23,7 @@ import {
   Row,
 } from 'reactstrap';
 import LoadingComponent from 'shared/blocks/loading/loading.component';
-import { ACCESS_TOKEN } from 'shared/const/user.const';
+import { ACCESS_TOKEN, Role } from 'shared/const/user.const';
 import 'styles/velzon-template/app.scss';
 import * as Yup from 'yup';
 import ParticlesAuth from '../components/particles-auth.component.jsx';
@@ -58,7 +58,7 @@ function Login() {
               info: { ...result.user },
             })
           );
-          navigate('/profile');
+          navigate(result.user.role === Role.ADMIN ? '/admin' : '/profile');
         }
         setLoading(false);
       } catch (error) {
@@ -76,7 +76,7 @@ function Login() {
       <LoadingComponent open={loading} />
 
       <Helmet>
-        <title>Login Page</title>
+        <title>Sign In Page</title>
       </Helmet>
 
       <ParticlesAuth>
@@ -87,7 +87,7 @@ function Login() {
                 <div className="text-center mt-sm-5 mb-4 text-white-50">
                   <div>
                     <Link to="/" className="d-inline-block auth-logo">
-                      <img src={logo} alt="" width={150} height={75} />
+                      <img src={logo} alt="" width={230} height={86} />
                     </Link>
                   </div>
                 </div>

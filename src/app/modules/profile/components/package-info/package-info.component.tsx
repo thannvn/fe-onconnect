@@ -1,7 +1,10 @@
 import { DiamondRounded } from '@mui/icons-material';
-import { Stack } from '@mui/material';
+import { Link as MatLink, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { convertDateByFormat } from 'app/helpers/convert-date.helper';
+import {
+  convertDateByFormat,
+  getExpiredDateAndDayLeft,
+} from 'app/helpers/convert-date.helper';
 import { useAppSelector } from 'app/services/redux/hooks';
 import { selectUser } from 'app/services/redux/slices/user-slice';
 import React from 'react';
@@ -26,12 +29,24 @@ function PackageInfoTab({ packageInfo }: PackageInfoProps) {
           <DiamondRounded fontSize="small" sx={{ color: '#ffa928' }} />
         </Link>
       </Stack>
-      <Typography className="mt--XS">
+      <Typography className="mt--XXS">
         Max extension: {packageInfo?.value}
       </Typography>
-      <Typography className="mt--XS">
+      <Typography className="mt--XXS">
         Start date:{' '}
-        {convertDateByFormat(user.createdDate, DATE_TIME_FORMAT.CROSS_DATE)}
+        {convertDateByFormat(user.createdAt, DATE_TIME_FORMAT.CROSS_DATE)}
+      </Typography>
+
+      <Typography className="mt--XXS">
+        Expired date: {getExpiredDateAndDayLeft(30, user.createdAt)}
+      </Typography>
+
+      <Typography className="mt--XXS">
+        Please click to this link to use OnConnect:
+        <MatLink href="https://pbx.onconnect.vn/" underline="none">
+          {' '}
+          https://pbx.onconnect.vn/
+        </MatLink>
       </Typography>
     </div>
   );

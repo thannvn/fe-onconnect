@@ -352,7 +352,7 @@ function HomePage() {
 
         <Grid item xs={12} className="trial-section mb--XXXL">
           <Typography>Reimagine your business</Typography>
-          <Typography>Get started with a 14-day free trial.</Typography>
+          <Typography>Get started with a 30-day free trial.</Typography>
           <Button
             variant="contained"
             className="trial-button --no-transform"
