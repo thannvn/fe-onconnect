@@ -123,9 +123,9 @@
     },
     "select_package": "Select package",
     "switchboard_name": {
-      "label": "Switchboard name",
-      "placeholder": "Switchboard name you want to set",
-      "switchboard_name_require": "Switchboard name is required"
+      "label": "PBX name",
+      "placeholder": "PBX name you want to set",
+      "switchboard_name_require": "PBX name is required"
     },
     "language": {
       "label": "Use language",

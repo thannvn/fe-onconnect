@@ -1,13 +1,16 @@
 import { AccountCircle, Home, Logout } from '@mui/icons-material';
 import { IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import AdminAPI from 'app/api/admin.api';
-import { convertDateByFormat } from 'app/helpers/convert-date.helper';
+import {
+  convertDateByFormat,
+  getExpiredDateAndDayLeft,
+} from 'app/helpers/convert-date.helper';
 import useChangePageSize from 'app/hooks/change-page-size.hook';
 import { useAppDispatch } from 'app/services/redux/hooks';
 import { logout } from 'app/services/redux/slices/user-slice';
-import dayjs from 'dayjs';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import CellAction from 'shared/blocks/cell-action/cell-action.component';
 import CustomRow from 'shared/blocks/custom-row/custom-row.component';
@@ -32,13 +35,13 @@ function AdminHomePage() {
   const userList = useRef<UserListInfo[]>([]);
 
   const COLUMN_CONFIG = useRef<GridColDef[]>([
-    { field: 'id', headerName: 'Id', flex: 0.25, sortable: true },
-    { field: 'name', headerName: 'Name', flex: 1, sortable: false },
+    { field: 'id', headerName: 'ID', flex: 0.25, sortable: true },
+    { field: 'name', headerName: 'Name', flex: 0.8, sortable: false },
     { field: 'email', headerName: 'Email', flex: 1, sortable: false },
     {
       field: 'phoneNumber',
       headerName: 'Phone Number',
-      flex: 1,
+      flex: 0.5,
       sortable: false,
     },
     {
@@ -46,17 +49,19 @@ function AdminHomePage() {
       headerName: 'Package name',
       flex: 1,
       sortable: false,
+      valueGetter: (params: GridValueGetterParams) =>
+        `${params.row.packageName} (${params.row.value} extensions)`,
     },
     {
       field: 'startDate',
       headerName: 'Start date',
-      flex: 0.6,
+      flex: 0.5,
       sortable: false,
     },
     {
       field: 'expiredDate',
       headerName: 'Expired date',
-      flex: 0.6,
+      flex: 1,
       sortable: false,
     },
     {
@@ -103,25 +108,24 @@ function AdminHomePage() {
   const getUserList = useCallback(async () => {
     try {
       setLoading(true);
-      const curentDate = dayjs(new Date());
-
       const result = await AdminAPI.getAllUser();
       if (result) {
+        console.log(result?.userList);
+
         userList.current = result.userList.map((item) => ({
           email: item.email,
           id: item.id,
           name: `${item.firstName} ${item.lastName}`,
-          packageName: item.Package.title,
+          packageName: item.Package?.title,
           phoneNumber: item.phoneNumber,
           startDate: convertDateByFormat(
             item.createdAt,
             DATE_TIME_FORMAT.CROSS_DATE
           ),
-          expiredDate: `${
-            30 - curentDate.diff(dayjs(item.createdAt), 'days')
-          } days left`,
+          expiredDate: getExpiredDateAndDayLeft(30, item.createdAt),
           companyName: item.companyName,
           companyRegion: item.companyRegion,
+          value: item.Package?.value,
         }));
       }
       setLoading(false);
@@ -136,6 +140,10 @@ function AdminHomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Admin Home Page</title>
+      </Helmet>
+
       <Loading open={loading} />
 
       <div className="admin-home">

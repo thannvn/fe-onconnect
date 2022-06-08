@@ -1,13 +1,14 @@
 import { DiamondRounded } from '@mui/icons-material';
-import { Stack, Link as MatLink } from '@mui/material';
+import { Link as MatLink, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { convertDateByFormat } from 'app/helpers/convert-date.helper';
+import {
+  convertDateByFormat,
+  getExpiredDateAndDayLeft,
+} from 'app/helpers/convert-date.helper';
 import { useAppSelector } from 'app/services/redux/hooks';
 import { selectUser } from 'app/services/redux/slices/user-slice';
-import dayjs from 'dayjs';
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { DATE_TIME_FORMAT } from 'shared/const/date-time.const';
 import { PackageInfo } from 'shared/const/pricing.const';
 import './package-info.style.scss';
@@ -37,8 +38,7 @@ function PackageInfoTab({ packageInfo }: PackageInfoProps) {
       </Typography>
 
       <Typography className="mt--XXS">
-        Expired date:{' '}
-        {30 - dayjs(new Date()).diff(dayjs(user.createdAt), 'days')} days left
+        Expired date: {getExpiredDateAndDayLeft(30, user.createdAt)}
       </Typography>
 
       <Typography className="mt--XXS">

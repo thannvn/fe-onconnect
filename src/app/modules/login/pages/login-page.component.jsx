@@ -76,7 +76,7 @@ function Login() {
       <LoadingComponent open={loading} />
 
       <Helmet>
-        <title>Login Page</title>
+        <title>Sign In Page</title>
       </Helmet>
 
       <ParticlesAuth>
@@ -87,7 +87,7 @@ function Login() {
                 <div className="text-center mt-sm-5 mb-4 text-white-50">
                   <div>
                     <Link to="/" className="d-inline-block auth-logo">
-                      <img src={logo} alt="" width={150} height={75} />
+                      <img src={logo} alt="" width={230} height={86} />
                     </Link>
                   </div>
                 </div>
