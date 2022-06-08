@@ -110,8 +110,6 @@ function AdminHomePage() {
       setLoading(true);
       const result = await AdminAPI.getAllUser();
       if (result) {
-        console.log(result?.userList);
-
         userList.current = result.userList.map((item) => ({
           email: item.email,
           id: item.id,
