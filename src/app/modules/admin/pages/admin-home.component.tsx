@@ -1,5 +1,20 @@
-import { AccountCircle, Home, Logout } from '@mui/icons-material';
-import { IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import {
+  AccountCircle,
+  Home,
+  Leaderboard,
+  Logout,
+  PersonAdd,
+  Store,
+  Weekend,
+} from '@mui/icons-material';
+import {
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import AdminAPI from 'app/api/admin.api';
 import {
@@ -19,6 +34,8 @@ import addToast from 'shared/blocks/toastify/add-toast.component';
 import { ROW_PAGE_OPTIONS } from 'shared/const/data-grid.const';
 import { DATE_TIME_FORMAT } from 'shared/const/date-time.const';
 import { Message } from 'shared/const/message.const';
+import UserCountChart from '../components/user-count-chart/user-count-chart.component';
+import WebsiteViewChart from '../components/website-view-chart/website-view-chart.component';
 import { UserListInfo } from '../shared/admin-home.const';
 import './admin-home.style.scss';
 
@@ -185,7 +202,97 @@ function AdminHomePage() {
           </Stack>
         </div>
 
-        <div className="data-grid-custom">
+        <Stack direction="row" className="mt--M" width="100%">
+          <div className="card-info">
+            <div className="title">
+              <div className="icon">
+                <Weekend />
+              </div>
+
+              <Typography>Upgrade Package</Typography>
+              <Typography>20</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>
+              <span>+55%</span> than lask week
+            </Typography>
+          </div>
+
+          <div className="card-info ml--S">
+            <div className="title">
+              <div className="icon --user">
+                <Leaderboard />
+              </div>
+
+              <Typography>Today&apos;s Users</Typography>
+              <Typography>1000</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>
+              <span>+3%</span> than last month
+            </Typography>
+          </div>
+
+          <div className="card-info ml--S">
+            <div className="title">
+              <div className="icon --revenue">
+                <Store />
+              </div>
+
+              <Typography>Revenue</Typography>
+              <Typography>34k</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>
+              <span>+1%</span> than yesterday
+            </Typography>
+          </div>
+
+          <div className="card-info ml--S">
+            <div className="title">
+              <div className="icon --follower">
+                <PersonAdd />
+              </div>
+
+              <Typography>Followers</Typography>
+              <Typography>+91</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>Just updated</Typography>
+          </div>
+        </Stack>
+
+        <Stack direction="row" className="mt--M" width="100%">
+          <div className="chart-wrapper">
+            <WebsiteViewChart />
+            <div className="chart-info">
+              <Typography className="mt--L title">Website Views</Typography>
+              <Typography className="description">
+                Last Campaign Performance
+              </Typography>
+            </div>
+          </div>
+
+          <div className="chart-wrapper ml--M">
+            <UserCountChart />
+            <div className="chart-info">
+              <Typography className="mt--L title">Monthly User</Typography>
+              <Typography className="description">
+                <span>(+15%)</span> increase in monthly.
+              </Typography>
+            </div>
+          </div>
+        </Stack>
+
+        <div className="data-grid-custom mt--S">
           <DataGrid
             rows={userList.current}
             columns={COLUMN_CONFIG}
