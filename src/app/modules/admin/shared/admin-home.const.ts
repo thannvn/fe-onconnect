@@ -8,4 +8,5 @@ export interface UserListInfo {
   companyName: string;
   companyRegion: string;
   expiredDate: string;
+  value: string;
 }
