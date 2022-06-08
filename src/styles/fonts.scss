@@ -14,6 +14,10 @@
 - h: heavy = 900
  */
 
+.font--11sb {
+  @include font_base(0.6875rem, 600);
+}
+
 .font--12-8 {
   @include font_base(0.8rem);
 }
@@ -24,6 +28,10 @@
 
 .font--14sb {
   @include font_base(0.875rem, 600);
+}
+
+.font--14-8md {
+  @include font_base(0.925rem, 500);
 }
 
 .font--15sb {

@@ -1,5 +1,10 @@
 import { PackageInfo } from './pricing.const';
 
+export enum Role {
+  USER = 'user',
+  ADMIN = 'admin',
+}
+
 export interface UserForm {
   phoneNumber: string;
   firstName: string;
@@ -20,7 +25,7 @@ export interface Profile extends UserInfo {
 export interface UserInfo extends UserForm {
   id: number;
   role: string;
-  createdDate: string;
+  createdAt: string;
 }
 
 export const ACCESS_TOKEN = 'access_token';

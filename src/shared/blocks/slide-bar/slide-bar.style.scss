@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts.scss';
+
+.slide-bar {
+  svg,
+  span {
+    color: $color-white;
+  }
+
+  span {
+    @extend .font--14sb;
+  }
+
+  .logo {
+    cursor: pointer;
+    width: 80%;
+    margin: $space-XXS auto $space-S auto;
+  }
+
+  .MuiDrawer-paper {
+    background-image: url('../../../app/assets/images/sidebar-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 105% auto;
+    width: 15rem;
+    box-sizing: 'border-box';
+
+    .selected-button {
+      padding: 5px 16px;
+      border-radius: 5px;
+      background-color: $color-white;
+      svg,
+      span {
+        color: $color-black;
+      }
+    }
+  }
+}
