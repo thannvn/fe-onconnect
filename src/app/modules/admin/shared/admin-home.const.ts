@@ -56,30 +56,30 @@ export const USER_COUNT = [
 export const WEBSITE_VIEW = [
   {
     name: 'Mo',
-    View: 100,
-  },
-  {
-    name: 'Tu',
-    View: 100,
-  },
-  {
-    name: 'We',
-    View: 400,
-  },
-  {
-    name: 'Th',
-    View: 300,
-  },
-  {
-    name: 'Fr',
     View: 500,
   },
   {
-    name: 'Sa',
+    name: 'Tu',
+    View: 550,
+  },
+  {
+    name: 'We',
+    View: 800,
+  },
+  {
+    name: 'Th',
     View: 650,
   },
   {
+    name: 'Fr',
+    View: 850,
+  },
+  {
+    name: 'Sa',
+    View: 1000,
+  },
+  {
     name: 'Su',
-    View: 800,
+    View: 1050,
   },
 ];
