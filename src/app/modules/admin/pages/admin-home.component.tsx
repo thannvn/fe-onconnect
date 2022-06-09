@@ -1,11 +1,12 @@
 import {
+  AccessTime,
   AccountCircle,
   Home,
-  Leaderboard,
   Logout,
   PersonAdd,
-  Store,
+  Today,
   Weekend,
+  ErrorOutline,
 } from '@mui/icons-material';
 import {
   Divider,
@@ -205,6 +206,23 @@ function AdminHomePage() {
         <Stack direction="row" className="mt--M" width="100%">
           <div className="card-info">
             <div className="title">
+              <div className="icon --view">
+                <Today />
+              </div>
+
+              <Typography>Today&apos;s Views</Typography>
+              <Typography>1000</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>
+              <span>+3%</span> than yesterday
+            </Typography>
+          </div>
+
+          <div className="card-info ml--S">
+            <div className="title">
               <div className="icon">
                 <Weekend />
               </div>
@@ -216,52 +234,35 @@ function AdminHomePage() {
             <Divider className="mt--XXS mb--XXS" />
 
             <Typography>
-              <span>+55%</span> than lask week
+              <span>+15%</span> than lask week
             </Typography>
           </div>
 
           <div className="card-info ml--S">
             <div className="title">
               <div className="icon --user">
-                <Leaderboard />
-              </div>
-
-              <Typography>Today&apos;s Users</Typography>
-              <Typography>1000</Typography>
-            </div>
-
-            <Divider className="mt--XXS mb--XXS" />
-
-            <Typography>
-              <span>+3%</span> than last month
-            </Typography>
-          </div>
-
-          <div className="card-info ml--S">
-            <div className="title">
-              <div className="icon --revenue">
-                <Store />
-              </div>
-
-              <Typography>Revenue</Typography>
-              <Typography>34k</Typography>
-            </div>
-
-            <Divider className="mt--XXS mb--XXS" />
-
-            <Typography>
-              <span>+1%</span> than yesterday
-            </Typography>
-          </div>
-
-          <div className="card-info ml--S">
-            <div className="title">
-              <div className="icon --follower">
                 <PersonAdd />
               </div>
 
-              <Typography>Followers</Typography>
-              <Typography>+91</Typography>
+              <Typography>New User</Typography>
+              <Typography>70</Typography>
+            </div>
+
+            <Divider className="mt--XXS mb--XXS" />
+
+            <Typography>
+              <span>+10%</span> than last week
+            </Typography>
+          </div>
+
+          <div className="card-info ml--S">
+            <div className="title">
+              <div className="icon --expired">
+                <ErrorOutline />
+              </div>
+
+              <Typography>Expired User</Typography>
+              <Typography>20</Typography>
             </div>
 
             <Divider className="mt--XXS mb--XXS" />
@@ -278,6 +279,16 @@ function AdminHomePage() {
               <Typography className="description">
                 Last Campaign Performance
               </Typography>
+
+              <Divider className="mt--XXS mb--XXS" />
+
+              <Stack direction="row" alignItems="center" spacing={0.5}>
+                <AccessTime fontSize="small" />
+
+                <Typography className="description">
+                  campaign sent 2 days ago
+                </Typography>
+              </Stack>
             </div>
           </div>
 
@@ -288,6 +299,16 @@ function AdminHomePage() {
               <Typography className="description">
                 <span>(+15%)</span> increase in monthly.
               </Typography>
+
+              <Divider className="mt--XXS mb--XXS" />
+
+              <Stack direction="row" alignItems="center" spacing={0.5}>
+                <AccessTime fontSize="small" />
+
+                <Typography className="description">
+                  updated 4 min ago
+                </Typography>
+              </Stack>
             </div>
           </div>
         </Stack>

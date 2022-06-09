@@ -45,7 +45,8 @@ function WebsiteViewChart() {
           }}
         />
         <Legend />
-        <Bar legendType="none" dataKey="View" fill="#fff" />
+
+        <Bar legendType="none" dataKey="View" fill="#fff" maxBarSize={40} />
       </BarChart>
     </ResponsiveContainer>
   );
