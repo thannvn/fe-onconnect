@@ -98,7 +98,7 @@ function HomePage() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} className="introduce-section mt--XXXL ">
+          {/* <Grid item xs={12} className="introduce-section mt--XXXL ">
             <div className="watch-video mb--XXS">
               <AppIcon iconName="ic-arrow-right-left" className="mt--XS" />
               <Typography className="hand-writing ml--XXS">
@@ -111,7 +111,7 @@ function HomePage() {
               className="video mb--L"
               src="https://www.youtube.com/embed/8vXu5f4wHnQ"
             />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} className="introduce-title-section mt--XXL">
             <Typography variant="h3" textAlign="center">
