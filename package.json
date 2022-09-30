@@ -40,7 +40,7 @@
     "react-toastify": "^9.0.2",
     "react-tsparticles": "1.43.1",
     "reactstrap": "^9.0.3",
-    "recharts": "^2.1.10",
+    "recharts": "^2.1.14",
     "redux-persist": "^6.0.0",
     "sass": "^1.51.0",
     "typescript": "^4.1.6",
